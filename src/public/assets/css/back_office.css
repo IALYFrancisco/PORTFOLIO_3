@@ -22,7 +22,7 @@ body main#container {
 }
 
 body main#container aside#aside_bar {
-    width: 50px;
+    width: 70px;
     height: inherit;
     background-color: var(--grenat);
     box-shadow: 3px 3px 20px #33333344;
@@ -76,7 +76,8 @@ body main#container main#right nav#nav_right ul {
     width: 250px;
     height: inherit;
     align-items: center;
-    justify-content: space-around;
+    justify-content: end;
+    padding-right: 30px;
 }
 
 body main#container main#right nav#nav_right ul li {
@@ -91,7 +92,7 @@ body main#container main#right nav#nav_right ul li a{
 }
 
 body main#container main#right nav#nav_right ul li a img{
-    width: 35px;
+    width: 30px;
 }
 
 body main#container main#right hr{
