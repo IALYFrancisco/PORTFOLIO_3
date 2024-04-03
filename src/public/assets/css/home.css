@@ -18,7 +18,7 @@ body {
 
 body header {
     width: 100%;
-    height: max-content;
+    height: 70px;
 }
 
 body header nav {
@@ -73,7 +73,6 @@ body main {
 body main div.left {
     width: 50%;
     height: inherit;
-    /* background-color: orange; */
     padding-left: 160px;
     padding-top: 20px;
     color: white;
@@ -81,8 +80,19 @@ body main div.left {
 
 body main div.left p.Lorem {
     width: 100%;
-    display: flex;
     text-align: justify;
+    justify-content: center;
+}
+
+body main div.left p.Lorem span.important_word,
+body main div.left p.Lorem span.important_word a {
+    color: yellow;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+body main div.left p.Lorem span.important_word a:hover {
+    text-decoration: underline;
 }
 
 body main div.left p.title {
@@ -109,7 +119,6 @@ body main div.left button {
 body main div.right {
     width: 50%;
     height: inherit;
-    /* background-color: greenyellow; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -169,11 +178,125 @@ body main div.left.my_projects div.list_project div.project {
     margin-bottom: 20px;   
 }
 
-body main div.left.my_projects div.list_project div.project:hover {
-       
-}
-
 body main div.left.my_projects div.project video {
     width: 250px;
     border-radius: 5px;
 }
+
+body main div.my_contacts {
+    width: 100%;
+    height: inherit;
+    padding-left: 160px;
+    padding-right: 160px;
+    padding-top: 20px;
+    color: white;
+}
+
+body main div.my_contacts p.title {
+    font-size: 45px;
+    border-bottom: 2px yellow solid;
+    margin-bottom: 30px;
+    padding-bottom: 6px;
+    color: white;
+    width: 25%;
+}
+
+body main div.my_contacts div.list_contact {
+    width: inherit;
+    height: max-content;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding-top: 40px;
+}
+
+body main div.my_contacts div.list_contact div.contact {
+    width: 200px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 50px;
+    transition: 0.5s all;
+    cursor: pointer;
+}
+
+body main div.my_contacts div.list_contact div.contact:hover {
+    background-color: rgba(255, 255, 0, 0.185);
+    transition: 0.5s all;
+    border-radius: 5px;
+    padding-bottom: 30px;
+}
+
+body main div.my_contacts div.list_contact div.contact img {
+    width: 50px;
+    margin: auto;
+}
+
+body main div.my_contacts div.list_contact label {
+    cursor: pointer;
+}
+
+body main div.my_contacts div.list_contact a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s all;
+}
+
+body main div.my_contacts div.list_contact a:hover {
+    color: yellow;
+    transition: 0.3s all;
+    text-decoration: underline;
+}
+
+body header div.menu {
+    display: none;
+}
+
+body header div.menu img{
+    width: 35px;
+}
+
+@media only screen and (max-width: 1330px) {
+    
+    body main div.my_contacts p.title {
+        width: max-content;
+        margin: auto;
+    }
+
+}
+
+@media only screen and (max-width: 570px) {
+    
+    body main div.my_contacts {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    body main div.my_contacts div.list_contact {
+     width: 300px;
+     margin: auto;
+    }
+
+}
+
+@media only screen and (max-width: 520px) {
+    
+    body header nav {
+        display: none;
+    }
+
+    body header div.menu {
+        display: block;
+    }
+
+    body header {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        padding-right: 30px;
+    }
+
+}
+

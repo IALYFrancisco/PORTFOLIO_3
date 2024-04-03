@@ -23,7 +23,19 @@ app.get('/my_skills', (req, res) => {
 
 app.get('/my_projects', (req, res) => {
   res.render('my_projects');
+});
+
+app.get('/my_contacts', (request, response) => {
+  response.render('my_contacts');
+});
+
+app.get('/testPage', (request, response) => {
+
+  const student_list = new Array('IALY', 'Francisco', 'Raymond');
+
+  response.render('testPage', { student_list : student_list })
 })
+
 
 // Définir le répertoire des fichiers statiques
 app.use(express.static(path.join(__dirname, 'src/public')));
