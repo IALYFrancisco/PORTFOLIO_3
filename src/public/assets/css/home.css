@@ -153,7 +153,16 @@ body main div.left div.skill div.jauge {
     position: relative;
 }
 
-body main div.left div.skill div.jauge::before {
+body main div.left div.skill#JS div.jauge::before {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 100%;
+    background: yellow;
+    border-radius: 5px;
+}
+
+body main div.left div.skill#ANGULAR div.jauge::before {
     content: '';
     position: absolute;
     width: 40%;
@@ -161,6 +170,38 @@ body main div.left div.skill div.jauge::before {
     background: yellow;
     border-radius: 5px;
 }
+
+
+body main div.left div.skill#VUE div.jauge::before {
+    content: '';
+    position: absolute;
+    width: 37%;
+    height: 100%;
+    background: yellow;
+    border-radius: 5px;
+}
+
+
+body main div.left div.skill#MONGODB div.jauge::before {
+    content: '';
+    position: absolute;
+    width: 36%;
+    height: 100%;
+    background: yellow;
+    border-radius: 5px;
+}
+
+
+body main div.left div.skill#NODE div.jauge::before {
+    content: '';
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    background: yellow;
+    border-radius: 5px;
+}
+
+
 
 body main div.left div.skill img {
     width: 43px;
