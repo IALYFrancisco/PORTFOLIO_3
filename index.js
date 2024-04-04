@@ -38,20 +38,13 @@ app.get('/my_projects', (req, res) => {
     const collection = mongoose.connection.db.collection('project');
 
 //Récupération des documments de la collection project
-    // collection.find().toArray((error, documents) => {
-
-    //   if(error) {
-    //     console.error('Erreur lors de la connection', error);
-
-    //     return;
-
-    //   }
-
+    
     const documents = await collection.find().toArray();
 
     res.render('my_projects', { documents });
 
     });
+    
   })
 
 
