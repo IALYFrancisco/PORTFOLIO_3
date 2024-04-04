@@ -15,13 +15,18 @@
 
     <ul>
 
-        <% student_list.forEach(element => {%>
+        <% documents.forEach(element => {%>
         
-            <li> <%= element %> </li>
+            <li> <%- element.movie_file_url %> </li>
 
+            <div class="project">
+                <video width="200px" src="<%- element.movie_file_url %>" autoplay loop controls></video>
+            </div>
+            
         <% }); %>
-
+            
     </ul>
+    
 
 
 </body>
