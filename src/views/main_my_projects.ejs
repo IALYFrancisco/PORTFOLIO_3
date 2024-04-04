@@ -3,18 +3,17 @@
         My Projects
     </p>
     <div class="list_project">
-        <div class="project">
-            <video src="assets/project/video/DJANGO-PYTHON.webm" autoplay loop controls></video>
-        </div>
-        <div class="project">
-            <video src="assets/project/video/TECHNOW-ANGULAR.webm" autoplay loop controls></video>
-        </div>
-        <div class="project">
-            <video src="assets/project/video/VUE.JS.webm" autoplay loop controls></video>
-        </div>
-        <div class="project">
-            <video src="assets/project/video/PORTFOLIO-SASS-JS-HTML-CSS.webm" autoplay loop controls></video>
-        </div>
+
+        <% documents.forEach( item => { %>
+        
+            <div class="project">
+                
+                <video src="<%- item.movie_file_url -%>" autoplay loop controls></video>
+            
+            </div>
+            
+        <% }); %>
+
     </div>
     <button>See more</button>
 </div>
