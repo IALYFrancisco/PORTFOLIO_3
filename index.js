@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const mongoose = require('mongoose');
 
 // Définir EJS comme moteur de modèle
 app.set('view engine', 'ejs');
@@ -33,7 +34,8 @@ app.get('/testPage', (request, response) => {
 
   const student_list = new Array('IALY', 'Francisco', 'Raymond');
 
-  response.render('testPage', { student_list : student_list })
+  response.render('testPage', { student_list : student_list });
+
 })
 
 
