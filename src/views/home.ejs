@@ -14,6 +14,11 @@
 </head>
 <body>
     <%- include("header") %>    
+    <script>
+        document.getElementById('toggleBtn').addEventListener('click', (event) => {
+            document.getElementById('navResponsive').classList.toggle('active');
+        })
+    </script>
     <main>
         <%- include("main_who_am_i") %>
         <div class="right img">
