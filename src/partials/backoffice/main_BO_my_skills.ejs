@@ -1,0 +1,23 @@
+<div id="container_BO_my_skills">
+    <div class="action">
+        <h1 class="title">List of my skills</h1>
+        <button>Add skill</button>
+    </div>
+    <div class="list_of_my_skills">
+        <% data.forEach(element => { %>
+            <ul>
+                <li> <img src="<%- element.skill_image_logo_file_url %>" alt=""></li>
+                <li> <%- element.skill_name %> </li>
+                <li> <%- element.knowledge_level %> </li>
+                <% if( element.known_library == "" ){ %>    
+                <li> <%- "-----" %> </li>
+                <% }else{ %>
+                <li style="display: flex; text-wrap: wrap;"> <%- element.known_library %> </li>
+                <% } %>
+                <li class="item_action" style="display: flex; justify-content: flex-end;">
+                    Delete || Edit
+                </li>
+            </ul>
+            <% }); %>
+    </div>
+</div>
