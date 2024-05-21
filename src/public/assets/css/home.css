@@ -217,7 +217,9 @@ body main div.left div.skill img {
 body main div.left.my_projects div.list_project {
     display: flex;
     width: 100%;
-    height: max-content;
+    height: 340px;
+    overflow-y: hidden;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
