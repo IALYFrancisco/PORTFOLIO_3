@@ -2,6 +2,9 @@
     <p class="title">
         My Projects
     </p>
+    <p class="incitation">
+        Scroll now to see others projects :)
+    </p>
     <div class="list_project">
 
         <% documents.forEach( item => { %>
@@ -42,5 +45,23 @@
         <% }); %>
 
     </div>
-    <button>See more</button>
+    <button id="seeMoreProjectBtn">See more</button>
 </div>
+
+<script>
+
+    var seeLoreProjectBtn = document.getElementById('seeMoreProjectBtn');
+
+    seeLoreProjectBtn.addEventListener("click", (event) => {
+       
+        let listProjetContainer = document.querySelector('.list_project');
+
+        listProjetContainer.classList.toggle("toogled");
+
+        let textIncitation = document.querySelector('p.incitation');
+
+        textIncitation.classList.toggle("toggled");
+
+    })
+
+</script>
