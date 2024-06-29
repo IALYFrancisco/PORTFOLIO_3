@@ -3,7 +3,7 @@ const app = express();
 const path = require('path');
 const mongoose = require('mongoose');
 const { error } = require('console');
-const URIMongoDB = "mongodb+srv://ialyfrancisco7:salut@cluster0.uhjiufn.mongodb.net/mon_portfolio";
+const URIMongoDB = "mongodb+srv://ialyfrancisco7:chocolatchaud@cluster0.uhjiufn.mongodb.net/mon_portfolio";
 
 // Définir EJS comme moteur de modèle
 app.set('view engine', 'ejs');
