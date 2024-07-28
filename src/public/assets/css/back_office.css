@@ -22,10 +22,10 @@ body main#container {
 }
 
 body main#container aside#aside_bar {
-    width: 70px;
+    width: 60px;
     height: inherit;
     background-color: var(--grenat);
-    box-shadow: 3px 3px 20px #33333344;
+    box-shadow: 1px 1px 5px #59565644;
     padding-top: 100px;
 }
 
@@ -54,13 +54,12 @@ body main#container aside#aside_bar nav#nav_left ul li a {
 }
 
 body main#container aside#aside_bar nav#nav_left ul li a img{
-    width: 30px;
+    width: 27px;
 }
 
 body main#container main#right {
     width: 100%;
     height: max-content;
-    /* background: rebeccapurple; */
 }
 
 body main#container main#right nav#nav_right {

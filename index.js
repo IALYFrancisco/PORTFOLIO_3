@@ -2,15 +2,15 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const mongoose = require('mongoose');
-const { error } = require('console');
-const URIMongoDB = "mongodb+srv://ialyfrancisco7:chocolatchaud@cluster0.uhjiufn.mongodb.net/mon_portfolio";
+const dotenv = require('dotenv');
 
-// Définir EJS comme moteur de modèle
+dotenv.config();
+
 app.set('view engine', 'ejs');
 
-// Définir le chemin vers le répertoire contenant les vues
 app.set('views', path.join(__dirname, 'src', 'views'));
 
+app.use(express.static(path.join(__dirname, 'src/public')));
 
 app.get('/', (req, res) => {
   res.render('home');
@@ -22,22 +22,15 @@ app.get('/my_skills', (req, res) => {
 
 app.get('/my_projects', (req, res) => {
 
-//Connexion à la base de données en ligne de mongoDB.
-  mongoose.connect(URIMongoDB, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  })
+mongoose.connect(process.env.DB_URI)
   .then(async () => {
     console.log('Connexion à MonogDB réussie');
 
-//Accéder à la collection project
-    const collection = mongoose.connection.db.collection('project');
+const collection = mongoose.connection.db.collection('project');
 
-//Récupération des documments de la collection project
-    
-    const documents = await collection.find().toArray();
+const documents = await collection.find().toArray();
 
-    res.render('my_projects', { documents });
+res.render('my_projects', { documents });
 
     });
     
@@ -46,14 +39,6 @@ app.get('/my_projects', (req, res) => {
 
 app.get('/my_contacts', (request, response) => {
   response.render('my_contacts');
-});
-
-app.get('/testPage', (request, response) => {
-
-  const student_list = new Array('IALY', 'Francisco', 'Raymond');
-  
-  response.render('testPage', { student_list : student_list });
-  
 });
 
 app.get('/back_office', (req, res) => {
@@ -116,11 +101,6 @@ app.get('/BO_my_skills', (req, res) => {
   res.render('BO_my_skills', { data : list_of_my_skills });
 });
 
-// Définir le répertoire des fichiers statiques
-app.use(express.static(path.join(__dirname, 'src/public')));
-
-// Démarrer le serveur
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Serveur en écoute sur le port ${PORT}`);
+app.listen(process.env.APP_PORT, () => {
+  console.log(`Serveur en écoute sur le port ${process.env.APP_PORT}`);
 });
