@@ -41,8 +41,8 @@ app.get('/my_contacts', (request, response) => {
   response.render('my_contacts');
 });
 
-app.get('/back_office', (req, res) => {
-  res.render('back_office');
+app.get('/backoffice', (req, res) => {
+  res.render('backoffice');
 });
 
 app.get('/BO_my_skills', (req, res) => {
@@ -98,7 +98,7 @@ app.get('/BO_my_skills', (req, res) => {
     },
   )
 
-  res.render('BO_my_skills', { data : list_of_my_skills });
+  res.render('backoffice_myskills', { data : list_of_my_skills });
 });
 
 app.listen(process.env.APP_PORT, () => {
