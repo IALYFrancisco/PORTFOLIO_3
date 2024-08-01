@@ -1,8 +1,9 @@
-const express = require('express');
+import express from 'express'
+import path from 'path'
+import mongoose from 'mongoose';
+import dotenv from 'dotenv'
+
 const app = express();
-const path = require('path');
-const mongoose = require('mongoose');
-const dotenv = require('dotenv');
 
 dotenv.config();
 
@@ -25,17 +26,11 @@ app.get('/my_projects', (req, res) => {
 mongoose.connect(process.env.DB_URI)
   .then(async () => {
     console.log('Connexion à MonogDB réussie');
-
-const collection = mongoose.connection.db.collection('project');
-
-const documents = await collection.find().toArray();
-
-res.render('my_projects', { documents });
-
-    });
-    
-  })
-
+    const collection = mongoose.connection.db.collection('project');
+    const documents = await collection.find().toArray();
+    res.render('my_projects', { documents });
+  }); 
+})
 
 app.get('/my_contacts', (request, response) => {
   response.render('my_contacts');
