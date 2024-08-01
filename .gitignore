@@ -1,5 +1,5 @@
 # dependencies
 node_modules
 
-#fichier de variable d'environnement
+#variable d'environnement
 .env

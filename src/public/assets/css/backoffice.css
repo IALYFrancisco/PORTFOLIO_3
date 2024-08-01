@@ -22,10 +22,10 @@ body main#container {
 }
 
 body main#container aside#aside_bar {
-    width: 70px;
+    width: 60px;
     height: inherit;
     background-color: var(--grenat);
-    box-shadow: 3px 3px 20px #33333344;
+    box-shadow: 1px 1px 5px #59565644;
     padding-top: 100px;
 }
 
@@ -54,13 +54,12 @@ body main#container aside#aside_bar nav#nav_left ul li a {
 }
 
 body main#container aside#aside_bar nav#nav_left ul li a img{
-    width: 30px;
+    width: 27px;
 }
 
 body main#container main#right {
     width: 100%;
     height: max-content;
-    /* background: rebeccapurple; */
 }
 
 body main#container main#right nav#nav_right {
@@ -140,8 +139,6 @@ body main#container main#right div#container_BO_my_skills div.action h1.title {
 
 body main#container main#right div#container_BO_my_skills div.list_of_my_skills {
     width: 100%;
-    /* background-color: green; */
-    /* overflow-y: scroll; */
     padding: 10px 100px;
 }
 
@@ -161,4 +158,62 @@ body main#container main#right div#container_BO_my_skills div.list_of_my_skills 
 
 body main#container main#right div#container_BO_my_skills div.list_of_my_skills ul li img {
     width: 40px;
+}
+
+/* Backoffice all projects style */
+
+body main#container main#right div#container_BO_my_skills div.statistics {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px 0 30px;
+    margin-top: -35px;
+}
+
+
+body main#container main#right div#container_BO_my_skills div.statistics ul.statistic li {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+body main#container main#right div#container_BO_my_skills div.statistics ul.statistic {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    width: 20%;
+}
+
+body main#container main#right div#container_BO_my_skills div.statistics ul.filters {
+    list-style-type: none;
+    width: 25%;
+    display: flex;
+    justify-content: space-between;
+}
+
+body main#container main#right div#container_BO_my_skills div.statistics ul.filters select#filter {
+    outline: none;
+    width: 90px;
+    height: 30px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+body main#container main#right div#container_BO_my_skills div.statistics ul.filters input {
+    width: 180px;
+    outline: none;
+    font-weight: bold;
+    padding: 0 5px 0 5px;
+    border: #9999995e solid 0.1px;
+    border-radius: 3px;
+}
+
+body main#container main#right div#container_BO_my_skills div.statistics ul.filters input:focus {
+    border-color: var(--grenat);
+}
+
+body main#container main#right div#container_BO_my_skills div.statistics ul.filters input:hover {
+    border-color: var(--grenat);
+    cursor: pointer;
 }
