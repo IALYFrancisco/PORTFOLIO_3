@@ -2,7 +2,7 @@ const express = require('express')
 const path = require('path')
 const mongoose = require('mongoose')
 const dotenv = require('dotenv')
-
+const app_route = require('./src/routes/app_routes')
 const app = express();
 
 dotenv.config();
@@ -17,9 +17,7 @@ app.get('/', (req, res) => {
   res.render('home');
 })
 
-app.get('/my_skills', (req, res) => {
-  res.render('my_skills');
-})
+app.use('/', app_route)
 
 app.get('/my_projects', (req, res) => {
 
