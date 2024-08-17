@@ -1,8 +1,10 @@
-const express = require('express');
+const express = require('express')
+const path = require('path')
+const body_parser = require('body-parser')
+const mongoose = require('mongoose')
+const dotenv = require('dotenv')
+const app_routes = require('./src/routes/app_routes')
 const app = express();
-const path = require('path');
-const mongoose = require('mongoose');
-const dotenv = require('dotenv');
 
 dotenv.config();
 
@@ -16,26 +18,18 @@ app.get('/', (req, res) => {
   res.render('home');
 })
 
-app.get('/my_skills', (req, res) => {
-  res.render('my_skills');
-})
+app.use('/', app_routes)
 
 app.get('/my_projects', (req, res) => {
 
 mongoose.connect(process.env.DB_URI)
   .then(async () => {
     console.log('Connexion à MonogDB réussie');
-
-const collection = mongoose.connection.db.collection('project');
-
-const documents = await collection.find().toArray();
-
-res.render('my_projects', { documents });
-
-    });
-    
-  })
-
+    const collection = mongoose.connection.db.collection('project');
+    const documents = await collection.find().toArray();
+    res.render('my_projects', { documents });
+  }); 
+})
 
 app.get('/my_contacts', (request, response) => {
   response.render('my_contacts');
@@ -102,5 +96,5 @@ app.get('/BO_my_skills', (req, res) => {
 });
 
 app.listen(process.env.APP_PORT, () => {
-  console.log(`Serveur en écoute sur le port ${process.env.APP_PORT}`);
+  console.log(`http://127.0.0.1:${process.env.APP_PORT}`);
 });
