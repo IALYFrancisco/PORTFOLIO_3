@@ -1,8 +1,9 @@
 const express = require('express')
 const path = require('path')
+const body_parser = require('body-parser')
 const mongoose = require('mongoose')
 const dotenv = require('dotenv')
-const app_route = require('./src/routes/app_routes')
+const app_routes = require('./src/routes/app_routes')
 const app = express();
 
 dotenv.config();
@@ -17,7 +18,7 @@ app.get('/', (req, res) => {
   res.render('home');
 })
 
-app.use('/', app_route)
+app.use('/', app_routes)
 
 app.get('/my_projects', (req, res) => {
 
