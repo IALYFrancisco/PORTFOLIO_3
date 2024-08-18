@@ -14,10 +14,6 @@ app.set('views', path.join(__dirname, 'src', 'views'));
 
 app.use(express.static(path.join(__dirname, 'src/public')));
 
-app.get('/', (req, res) => {
-  res.render('home');
-})
-
 app.use('/', app_routes)
 
 app.get('/my_projects', (req, res) => {
@@ -25,7 +21,7 @@ app.get('/my_projects', (req, res) => {
 mongoose.connect(process.env.DB_URI)
   .then(async () => {
     console.log('Connexion à MonogDB réussie');
-    const collection = mongoose.connection.db.collection('project');
+    const collection = mongoose.connection.db.collection('projects');
     const documents = await collection.find().toArray();
     res.render('my_projects', { documents });
   }); 

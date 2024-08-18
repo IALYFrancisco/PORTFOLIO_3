@@ -1,12 +1,14 @@
 const express = require('express')
 const app_routes = express.Router()
-const goToMySkills = require('../controllers/app_controllers.js')
-  
+const goToMySkills = require('../controllers/goToMySkillsController');
+const goToMyContacts = require('../controllers/goToMyContactsController');
+const goToHome = require('../controllers/goToHomeController');
+
+app_routes.get('/', goToHome)
+
 app_routes.get('/my_skills', goToMySkills)
 
-app_routes.get('/my_contacts', (request, response) => {
-    response.render('my_contacts');
-});
+app_routes.get('/my_contacts', goToMyContacts);
   
 app_routes.get('/backoffice', (req, res) => {
     res.render('backoffice');
@@ -66,8 +68,6 @@ app_routes.get('/BO_my_skills', (req, res) => {
     )
   
     res.render('backoffice_myskills', { data : list_of_my_skills });
-  });  
-//Mauvaise exportation c'est module export, non pas exports.modules
-// exports.modules = app_routes
+  });
 module.exports = app_routes
 
