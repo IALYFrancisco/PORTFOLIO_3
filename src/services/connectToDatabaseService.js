@@ -3,10 +3,10 @@ const dotenv = require('dotenv')
 
 dotenv.config()
 
-function dbConnexion() {
+function dbConnection() {
     mongoose.connect(process.env.DB_URI)
-        .then(()=>{console.log("Connexion database OK")})
+        .then(()=>{console.log("Connection database OK")})
         .catch((error)=>{console.log(error)})
 }
 
-dbConnexion()
+module.exports = dbConnection
