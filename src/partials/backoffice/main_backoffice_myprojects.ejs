@@ -18,4 +18,23 @@
             <input type="search" name="project search" id="projectsearch" placeholder="Search a project">
         </ul>
     </div>
+    <div class="list_of_my_skills">
+        <% list_of_my_projects.forEach(element => { %>
+            <ul>
+                <li>
+                    <img src="<%- element.skill_image_logo_file_url %>" alt="">
+                </li>
+                <li style="text-transform: uppercase;"> <%- element.name %> </li>
+                <li> <%- element.knowledge_level %> </li>
+                <% if( element.known_library == "" ){ %>    
+                <li> <%- "-----" %> </li>
+                <% }else{ %>
+                <li style="display: flex; text-wrap: wrap;"> <%- element.known_library %> </li>
+                <% } %>
+                <li class="item_action" style="display: flex; justify-content: flex-end; align-items: center;">
+                    Delete  ||  Edit  ||  <span style="display: flex; align-items: center;"> <img style="width: 20px;" src="assets/icon/icons8-info-pastel/icons8-info-100.png" alt=""> </span>
+                </li>
+            </ul>
+            <% }); %>
+    </div>
 </div>
