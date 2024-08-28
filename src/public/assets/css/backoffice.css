@@ -217,3 +217,8 @@ body main#container main#right div#container_BO_my_skills div.statistics ul.filt
     border-color: var(--grenat);
     cursor: pointer;
 }
+
+video {
+    width: 150px;
+    border-radius: 3px;
+}
