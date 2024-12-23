@@ -19,4 +19,6 @@ app_routes.get('/my_projects', goToMyProjects)
   
 app_routes.get('/BO_my_skills', goToBackofficeMySkills);
 
+app_routes.get('add-project',)
+
 module.exports = app_routes
