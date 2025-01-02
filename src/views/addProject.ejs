@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+    @font-face {
+        font-family: proxima_soft_thin;
+        src: url("assets/font/ProximaSoft-Thin.ttf");
+    }
+    </style>
+    <link rel="stylesheet" href="assets/css/add-project.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav></nav>
+    <form action="">
+        <section>
+            <label for="project-name">Project name</label>
+            <input type="text" name="project-name" id="project-name" required>        
+        </section>
+        <section>
+            <label for="project-type">Type of project</label>
+            <select name="project-type" id="project-type" required>
+                <option value="website">Website</option>
+                <option value="mobile-application">Mobile application</option>
+                <option value="desktop-application">Desktop application</option>
+            </select>
+        </section>
+        <section>
+            <label for="skills">Skills</label>
+            <input type="text" name="skills" id="skills" required>        
+        </section>
+        <section>
+            <label for="github-url">Github url</label>
+            <input type="text" name="github-url" id="github-url" required>        
+        </section>
+        <section>
+            <label for="devlopers">Devlopers</label>
+            <input type="text" name="devlopers" id="devlopers" required>        
+        </section>
+        <section>
+            <label for="moviefile-url">Movie file url</label>
+            <input type="text" name="moviefile-url" id="moviefile-url" required>        
+        </section>
+        <section>
+            <label for="host-url">Host url</label>
+            <input type="text" name="host-url" id="host-url" required>        
+        </section>
+        <section>
+            <label for="project-description">Project descriptions</label>
+            <textarea name="project-description" id="project-description" required></textarea>      
+        </section>
+        <section class="button-container">
+            <button>Submit</button>
+        </section>
+    </form>
+</body>
+</html>
