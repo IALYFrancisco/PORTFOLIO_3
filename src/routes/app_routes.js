@@ -10,15 +10,15 @@ const goToAddProject = require('../controllers/ProjectController')
 
 app_routes.get('/', goToHome)
 
-app_routes.get('/my_skills', goToMySkills)
+app_routes.get('/my-skills', goToMySkills)
 
-app_routes.get('/my_contacts', goToMyContacts);
+app_routes.get('/my-contacts', goToMyContacts);
   
 app_routes.get('/backoffice', goToBackoffice);
 
-app_routes.get('/my_projects', goToMyProjects)
+app_routes.get('/my-projects', goToMyProjects)
   
-app_routes.get('/BO_my_skills', goToBackofficeMySkills);
+app_routes.get('/backoffice-my-skills', goToBackofficeMySkills);
 
 app_routes.get('/add-project', goToAddProject)
 
