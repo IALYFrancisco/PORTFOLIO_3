@@ -3,11 +3,11 @@ const mongoose = require('mongoose')
 const projectsSchema = mongoose.Schema({
     name: { type: String, required: true },
     type: { type: String, required: true },
-    devloper: { type: String, required: true },
-    decription: { type: String, required: true },
-    skill: { type: String, required: true },
+    devlopers: { type: String, required: true },
+    descriptions: { type: String, required: true },
+    skills: { type: String, required: true },
     github_url: { type: String, required: true },
-    movie_file_url: { type: String, required: true },
+    moviefile_url: { type: String, required: true },
     host_url: { type:String, required: true }
 })
 

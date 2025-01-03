@@ -13,6 +13,8 @@ app.set('views', path.join(__dirname, 'src', 'views'));
 
 app.use(express.static(path.join(__dirname, 'src/public')));
 
+app.use(body_parser.urlencoded({extend:true}))
+
 app.use('/', app_routes)
 
 app.listen(process.env.APP_PORT, () => {

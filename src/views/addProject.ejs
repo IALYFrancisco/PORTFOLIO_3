@@ -14,14 +14,14 @@
 </head>
 <body>
     <nav></nav>
-    <form action="">
+    <form action="/add-project" method="POST">
         <section>
-            <label for="project-name">Project name</label>
-            <input type="text" name="project-name" id="project-name" required>        
+            <label for="name">Project name</label>
+            <input type="text" name="name" id="name" required>        
         </section>
         <section>
-            <label for="project-type">Type of project</label>
-            <select name="project-type" id="project-type" required>
+            <label for="type">Type of project</label>
+            <select name="type" id="type" required>
                 <option value="website">Website</option>
                 <option value="mobile-application">Mobile application</option>
                 <option value="desktop-application">Desktop application</option>
@@ -32,24 +32,24 @@
             <input type="text" name="skills" id="skills" required>        
         </section>
         <section>
-            <label for="github-url">Github url</label>
-            <input type="text" name="github-url" id="github-url" required>        
+            <label for="github_url">Github url</label>
+            <input type="text" name="github_url" id="github_url" required>        
         </section>
         <section>
             <label for="devlopers">Devlopers</label>
             <input type="text" name="devlopers" id="devlopers" required>        
         </section>
         <section>
-            <label for="moviefile-url">Movie file url</label>
-            <input type="text" name="moviefile-url" id="moviefile-url" required>        
+            <label for="moviefile_url">Movie file url</label>
+            <input type="text" name="moviefile_url" id="moviefile_url" required>        
         </section>
         <section>
-            <label for="host-url">Host url</label>
-            <input type="text" name="host-url" id="host-url" required>        
+            <label for="host_url">Host url</label>
+            <input type="text" name="host_url" id="host_url" required>        
         </section>
         <section>
-            <label for="project-description">Project descriptions</label>
-            <textarea name="project-description" id="project-description" required></textarea>      
+            <label for="descriptions">Project descriptions</label>
+            <textarea name="descriptions" id="descriptions" required></textarea>      
         </section>
         <section class="button-container">
             <button>Submit</button>

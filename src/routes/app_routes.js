@@ -7,6 +7,7 @@ const goToMyProjects = require('../controllers/goToMyProjectsController')
 const goToBackoffice = require('../controllers/goToBackoffice')
 const goToBackofficeMySkills = require('../controllers/goToBackofficeMySkills')
 const goToAddProject = require('../controllers/ProjectController')
+const addProject = require('../services/addProjectService')
 
 app_routes.get('/', goToHome)
 
@@ -21,5 +22,7 @@ app_routes.get('/my-projects', goToMyProjects)
 app_routes.get('/backoffice-my-skills', goToBackofficeMySkills);
 
 app_routes.get('/add-project', goToAddProject)
+
+app_routes.post('/add-project', addProject)
 
 module.exports = app_routes
