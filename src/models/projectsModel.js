@@ -7,7 +7,7 @@ const projectsSchema = mongoose.Schema({
     descriptions: { type: String, required: true },
     skills: { type: String, required: true },
     github_url: { type: String, required: true },
-    moviefile_url: { type: String, required: true },
+    movie_file_url: { type: String, required: true },
     host_url: { type:String, required: true }
 })
 
