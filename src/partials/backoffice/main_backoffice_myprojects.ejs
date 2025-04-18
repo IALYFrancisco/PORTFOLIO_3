@@ -11,18 +11,21 @@
         <li><span class="number">6</span> in progress</li>|
         <li><span class="number">10</span> done</li>
         </ul>
-        <ul class="filters">
+        <form class="filters" method="GET" action="/backoffice">
             <select name="filter" id="filter">
                 <option value="all">All projects</option>
                 <option value="encours">En cours</option>
                 <option value="finis">Done</option>
             </select>
-            <input type="search" name="project search" id="projectsearch" placeholder="Search a project">
-        </ul>
+            <input type="search" name="project_name" id="project_name" placeholder="Search a project">
+            <button>
+                <img src="assets/images/search.png" alt="">
+            </button>
+        </form>
     </div>
     <div class="list_of_my_skills">
-    <% if(list_of_my_projects.lenght > 0) {%>
-        <% list_of_my_projects.forEach(element => { %>
+    <% if(projectsList.length > 0) {%>
+        <% projectsList.forEach(element => { %>
             <ul>
                 <li>
                     <video src="<%- element.movie_file_url %>" mute loop autoplay controls></video>
@@ -40,9 +43,9 @@
             </ul>
         <% }); %>
     <% } else { %>
-    <section class="message-container">
-        <h3>No project, </h3><a href="add-project">add one ?</a>
-    </section>
+        <section class="message-container">
+            <h3>No project, </h3><a href="add-project">add one ?</a>
+        </section>
     <% } %>
     </div>
 </div>

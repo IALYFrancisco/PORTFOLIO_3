@@ -6,7 +6,7 @@ async function addProjectService(request, response) {
         await newProject.save()
         response.json('✅✅')
     }catch(error){
-        console.log('There are error: ' + error)
+        console.log('There are an errors: ' + error)
     }
 }
 
