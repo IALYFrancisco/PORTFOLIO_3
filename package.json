@@ -4,6 +4,8 @@
   "description": "Site portfolio avec Node, Express et MongoDb",
   "main": "index.js",
   "scripts": {
+    "start:prod" : "node index.js",
+    "start:dev" : "nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "IALY",
