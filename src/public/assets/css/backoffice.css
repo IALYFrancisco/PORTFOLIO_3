@@ -222,3 +222,25 @@ video {
     width: 150px;
     border-radius: 3px;
 }
+
+.message-container {
+    height: 300px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.message-container h3 {
+    color: #333;
+    margin-right: 5px;
+}
+
+.message-container a {
+    font-weight: 900;
+    color: red;
+}
+
+.message-container a:hover {
+    text-decoration: underline;
+}
