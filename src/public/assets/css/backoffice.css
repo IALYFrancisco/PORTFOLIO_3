@@ -78,6 +78,7 @@ body main#container main#right nav#nav_right ul {
     align-items: center;
     justify-content: end;
     padding-right: 30px;
+    column-gap: 30px;
 }
 
 body main#container main#right nav#nav_right ul li {
@@ -89,6 +90,8 @@ body main#container main#right nav#nav_right ul li a{
     width: max-content;
     height: max-content;
     text-decoration: none;
+    font-weight: 900;
+    color: #333;
 }
 
 body main#container main#right nav#nav_right ul li a img{
