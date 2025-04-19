@@ -18,5 +18,5 @@ app.use(body_parser.urlencoded({extend:true}))
 app.use('/', app_routes)
 
 app.listen(process.env.APP_PORT, () => {
-  console.log(`L'application est en cours d'exécution sur http://127.0.0.1:${process.env.APP_PORT}`);
+  console.log(`L'application est en cours d'exécution sur process.env.APP_ADDRESS`);
 });
