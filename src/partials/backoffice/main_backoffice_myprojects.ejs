@@ -1,26 +1,31 @@
 <div id="container_BO_my_skills">
     <div class="action">
         <h1 class="title">All projects</h1>
-        <!-- <button>Add project</button> -->
-        <a href="add-project">Add project</a>
+        <a href="add-project">
+            <button>Add project</button>
+        </a>
     </div>
     <div class="statistics">
         <ul class="statistic">
-        <li><span class="number">16</span> projects</li>|
+        <li><span class="number"><%- projectsList.length -%></span> projects</li>|
         <li><span class="number">6</span> in progress</li>|
         <li><span class="number">10</span> done</li>
         </ul>
-        <ul class="filters">
+        <form class="filters" method="GET" action="/backoffice">
             <select name="filter" id="filter">
                 <option value="all">All projects</option>
                 <option value="encours">En cours</option>
                 <option value="finis">Done</option>
             </select>
-            <input type="search" name="project search" id="projectsearch" placeholder="Search a project">
-        </ul>
+            <input type="search" name="project_name" id="project_name" placeholder="Search a project">
+            <button>
+                <img src="assets/images/search.png" alt="">
+            </button>
+        </form>
     </div>
     <div class="list_of_my_skills">
-        <% list_of_my_projects.forEach(element => { %>
+    <% if(projectsList.length > 0) {%>
+        <% projectsList.forEach(element => { %>
             <ul>
                 <li>
                     <video src="<%- element.movie_file_url %>" mute loop autoplay controls></video>
@@ -36,6 +41,11 @@
                     Delete  ||  Edit  ||  <span style="display: flex; align-items: center;"> <img style="width: 20px;" src="assets/icon/icons8-info-pastel/icons8-info-100.png" alt=""> </span>
                 </li>
             </ul>
-            <% }); %>
+        <% }); %>
+    <% } else { %>
+        <section class="message-container">
+            <h3>No project, </h3><a href="add-project">add one ?</a>
+        </section>
+    <% } %>
     </div>
 </div>

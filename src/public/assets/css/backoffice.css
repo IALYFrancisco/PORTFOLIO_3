@@ -78,6 +78,7 @@ body main#container main#right nav#nav_right ul {
     align-items: center;
     justify-content: end;
     padding-right: 30px;
+    column-gap: 30px;
 }
 
 body main#container main#right nav#nav_right ul li {
@@ -89,6 +90,8 @@ body main#container main#right nav#nav_right ul li a{
     width: max-content;
     height: max-content;
     text-decoration: none;
+    font-weight: 900;
+    color: #333;
 }
 
 body main#container main#right nav#nav_right ul li a img{
@@ -125,7 +128,6 @@ body main#container main#right div#container_BO_my_skills div.action button {
     cursor: pointer;
     transition: 0.1s;
     outline: none;
-    cursor: pointer;
 }
 
 body main#container main#right div#container_BO_my_skills div.action button:active {
@@ -184,14 +186,14 @@ body main#container main#right div#container_BO_my_skills div.statistics ul.stat
     width: 20%;
 }
 
-body main#container main#right div#container_BO_my_skills div.statistics ul.filters {
+body main#container main#right div#container_BO_my_skills div.statistics .filters {
     list-style-type: none;
     width: 25%;
     display: flex;
     justify-content: space-between;
 }
 
-body main#container main#right div#container_BO_my_skills div.statistics ul.filters select#filter {
+body main#container main#right div#container_BO_my_skills div.statistics .filters select#filter {
     outline: none;
     width: 90px;
     height: 30px;
@@ -200,7 +202,7 @@ body main#container main#right div#container_BO_my_skills div.statistics ul.filt
     cursor: pointer;
 }
 
-body main#container main#right div#container_BO_my_skills div.statistics ul.filters input {
+body main#container main#right div#container_BO_my_skills div.statistics .filters input {
     width: 180px;
     outline: none;
     font-weight: bold;
@@ -209,11 +211,11 @@ body main#container main#right div#container_BO_my_skills div.statistics ul.filt
     border-radius: 3px;
 }
 
-body main#container main#right div#container_BO_my_skills div.statistics ul.filters input:focus {
+body main#container main#right div#container_BO_my_skills div.statistics .filters input:focus {
     border-color: var(--grenat);
 }
 
-body main#container main#right div#container_BO_my_skills div.statistics ul.filters input:hover {
+body main#container main#right div#container_BO_my_skills div.statistics .filters input:hover {
     border-color: var(--grenat);
     cursor: pointer;
 }
@@ -221,4 +223,49 @@ body main#container main#right div#container_BO_my_skills div.statistics ul.filt
 video {
     width: 150px;
     border-radius: 3px;
+}
+
+.message-container {
+    height: 300px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.message-container h3 {
+    color: #333;
+    margin-right: 5px;
+}
+
+.message-container a {
+    font-weight: 900;
+    color: red;
+}
+
+.message-container a:hover {
+    text-decoration: underline;
+}
+
+.filters button {
+    width: 30px;
+    background-color: yellow;
+    border: none;
+    box-shadow: 1px 1px 5px #96959546;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.1s;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.filters button:active {
+    transform: scale(0.95);
+    transition: 0.1s;
+}
+
+.filters button img {
+    width: 20px;
 }
