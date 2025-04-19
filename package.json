@@ -1,5 +1,5 @@
 {
-  "name": "portfolio-node-express-mongodb",
+  "name": "portfolio_3",
   "version": "1.0.0",
   "description": "Site portfolio avec Node, Express et MongoDb",
   "main": "index.js",
