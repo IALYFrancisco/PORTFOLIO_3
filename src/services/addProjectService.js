@@ -4,7 +4,7 @@ async function addProjectService(request, response) {
     try{
         let newProject = projet(request.body)
         await newProject.save()
-        response.redirect('/dashboard')
+        response.redirect('/backoffice')
     }catch(error){
         console.log('There are an errors: ' + error)
     }
