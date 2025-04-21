@@ -168,7 +168,7 @@ body main div.right img {
     width: 100%;
     max-width: 1200px;
     margin: auto;
-    background-color: red;
+    /* background-color: red; */
 }
 
 body header div.menu {
@@ -204,6 +204,28 @@ body .nav#navResponsive.active ul {
     height: 170px;
     padding: 10px;
     transition: 0.3s ease-in-out;
+}
+
+section.who-am-i {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    /* background-color: orange; */
+    display: flex;
+    justify-content: space-between;
+    column-gap: 30px;
+}
+
+section.who-am-i .left {
+    width: 50%;
+}
+
+section.who-am-i .right {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    margin-top: 100px;
 }
 
 @media only screen and (max-width: 1199px) {
