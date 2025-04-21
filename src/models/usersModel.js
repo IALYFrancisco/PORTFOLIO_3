@@ -7,6 +7,6 @@ const usersSchema = mongoose.Schema({
     role: { type: String, default: "user" }
 })
 
-const _Users = new mongoose.mode('Users', usersSchema)
+const _Users = new mongoose.model('Users', usersSchema)
 
 module.exports = { Users : _Users }
