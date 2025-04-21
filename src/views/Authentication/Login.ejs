@@ -14,6 +14,12 @@
     <title>Login | PORTFOLIO</title>
 </head>
 <body>
+    <% if(error && error.length > 0) { %>
+        <div class="message-container">
+            <p><%- error -%></p>
+        </div>
+    <% } %>
+
     <form action="/authentication/login" method="POST">
         <section class="logo-container">
             <a href="/">
@@ -26,7 +32,7 @@
             <input type="email" name="email" id="email" required>        
         </section>
         <section>
-            <label for="github_url">Password : </label>
+            <label for="password">Password : </label>
             <input type="password" name="password" id="password" required>        
         </section>
         <section class="button-container">
