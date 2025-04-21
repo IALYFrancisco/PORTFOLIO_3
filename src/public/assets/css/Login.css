@@ -69,3 +69,19 @@ select {
     font-weight: 600;
     padding: 5px;
 }
+
+.logo-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-container h2 {
+    margin: 10px auto 30px auto;
+}
+
+.logo-container img {
+    width: 35px;
+}
