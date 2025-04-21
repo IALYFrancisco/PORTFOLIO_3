@@ -168,7 +168,6 @@ body main div.right img {
     width: 100%;
     max-width: 1200px;
     margin: auto;
-    /* background-color: red; */
 }
 
 body header div.menu {
@@ -209,8 +208,7 @@ body .nav#navResponsive.active ul {
 section.who-am-i {
     width: 100%;
     max-width: 900px;
-    margin: auto;
-    /* background-color: orange; */
+    margin: 50px auto auto auto;
     display: flex;
     justify-content: space-between;
     column-gap: 30px;
