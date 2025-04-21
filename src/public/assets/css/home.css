@@ -505,6 +505,35 @@ body .nav#navResponsive.active ul {
 
 }
 
+@media only screen and (max-width: 700px) {
+    
+    body header nav {
+        display: none;
+    }
+
+    body header div.menu {
+        display: block;
+    }
+
+    body .nav#navResponsive ul{
+        
+        display: block;
+        transition: 0.3s ease-in-out;
+    }
+
+    body header {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        padding-right: 10px;
+    }
+
+    .button-container {
+        display: none;
+    }
+
+}
+
 @media only screen and (max-width: 570px) {
     
     body main div.my_contacts {
@@ -529,31 +558,6 @@ body .nav#navResponsive.active ul {
         height: max-content;
         flex-wrap: wrap;
         justify-content: center;
-    }
-
-}
-
-@media only screen and (max-width: 520px) {
-    
-    body header nav {
-        display: none;
-    }
-
-    body header div.menu {
-        display: block;
-    }
-
-    body .nav#navResponsive ul{
-        
-        display: block;
-        transition: 0.3s ease-in-out;
-    }
-
-    body header {
-        display: flex;
-        justify-content: end;
-        align-items: center;
-        padding-right: 10px;
     }
 
 }
