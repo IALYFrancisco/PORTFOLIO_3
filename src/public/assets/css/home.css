@@ -156,6 +156,12 @@ body main div.left button {
     cursor: pointer;
     color: #000;
     font-weight: bolder;
+    transition: 0.1s;
+}
+
+body main div.left button:active {
+    transform: scale(0.95);
+    transition: 0.1s;
 }
 
 body main div.right img {
@@ -208,7 +214,7 @@ body .nav#navResponsive.active ul {
 section.who-am-i {
     width: 100%;
     max-width: 900px;
-    margin: 50px auto auto auto;
+    margin: 50px auto;
     display: flex;
     justify-content: space-between;
     column-gap: 30px;
