@@ -136,17 +136,6 @@ body main div.left p.Lorem {
     justify-content: center;
 }
 
-body main div.left p.Lorem span.important_word,
-body main div.left p.Lorem span.important_word a {
-    color: yellow;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-body main div.left p.Lorem span.important_word a:hover {
-    text-decoration: underline;
-}
-
 body main div.left p.title {
     font-size: 45px;
     border-bottom: 2px yellow solid;
