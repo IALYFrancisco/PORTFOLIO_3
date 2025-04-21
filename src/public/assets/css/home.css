@@ -187,6 +187,13 @@ body main div.right img {
     object-fit: cover;
 }
 
+.home-info-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    background-color: red;
+}
+
 body main div.left div.skill {
     width: 100%;
     height: max-content;
