@@ -1,4 +1,5 @@
 const { Users } = require("../models/usersModel")
+const { connection, disconnection } = require("../services/db")
 
 function _goToLogin(request, response){
     response.render('Authentication/Login')
@@ -7,16 +8,18 @@ function _goToLogin(request, response){
 async function _checkLogin(request, response){
     try {
         const { email, password } = request.body
+        await connection()
         const user = await Users.findOne({email})
+        await disconnection()
         if(!user){
             request.flash('error', "User doesn't exist!")
-            response.redirect("/authentication/login")
+            return response.redirect("/authentication/login")
         }
         response.send(request.body)
     }catch(error){
         console.log("Erreur de connexion d'utilisateur:" + error)
         request.flash('error', "Failed to log in, try next time")
-        response.redirect("/authentication/login")
+        return response.redirect("/authentication/login")
     }
 }
 
