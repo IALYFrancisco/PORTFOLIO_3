@@ -6,6 +6,12 @@ function _goToLogin(request, response){
     response.render('Authentication/Login')
 }
 
+function _logout(request, response) {
+    request.session.destroy(()=>{
+        response.redirect("/authentication/login")
+    })
+}
+
 async function _checkLogin(request, response){
     try {
         const { email, password } = request.body
@@ -17,7 +23,7 @@ async function _checkLogin(request, response){
             return response.redirect("/authentication/login")
         }
         if(user && await comparePassword(password, user.password)){
-            request.session.user = user
+            request.session.user = {name : user.name, email : user.email, role : user.role}
             return response.redirect("/backoffice")
         }else{
             request.flash('error', "Email or password incorrect.")
@@ -55,5 +61,6 @@ module.exports = {
     goToLogin : _goToLogin,
     checkLogin : _checkLogin,
     isAdmin : _isAdmin,
-    isAuthenticated : _isAuthenticated
+    isAuthenticated : _isAuthenticated,
+    logout : _logout
 }
