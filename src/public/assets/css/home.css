@@ -37,6 +37,8 @@ body {
 
 body header {
     width: 100%;
+    max-width: 1400px;
+    margin: auto;
     height: 70px;
     display: flex;
     justify-content: space-between;
