@@ -15,7 +15,7 @@ app.set('views', path.join(__dirname, 'src', 'views'));
 
 app.use(express.static(path.join(__dirname, 'src/public')));
 
-app.use(body_parser.urlencoded({extend:true}))
+app.use(body_parser.urlencoded({extended:true}))
 
 app.use('/', app_routes)
 
