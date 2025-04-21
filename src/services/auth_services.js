@@ -1,5 +1,6 @@
 const { Users } = require("../models/usersModel")
 const { connection, disconnection } = require("../services/db")
+const bcrypt = require('bcrypt')
 
 function _goToLogin(request, response){
     response.render('Authentication/Login')
@@ -15,7 +16,13 @@ async function _checkLogin(request, response){
             request.flash('error', "User doesn't exist!")
             return response.redirect("/authentication/login")
         }
-        response.send(request.body)
+        if(user && await comparePassword(password, user.password)){
+            request.session.user = user
+            return response.redirect("/backoffice")
+        }else{
+            request.flash('error', "Email or password incorrect.")
+            return response.redirect("/authentication/login")
+        }
     }catch(error){
         console.log("Erreur de connexion d'utilisateur:" + error)
         request.flash('error', "Failed to log in, try next time")
@@ -36,6 +43,13 @@ function _isAuthenticated(request, response, next) {
     request.flash('error', 'You must be connected')
     response.redirect('/authentication/login')
 }
+
+// Fonction pour vérifier le mot de passe
+async function comparePassword(plainPassword, hashedPassword){
+    return await bcrypt.compare(plainPassword, hashedPassword)
+}
+
+console.log(Math.PI)
 
 module.exports = {
     goToLogin : _goToLogin,
