@@ -222,15 +222,6 @@ body .nav#navResponsive.active ul {
 
 @media only screen and (max-width: 1199px) {
     
-    body main div.left {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 20px;
-        height: max-content;
-        margin: auto;
-    }
-    
     body main div.left p.title {
         font-size: 2rem;
         width: 100%;
