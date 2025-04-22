@@ -17,11 +17,19 @@
             </li>
         </ul>
     </nav>
-    <div class="button-container">
-        <a href="/authentication/login">
-            <button>Login</button>
-        </a>
-    </div>
+    <% if(user){ %>
+        <div class="button-container">
+            <a href="/backoffice">
+                <button>Dashboard</button>
+            </a>
+        </div>
+    <% } else { %>
+        <div class="button-container">
+            <a href="/authentication/login">
+                <button>Login</button>
+            </a>
+        </div>
+    <% } %>
     <div class="menu">
         <img src="assets/icon/icons8-menu-color/icons8-menu-480.png" alt="" id="toggleBtn">
     </div>
