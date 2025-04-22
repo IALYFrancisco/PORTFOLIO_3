@@ -55,6 +55,12 @@ async function comparePassword(plainPassword, hashedPassword){
     return await bcrypt.compare(plainPassword, hashedPassword)
 }
 
+// Middleware pour zapper login
+async function _zappLogin (request, response, next){
+    if (request.session.user) return response.redirect('/backoffice')
+    return next()
+}
+
 console.log(Math.PI)
 
 module.exports = {
@@ -62,5 +68,6 @@ module.exports = {
     checkLogin : _checkLogin,
     isAdmin : _isAdmin,
     isAuthenticated : _isAuthenticated,
-    logout : _logout
+    logout : _logout,
+    zappLogin : _zappLogin
 }

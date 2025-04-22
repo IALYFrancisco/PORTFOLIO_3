@@ -1,8 +1,8 @@
 const express = require('express')
-const { goToLogin, checkLogin, logout } = require('../services/auth_services')
+const { goToLogin, checkLogin, logout, zappLogin } = require('../services/auth_services')
 const _auth_routes = express.Router()
 
-_auth_routes.get('/login', goToLogin)
+_auth_routes.get('/login', zappLogin, goToLogin)
 
 _auth_routes.post('/login', checkLogin)
 
