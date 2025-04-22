@@ -14,6 +14,11 @@
     <title>Backoffice | Projects - PORTFOLIO</title>
 </head>
 <body>
+    <% if(success && success.length > 0) { %>
+        <div class="notification-container">
+            <p><%- success %></p>
+        </div>
+    <% } %>
     <main id="container">
         <%- include('../partials/backoffice/BO_sidebar') -%>
         <main id="right">

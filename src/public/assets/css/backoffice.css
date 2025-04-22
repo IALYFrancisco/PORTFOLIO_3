@@ -269,3 +269,20 @@ video {
 .filters button img {
     width: 20px;
 }
+
+.notification-container {
+    width: max-content;
+    padding: 10px;
+    background-color: rgb(18, 190, 18);
+    margin: 20px auto;
+    border-radius: 3px;
+    position: absolute;
+    left: -50%;
+    right: -50%;
+}
+
+.notification-container p {
+    color: white;
+    font-size: 14px;
+    font-weight: 900;
+}

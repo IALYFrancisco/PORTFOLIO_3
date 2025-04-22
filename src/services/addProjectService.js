@@ -7,7 +7,8 @@ async function addProjectService(request, response) {
         let newProject = projet(request.body)
         await newProject.save()
         await disconnection()
-        response.redirect('/backoffice')
+        request.flash('success', "A project is added.")
+        return response.redirect('/backoffice')
     }catch(error){
         console.log('There are an errors: ' + error)
     }
