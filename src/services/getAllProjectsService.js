@@ -1,9 +1,10 @@
 const projectCollection = require('../models/projectsModel')
-const dbConnection = require('./connectToDatabaseService')
+const { connection, disconnection } = require('./db')
 
 async function getAllProjects(filters) {
-  dbConnection()
+  await connection()
   const all_projects = await projectCollection.find(filters)
+  await disconnection()
   return all_projects
 }
 
