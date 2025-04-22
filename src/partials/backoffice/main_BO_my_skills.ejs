@@ -6,7 +6,7 @@
     <div class="list_of_my_skills">
         <% data.forEach(element => { %>
             <ul>
-                <li> <img src="<%- element.skill_image_logo_file_url %>" alt=""></li>
+                <li> <img src="../<%- element.skill_image_logo_file_url %>" alt=""></li>
                 <li style="text-transform: uppercase;"> <%- element.skill_name %> </li>
                 <li> <%- element.knowledge_level %> </li>
                 <% if( element.known_library == "" ){ %>    
