@@ -38,13 +38,13 @@ body {
 
 body header {
     width: 100%;
+    max-width: 770px;
+    margin: auto;
     height: 70px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 30px;
 }
-
 .button-container {
     height: 100%;
     display: flex;
