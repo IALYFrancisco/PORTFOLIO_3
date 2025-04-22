@@ -141,6 +141,8 @@ body main#container main#right div#container_BO_my_skills div.action h1.title {
 
 body main#container main#right div#container_BO_my_skills div.list_of_my_skills {
     width: 100%;
+    height: calc(100vh - 170px);
+    overflow: scroll;
     padding: 10px 100px;
 }
 
