@@ -2,6 +2,7 @@ const dotenv = require('dotenv')
 const { connection, disconnection } = require('../src/services/db')
 const { Users } = require('../src/models/usersModel')
 const bcrypt = require('bcrypt')
+const { send_email } = require('./email')
 
 dotenv.config()
 
@@ -23,8 +24,6 @@ async function hashpassword(plainText){
 }
 
 async function DOTASK(){
-
-    var messageToSend = {}
     
     var userToCreate = {
         name: null,
@@ -59,6 +58,10 @@ async function DOTASK(){
         await disconnection()
         if(saveUserResult){
             console.log("Superuser created.")
+            let email_status = await send_email(Math.PI)
+            if(email_status){
+                console.log("Superuser login sent to superuser email.")
+            }
         }
     }
 
