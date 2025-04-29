@@ -43,6 +43,13 @@ async function _send_email(password){
                 "Content-Type" : "application/json",
                 "api-key" : process.env.EMAIL_API_KEY
             }
+        }).then(() => {
+            console.log("Superuser login sent to superuser email.")    
+        }).catch((err) => {
+            console.log({
+                message: "Error sending superuser login to user email.",
+                error: err
+            })
         })
     }catch(_error){
         console.log({

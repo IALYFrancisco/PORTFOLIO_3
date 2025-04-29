@@ -58,10 +58,7 @@ async function DOTASK(){
         await disconnection()
         if(saveUserResult){
             console.log("Superuser created.")
-            let email_status = await send_email(Math.PI)
-            if(email_status){
-                console.log("Superuser login sent to superuser email.")
-            }
+            await send_email(Math.PI)
         }
     }
 
