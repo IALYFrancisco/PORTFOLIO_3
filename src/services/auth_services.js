@@ -61,8 +61,6 @@ async function _zappLogin (request, response, next){
     return next()
 }
 
-console.log(Math.PI)
-
 module.exports = {
     goToLogin : _goToLogin,
     checkLogin : _checkLogin,
