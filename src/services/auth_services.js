@@ -1,4 +1,4 @@
-const { Users } = require("../models/usersModel")
+const { Users } = require("../Models/UsersModel")
 const { connection, disconnection } = require("../services/db")
 const bcrypt = require('bcrypt')
 
