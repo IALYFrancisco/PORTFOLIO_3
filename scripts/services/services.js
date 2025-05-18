@@ -51,7 +51,7 @@ async function createSuperuser(){
 async function save_local(u,p){
     try {
         let homeDir = os.homedir()
-        let dossierSuperuser = path.join(homeDir, '.me', 'superuser')
+        let dossierSuperuser = path.join(homeDir, '.ialy', 'superuser')
         fs.mkdirSync(dossierSuperuser, { recursive: true })
         let fileContents =
         `{"name":"${u.name}","email":"${u.email}","password":"${p}"}`
