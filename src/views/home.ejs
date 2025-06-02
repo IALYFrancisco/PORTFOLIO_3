@@ -20,16 +20,16 @@
     <title>Home | PORTFOLIO</title>
 </head>
 <body>
-    <%- include("header") %>    
     <script>
         document.getElementById('toggleBtn').addEventListener('click', (event) => {
             document.getElementById('navResponsive').classList.toggle('active');
         })
     </script>
     <main class="container">
-        <h1>Who am I?</h1>
+        <%- include("header") %>
         <section class="who-am-i">
             <div class="left">
+                <h1>Who am I?</h1>
                 <p>
                     My name is <span class="important_word" style="font-size: 30px;" title="Nom de IALY 😀">IALY</span>. Computer Science student in the Software Engineering track. I am able to develop cross-platform applications (Web and mobile: android and ios) in
                     using the technologies you will see in the <span class="important_word"><a href="my-skills">My Skills</a></span> tab. Being passionate in the world of web development, there is in me a great consideration and love of
@@ -48,5 +48,8 @@
             </div>
         </section>
     </main>
+    <footer>
+        <p>Made with 💖 by <a href="/">IALY</a></p>
+    </footer>
 </body>
 </html>
