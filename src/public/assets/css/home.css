@@ -121,24 +121,24 @@ body main div.left {
     color: white;
 }
 
-body main div.left p.Lorem {
+body main div.left p {
     width: 100%;
     text-align: justify;
     justify-content: center;
 }
 
-body main .left .Lorem .important_word,
-body main .left p.Lorem .important_word a {
+body main .left p .important_word,
+body main .left p .important_word a {
     color: yellow;
     text-decoration: none;
     font-weight: bold;
 }
 
-body main div.left p.Lorem span.important_word a:hover {
+body main div.left p span.important_word a:hover {
     text-decoration: underline;
 }
 
-body main div.left .title {
+body main div.left h1 {
     font-size: 2em;
     width: max-content;
     border-bottom: 2px yellow solid;
@@ -171,7 +171,7 @@ body main div.right img {
     box-shadow: 2px 2px 10px #3333334d, -2px -2px 10px #3333334d;
 }
 
-.home-info-container {
+.container {
     width: 100%;
     max-width: 1200px;
     margin: auto;
