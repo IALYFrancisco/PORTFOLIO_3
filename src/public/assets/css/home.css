@@ -127,15 +127,14 @@ body main div.left p.Lorem {
     justify-content: center;
 }
 
-body main div.left p.Lorem span,
-body main div.left p.Lorem h2,
-body main div.left p.Lorem span a {
+body main .left .Lorem .important_word,
+body main .left p.Lorem .important_word a {
     color: yellow;
-    /* text-decoration: none;
-    font-weight: bold; */
+    text-decoration: none;
+    font-weight: bold;
 }
 
-body main div.left p.Lorem span a:hover {
+body main div.left p.Lorem span.important_word a:hover {
     text-decoration: underline;
 }
 
@@ -232,22 +231,6 @@ section.who-am-i .right {
     justify-content: center;
     align-items: start;
     margin-top: 100px;
-}
-
-@media only screen and (max-width: 1199px) {
-    
-    body main div.left p.title {
-        font-size: 2rem;
-        width: 100%;
-        margin: auto;
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    body main {
-        height: max-content;
-   }
-
 }
 
 @media only screen and (max-width: 700px) {
