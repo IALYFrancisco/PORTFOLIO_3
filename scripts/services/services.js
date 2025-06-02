@@ -1,3 +1,4 @@
+const { connection, disconnection } = require("../../src/services/db")
 const { Users } = require('../../src/Models/UsersModel')
 const fs = require('fs')
 const os = require('os')
@@ -5,7 +6,9 @@ const bcrypt = require('bcrypt')
 const path = require('path')
 const { default: axios } = require("axios");
 const chalk = require('chalk')
-const { disconnection, connection } = require('../../src/services/db')
+const crypto = require('crypto')
+
+var root_password = crypto.randomBytes(32).toString('hex')
 
 var userToCreate = {
     name: null,
@@ -30,7 +33,7 @@ async function checkSuperuser(){
 async function createSuperuser(){
     try{
         console.log(chalk.yellow("Creating superuser ..."))
-        userToCreate.password = await hashpassword(`${Math.PI}`)
+        userToCreate.password = await hashpassword(`${root_password}`)
         await connection()
         let user = Users(userToCreate)
         await user.save()
@@ -48,13 +51,13 @@ async function createSuperuser(){
 async function save_local(u,p){
     try {
         let homeDir = os.homedir()
-        let dossierSuperuser = path.join(homeDir, '.me', 'superuser')
+        let dossierSuperuser = path.join(homeDir, '.ialy', 'superuser')
         fs.mkdirSync(dossierSuperuser, { recursive: true })
         let fileContents =
         `{"name":"${u.name}","email":"${u.email}","password":"${p}"}`
         let filePath = path.join(dossierSuperuser, 'informations.json')
         fs.writeFileSync(filePath, fileContents, 'utf-8')
-        console.log(chalk.yellow(`Superuser informations is saved at ${filePath}`))
+        console.log(chalk.yellow(`Superuser informations are saved at ${filePath}`))
         console.log(chalk.bgGreenBright.black('Done!'))
     }catch(err) {
         console.log({
@@ -168,7 +171,7 @@ async function _LDOTASK(){
         let results = await createSuperuser()
         if(results){
             console.log(chalk.yellow("Local informations saving ..."))
-            await save_local(userToCreate, Math.PI)
+            await save_local(userToCreate, root_password)
         }
     }
 
@@ -199,7 +202,7 @@ async function _EDOTASK(){
         let results = await createSuperuser()
         if(results){
             console.log("Sending by email ...")
-            await send_email(Math.PI)
+            await send_email(root_password)
         }
     }
 

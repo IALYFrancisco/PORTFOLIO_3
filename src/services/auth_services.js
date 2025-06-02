@@ -1,4 +1,4 @@
-const { Users } = require("../models/usersModel")
+const { Users } = require("../Models/UsersModel")
 const { connection, disconnection } = require("../services/db")
 const bcrypt = require('bcrypt')
 
@@ -60,8 +60,6 @@ async function _zappLogin (request, response, next){
     if (request.session.user) return response.redirect('/backoffice')
     return next()
 }
-
-console.log(Math.PI)
 
 module.exports = {
     goToLogin : _goToLogin,
