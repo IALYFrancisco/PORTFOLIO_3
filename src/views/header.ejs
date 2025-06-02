@@ -48,5 +48,18 @@
         <li>
             <a href="my-contacts">My Contacts</a>
         </li>
+        <% if(user){ %>
+            <li>
+                <a href="/backoffice">
+                    <button>Dashboard</button>
+                </a>
+            </li>
+        <% } else { %>
+            <li>
+                <a href="/authentication/login">
+                    <button>Login</button>
+                </a>
+            </li>
+        <% } %>
     </ul>
 </div>
