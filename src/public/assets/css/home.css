@@ -231,6 +231,19 @@ footer p a:hover {
     text-decoration: underline;
 }
 
+@media only screen and (max-width: 1024px) {
+    .container {
+        padding: 0 25px;
+    }
+    section.who-am-i {
+        column-gap: 25px;
+    }
+    section.who-am-i .left,
+    section.who-am-i .right {
+        width: 50%;
+    }
+}
+
 @media only screen and (max-width: 700px) {
     
     body header nav {
@@ -256,6 +269,27 @@ footer p a:hover {
 
     .button-container {
         display: none;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    section.who-am-i {
+        display: block;
+    }
+
+    .container section.who-am-i {
+        margin-bottom: 0px;
+    }
+
+    section.who-am-i .left,
+    section.who-am-i .right {
+        width: 100%;
+    }
+
+    section.who-am-i .left {
+        margin-bottom: 50px;
     }
 
 }
