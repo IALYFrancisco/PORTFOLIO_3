@@ -183,6 +183,14 @@ body main h1 {
     color: white;
 }
 
+section.who-am-i {
+    width: 100%;
+    margin: 50px auto;
+    display: flex;
+    justify-content: space-between;
+    column-gap: 75px;
+}
+
 section.who-am-i .right {
     width: 40%;
 }
@@ -191,14 +199,6 @@ body main .right img {
     width: 100%;
     border-radius: 5px;
     box-shadow: 2px 2px 10px #3333334d, -2px -2px 10px #3333334d;
-}
-
-section.who-am-i {
-    width: 100%;
-    margin: 50px auto;
-    display: flex;
-    justify-content: space-between;
-    column-gap: 75px;
 }
 
 footer {
