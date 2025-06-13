@@ -246,7 +246,6 @@ footer p a:hover {
     }
 
     body .nav#navResponsive ul{
-        
         display: block;
         transition: 0.3s ease-in-out;
     }

@@ -240,7 +240,8 @@ body main div.left p.incitation.toggled {
 }
 
 body main div.left div.list_project div.project {
-    width: 500px;
+    width: 100%;
+    max-width: 500px;
     height: max-content;
     background-color: rgba(255, 255, 255, 0.158);
     padding: 5px;
@@ -256,6 +257,7 @@ body main div.left div.list_project div.project div.project_action {
     width: 100%;
     padding-left: 8px;
     height: 100%;
+    overflow: hidden;
 }
 
 body main div.left div.list_project div.project div.project_action p {
@@ -292,33 +294,20 @@ body header div.menu img{
     width: 30px;
 }
 
-body .nav#navResponsive ul{
-    background-color: rgba(255, 255, 0, 0.123);
-    width: max-content;
-    height: 0px;
-    overflow: hidden;
-    margin: auto;
-    list-style-type: none;
-    border: 2px solid yellow;
-    line-height: 35px;
-    text-align: center;
-    border-radius: 5px;
-    display: none;
-    transition: 0.3s ease-in-out;
+@media only screen and (max-width: 1024px) {
+    .container {
+        padding: 0 25px;
+    }
+    section.my-projects {
+        column-gap: 25px;
+    }
+    section.my-projects .left,
+    section.my-projects .right {
+        width: 50%;
+    }
 }
 
-body .nav#navResponsive ul li a{
-    color: white;
-    text-decoration: none;
-}
-
-body .nav#navResponsive.active ul {
-    height: 170px;
-    padding: 10px;
-    transition: 0.3s ease-in-out;
-}
-
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 760px) {
     
     body header nav {
         display: none;
@@ -329,7 +318,6 @@ body .nav#navResponsive.active ul {
     }
 
     body .nav#navResponsive ul{
-        
         display: block;
         transition: 0.3s ease-in-out;
     }
@@ -345,20 +333,47 @@ body .nav#navResponsive.active ul {
         display: none;
     }
 
-}
-
-@media only screen and (max-width: 570px) {
-
-    body main div.left div.list_project div.project {
-        margin: auto;
+    .container {
+        padding: 0 15px;
     }
 
-    body main div.left div.list_project {
-        display: flex;
+    section.my-projects {
+        display: block;
+    }
+
+    .container section.my-projects {
+        margin-bottom: 0px;
+    }
+
+    section.my-projects .left,
+    section.my-projects .right {
         width: 100%;
-        height: max-content;
-        flex-wrap: wrap;
-        justify-content: center;
+    }
+
+    section.my-projects .left {
+        margin-bottom: 50px;
+    }
+
+    body main div.left .skill img {
+        width: 35px;
+    }
+
+    body main div.left div.list_project div.project {
+        max-width: 100%;
+        display: initial;
+    }
+
+    body main div.left div.project video {
+        width: 100%;
+        height: 100px;
+    }
+
+    body main div.left div.list_project div.project div.project_action {
+        padding-left: 0;
+    }
+
+    body main div.left button {
+        margin-top: 20px;
     }
 
 }
