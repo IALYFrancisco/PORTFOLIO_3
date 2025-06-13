@@ -170,7 +170,6 @@ body main div.left p {
     text-align: justify;
     justify-content: center;
     margin-top: 35px;
-    margin-bottom: 38px;
 }
 
 body main .left h1 {
@@ -187,6 +186,7 @@ body main .left h3 {
     border-bottom-style: dashed;
     padding-bottom: 6px;
     margin-bottom: 30px;
+    margin-top: 75px;
     color: white;
 }
 
