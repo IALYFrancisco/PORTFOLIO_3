@@ -322,4 +322,8 @@ footer p a:hover {
         margin-bottom: 50px;
     }
 
+    body main div.left .skill img {
+        width: 35px;
+    }
+
 }
