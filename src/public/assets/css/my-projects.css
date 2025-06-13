@@ -42,6 +42,14 @@ body main {
     margin: auto;
 }
 
+body main h1 {
+    font-size: 2em;
+    width: max-content;
+    border-bottom: 2px yellow solid;
+    padding-bottom: 6px;
+    color: white;
+}
+
 body header {
     width: 100%;
     margin: auto;
@@ -170,22 +178,22 @@ body main div.left button {
     font-weight: bolder;
 }
 
-body main div.right {
-    width: 600px;
-    height: inherit;
+section.my-projects {
+    width: 100%;
+    margin: 50px auto;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    object-fit: cover;
+    justify-content: space-between;
+    column-gap: 75px;
+}
+
+section.my-projects .right {
+    width: 40%;
 }
 
 body main div.right img {
-    width: 55%;
+    width: 100%;
     border-radius: 5px;
     box-shadow: 2px 2px 10px #3333334d, -2px -2px 10px #3333334d;
-    margin-left: -50px;
-    display: flex;
-    object-fit: cover;
 }
 
 /* Début de style de la page myproject */
@@ -197,7 +205,7 @@ body main div.left div.list_project {
     overflow-y: hidden;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 30px;
+    margin-top: 40px;
 }
 
 
@@ -237,7 +245,7 @@ body main div.left div.list_project div.project {
     height: max-content;
     background-color: rgba(255, 255, 255, 0.158);
     padding: 5px;
-    border-radius: 10px;
+    border-radius: 5px;
     display: flex;
     align-items: center;
     transition: 0.25s;
