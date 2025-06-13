@@ -164,6 +164,14 @@ body main div.left {
     width: 50%;
 }
 
+body main .left h1 {
+    font-size: 2em;
+    width: max-content;
+    border-bottom: 2px yellow solid;
+    padding-bottom: 6px;
+    color: white;
+}
+
 body main div.right {
     width: 40%;
 }
@@ -179,7 +187,6 @@ body main div.left div.skill {
     height: max-content;
     display: flex;
     align-items: center;
-    justify-content: space-around;
     margin-bottom: 20px;
 }
 
