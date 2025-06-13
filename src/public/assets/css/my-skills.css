@@ -186,7 +186,12 @@ body main .left h3 {
     border-bottom: 2px yellow solid;
     border-bottom-style: dashed;
     padding-bottom: 6px;
+    margin-bottom: 30px;
     color: white;
+}
+
+body main .left h4 {
+    margin-bottom: 10px;
 }
 
 body main div.right {
@@ -201,14 +206,20 @@ body main div.right img {
 
 body main div.left .skill {
     width: 100%;
-    height: max-content;
+    height: 42px;
     display: flex;
     align-items: center;
     margin-bottom: 20px;
 }
 
+body main div.left .skill .info {
+    width: 100%;
+    height: 100%;
+}
+
+
 body main div.left .skill div.jauge {
-    width: 80%;
+    width: 100%;
     height: 8px;
     border-radius: 5px;
     background-color: white;
@@ -262,4 +273,5 @@ body main div.left .skill#NODE div.jauge::before {
 
 body main div.left .skill img {
     width: 43px;
+    margin-right: 8px;
 }
