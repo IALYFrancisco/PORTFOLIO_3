@@ -88,7 +88,6 @@ body main div.left div.skill#ANGULAR div.jauge::before {
     border-radius: 5px;
 }
 
-
 body main div.left div.skill#VUE div.jauge::before {
     content: '';
     position: absolute;
@@ -97,7 +96,6 @@ body main div.left div.skill#VUE div.jauge::before {
     background: yellow;
     border-radius: 5px;
 }
-
 
 body main div.left div.skill#MONGODB div.jauge::before {
     content: '';
@@ -108,7 +106,6 @@ body main div.left div.skill#MONGODB div.jauge::before {
     border-radius: 5px;
 }
 
-
 body main div.left div.skill#NODE div.jauge::before {
     content: '';
     position: absolute;
@@ -117,8 +114,6 @@ body main div.left div.skill#NODE div.jauge::before {
     background: yellow;
     border-radius: 5px;
 }
-
-
 
 body main div.left div.skill img {
     width: 43px;
