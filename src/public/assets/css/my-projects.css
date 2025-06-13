@@ -318,33 +318,6 @@ body .nav#navResponsive.active ul {
     transition: 0.3s ease-in-out;
 }
 
-@media only screen and (max-width: 1199px) {
-    
-    body main div.left {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 20px;
-        height: max-content;
-        margin: auto;
-    }
-    
-    body main {
-        height: max-content;
-   }
-
-    body main div.right img {
-        width: 55%;
-        border-radius: 5px;
-        box-shadow: 2px 2px 10px #3333334d, -2px -2px 10px #3333334d;
-        margin-top: 50px;
-        margin-left: 0px;
-        display: flex;
-        object-fit: cover;
-    }
-
-}
-
 @media only screen and (max-width: 700px) {
     
     body header nav {
