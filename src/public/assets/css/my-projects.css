@@ -251,12 +251,6 @@ body main div.left div.list_project div.project {
     transition: 0.25s;
 }
 
-body main div.left div.list_project div.project:hover {
-    cursor: pointer;
-    box-shadow: 2px 2px 10px rgba(255, 255, 0, 0.226), -2px -2px 10px rgba(255, 255, 0, 0.226);
-    transition: 0.25s;
-}
-
 body main div.left div.list_project div.project div.project_action {
     display: flex;
     flex-direction: column;
