@@ -275,3 +275,24 @@ body main div.left .skill img {
     width: 43px;
     margin-right: 8px;
 }
+
+footer {
+    display: flex;
+    justify-content: center;
+    height: 75px;
+    align-items: center;
+}
+
+footer p {
+    color: white;
+    font-size: 14px;
+}
+
+footer p a {
+    color: yellow;
+    font-weight: bold;
+}
+
+footer p a:hover {
+    text-decoration: underline;
+}
