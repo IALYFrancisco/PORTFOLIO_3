@@ -50,6 +50,10 @@ body main h1 {
     color: white;
 }
 
+body main .left h4 {
+    margin-top: 5px;
+}
+
 body header {
     width: 100%;
     margin: auto;
@@ -260,24 +264,9 @@ body main div.left div.list_project div.project div.project_action button.live_d
     margin-top: 10px;
 }
 
-body main div.left div.list_project div.project div.project_action div.images_link {
-    width: 100%;
-    margin-top:30px;
-}
-
-body main div.left div.list_project div.project div.project_action div.images_link img {
-    width: 35px;
-    margin: auto;
-    color: #333;
-}
-
-body main div.left div.list_project div.project div.project_action div.images_link a:nth-child(2) {
-    margin-left: 15px;
-}
-
 body main div.left div.project video {
     width: 250px;
-    border-radius: 5px;
+    border-radius: 3px;
 }
 
 body header div.menu {
@@ -288,7 +277,6 @@ body header div.menu img{
     width: 30px;
 }
 
-/*Code de nav responsivé*/
 body .nav#navResponsive ul{
     background-color: rgba(255, 255, 0, 0.123);
     width: max-content;
