@@ -178,7 +178,7 @@ body main div.right img {
 
 /* Début de style de la page myproject */
 
-body main div.left.my_projects div.list_project {
+body main div.left div.list_project {
     display: flex;
     width: 100%;
     height: 340px;
@@ -189,11 +189,11 @@ body main div.left.my_projects div.list_project {
 }
 
 
-body main div.left.my_projects div.list_project.toogled {
+body main div.left div.list_project.toogled {
     overflow-y: scroll;
 }
 
-body main div.left.my_projects p.incitation {
+body main div.left p.incitation {
     margin-bottom: 15px;
     font-size: 12px;
     display: none;
@@ -201,7 +201,7 @@ body main div.left.my_projects p.incitation {
     animation: shadow 1.5s infinite ease-in-out;
 }
 
-body main div.left.my_projects p.incitation.toggled {
+body main div.left p.incitation.toggled {
     display: block;
     transition: 0.5s;
 }
@@ -219,7 +219,7 @@ body main div.left.my_projects p.incitation.toggled {
     }
 }
 
-body main div.left.my_projects div.list_project div.project {
+body main div.left div.list_project div.project {
     margin-bottom: 20px;   
     width: 500px;
     height: max-content;
@@ -231,13 +231,13 @@ body main div.left.my_projects div.list_project div.project {
     transition: 0.25s;
 }
 
-body main div.left.my_projects div.list_project div.project:hover {
+body main div.left div.list_project div.project:hover {
     cursor: pointer;
     box-shadow: 2px 2px 10px rgba(255, 255, 0, 0.226), -2px -2px 10px rgba(255, 255, 0, 0.226);
     transition: 0.25s;
 }
 
-body main div.left.my_projects div.list_project div.project div.project_action {
+body main div.left div.list_project div.project div.project_action {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -245,27 +245,27 @@ body main div.left.my_projects div.list_project div.project div.project_action {
     height: 100%;
 }
 
-body main div.left.my_projects div.list_project div.project div.project_action button.live_demo{
+body main div.left div.list_project div.project div.project_action button.live_demo{
     width: 100%;
     margin-top: 10px;
 }
 
-body main div.left.my_projects div.list_project div.project div.project_action div.images_link {
+body main div.left div.list_project div.project div.project_action div.images_link {
     width: 100%;
     margin-top:30px;
 }
 
-body main div.left.my_projects div.list_project div.project div.project_action div.images_link img {
+body main div.left div.list_project div.project div.project_action div.images_link img {
     width: 35px;
     margin: auto;
     color: #333;
 }
 
-body main div.left.my_projects div.list_project div.project div.project_action div.images_link a:nth-child(2) {
+body main div.left div.list_project div.project div.project_action div.images_link a:nth-child(2) {
     margin-left: 15px;
 }
 
-body main div.left.my_projects div.project video {
+body main div.left div.project video {
     width: 250px;
     border-radius: 5px;
 }
@@ -371,11 +371,11 @@ body .nav#navResponsive.active ul {
 
 @media only screen and (max-width: 570px) {
 
-    body main div.left.my_projects div.list_project div.project {
+    body main div.left div.list_project div.project {
         margin: auto;
     }
 
-    body main div.left.my_projects div.list_project {
+    body main div.left div.list_project {
         display: flex;
         width: 100%;
         height: max-content;
