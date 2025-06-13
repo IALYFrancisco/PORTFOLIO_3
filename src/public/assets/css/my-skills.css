@@ -135,14 +135,6 @@ body main div.left p.Lorem {
     justify-content: center;
 }
 
-body main div.left p.title {
-    font-size: 45px;
-    border-bottom: 2px yellow solid;
-    width: 50%;
-    margin-bottom: 30px;
-    padding-bottom: 6px;
-}
-
 body main div.left button {
     width: 100px;
     height: 40px;
@@ -290,14 +282,6 @@ body .nav#navResponsive.active ul {
         padding: 20px;
         height: max-content;
         margin: auto;
-    }
-    
-    body main div.left p.title {
-        font-size: 2rem;
-        width: 100%;
-        margin: auto;
-        text-align: center;
-        margin-bottom: 20px;
     }
 
     body main {
