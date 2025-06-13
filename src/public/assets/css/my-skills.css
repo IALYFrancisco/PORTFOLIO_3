@@ -152,6 +152,14 @@ body main {
     margin: auto;
 }
 
+section.my-skills {
+    width: 100%;
+    margin: 50px auto;
+    display: flex;
+    justify-content: space-between;
+    column-gap: 75px;
+}
+
 body main div.left {
     width: 50%;
 }
