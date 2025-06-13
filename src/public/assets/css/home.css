@@ -147,6 +147,8 @@ body .nav#navResponsive.active ul {
 
 body main {
     width: 100%;
+    max-width: 900px;
+    margin: auto;
 }
 
 body main div.left {
@@ -184,12 +186,6 @@ body main .right img {
     width: 100%;
     border-radius: 5px;
     box-shadow: 2px 2px 10px #3333334d, -2px -2px 10px #3333334d;
-}
-
-.container {
-    width: 100%;
-    max-width: 900px;
-    margin: auto;
 }
 
 section.who-am-i {
