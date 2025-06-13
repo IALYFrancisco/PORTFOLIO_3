@@ -153,12 +153,8 @@ body .nav#navResponsive.active ul {
 }
 
 body main div.left {
-    width: 50%;
-    min-width: 270px;
-    height: inherit;
-    padding-left: 160px;
-    padding-top: 20px;
     color: white;
+    width: 60%;
 }
 
 body main div.left button {
