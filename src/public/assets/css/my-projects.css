@@ -263,6 +263,14 @@ body main div.left div.list_project div.project div.project_action p {
     margin: 5px 0 5px 0;
 }
 
+body main div.left div.list_project div.project div.project_action p.skills {
+    width: 100%;
+    max-width: 232px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 body main div.left div.list_project div.project div.project_action span {
     color: yellow;
 }
