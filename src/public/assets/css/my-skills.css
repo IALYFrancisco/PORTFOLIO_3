@@ -260,3 +260,16 @@ footer p a {
 footer p a:hover {
     text-decoration: underline;
 }
+
+@media only screen and (max-width: 1024px) {
+    .container {
+        padding: 0 25px;
+    }
+    section.my-skills {
+        column-gap: 25px;
+    }
+    section.my-skills .left,
+    section.my-skills .right {
+        width: 50%;
+    }
+}
