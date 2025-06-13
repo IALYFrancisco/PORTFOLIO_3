@@ -170,7 +170,6 @@ body main div.right img {
     width: 55%;
     border-radius: 5px;
     box-shadow: 2px 2px 10px #3333334d, -2px -2px 10px #3333334d;
-    margin-top: -80px;
     margin-left: -50px;
     display: flex;
     object-fit: cover;
