@@ -294,6 +294,27 @@ body header div.menu img{
     width: 30px;
 }
 
+footer {
+    display: flex;
+    justify-content: center;
+    height: 75px;
+    align-items: center;
+}
+
+footer p {
+    color: white;
+    font-size: 14px;
+}
+
+footer p a {
+    color: yellow;
+    font-weight: bold;
+}
+
+footer p a:hover {
+    text-decoration: underline;
+}
+
 @media only screen and (max-width: 1024px) {
     .container {
         padding: 0 25px;
