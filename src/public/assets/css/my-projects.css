@@ -400,7 +400,7 @@ footer p a:hover {
         padding-left: 0;
     }
 
-    body main div.left button {
+    body main div.left > button {
         margin-top: 20px;
     }
 
