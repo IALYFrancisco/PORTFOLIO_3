@@ -181,6 +181,10 @@ body main div.left button {
     font-weight: bolder;
 }
 
+body main div.left > button {
+    margin-top: 20px;
+}
+
 section.my-projects {
     width: 100%;
     margin: 50px auto;
