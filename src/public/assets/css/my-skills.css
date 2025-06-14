@@ -32,13 +32,11 @@ a {
 
 body {
     width: 100%;
-    height: 100vh;
     background-color: var(--grenat);
 }
 
 body header {
     width: 100%;
-    max-width: 770px;
     margin: auto;
     height: 70px;
     display: flex;
@@ -52,7 +50,7 @@ body header {
     align-items: center;
 }
 
-.button-container button {
+button {
     padding: 10px 13px;
     background-color: yellow;
     border: none;
@@ -65,7 +63,7 @@ body header {
     outline: none;
 }
 
-.button-container button:active {
+button:active {
     transform: scale(0.95);
     transition: 0.1s;
 }
@@ -114,162 +112,27 @@ body header nav ul li a {
     color: white;
 }
 
-body main {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-wrap: wrap-reverse;
-    justify-content: center;
-}
-
-body main div.left {
-    width: 50%;
-    min-width: 270px;
-    height: inherit;
-    padding-left: 160px;
-    padding-top: 20px;
-    color: white;
-}
-
-body main div.left p.Lorem {
-    width: 100%;
-    text-align: justify;
-    justify-content: center;
-}
-
-body main div.left p.title {
-    font-size: 45px;
-    border-bottom: 2px yellow solid;
-    width: 50%;
-    margin-bottom: 30px;
-    padding-bottom: 6px;
-}
-
-body main div.left button {
-    width: 100px;
-    height: 40px;
-    background-color: yellow;
-    border: none;
-    margin-top: 25px;
-    border-radius: 5px;
-    box-shadow: 2px 2px 10px #3333334d, -2px -2px 10px #3333334d;
-    cursor: pointer;
-    color: #000;
-    font-weight: bolder;
-}
-
-body main div.right {
-    width: 600px;
-    height: inherit;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    object-fit: cover;
-}
-
-body main div.right img {
-    width: 55%;
-    border-radius: 5px;
-    box-shadow: 2px 2px 10px #3333334d, -2px -2px 10px #3333334d;
-    margin-top: -80px;
-    margin-left: -50px;
-    display: flex;
-    object-fit: cover;
-}
-
-body main div.left div.skill {
-    width: 100%;
-    height: max-content;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin-bottom: 20px;
-}
-
-body main div.left div.skill div.jauge {
-    width: 80%;
-    height: 8px;
-    border-radius: 5px;
-    background-color: white;
-    position: relative;
-}
-
-body main div.left div.skill#JS div.jauge::before {
-    content: '';
-    position: absolute;
-    width: 60%;
-    height: 100%;
-    background: yellow;
-    border-radius: 5px;
-}
-
-body main div.left div.skill#ANGULAR div.jauge::before {
-    content: '';
-    position: absolute;
-    width: 40%;
-    height: 100%;
-    background: yellow;
-    border-radius: 5px;
-}
-
-
-body main div.left div.skill#VUE div.jauge::before {
-    content: '';
-    position: absolute;
-    width: 37%;
-    height: 100%;
-    background: yellow;
-    border-radius: 5px;
-}
-
-
-body main div.left div.skill#MONGODB div.jauge::before {
-    content: '';
-    position: absolute;
-    width: 36%;
-    height: 100%;
-    background: yellow;
-    border-radius: 5px;
-}
-
-
-body main div.left div.skill#NODE div.jauge::before {
-    content: '';
-    position: absolute;
-    width: 40%;
-    height: 100%;
-    background: yellow;
-    border-radius: 5px;
-}
-
-
-
-body main div.left div.skill img {
-    width: 43px;
-}
 
 body header div.menu {
     display: none;
 }
 
-body header div.menu img{
+body header div.menu img {
     width: 30px;
 }
 
-/*Code de nav responsivé*/
 body .nav#navResponsive ul{
     background-color: rgba(255, 255, 0, 0.123);
-    width: max-content;
     height: 0px;
     overflow: hidden;
     margin: auto;
     list-style-type: none;
-    border: 2px solid yellow;
+    border: 1px solid yellow;
     line-height: 35px;
     text-align: center;
     border-radius: 5px;
     display: none;
-    transition: 0.3s ease-in-out;
+    transition: 0.5s ease-in-out;
 }
 
 body .nav#navResponsive ul li a{
@@ -278,44 +141,137 @@ body .nav#navResponsive ul li a{
 }
 
 body .nav#navResponsive.active ul {
-    height: 170px;
+    height: 200px;
     padding: 10px;
-    transition: 0.3s ease-in-out;
+    transition: 0.5s ease-in-out;
 }
 
-@media only screen and (max-width: 1199px) {
-    
-    body main div.left {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 20px;
-        height: max-content;
-        margin: auto;
-    }
-    
-    body main div.left p.title {
-        font-size: 2rem;
-        width: 100%;
-        margin: auto;
-        text-align: center;
-        margin-bottom: 20px;
-    }
+body main {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+}
 
-    body main {
-        height: max-content;
-   }
+section.my-skills {
+    width: 100%;
+    margin: 50px auto;
+    display: flex;
+    justify-content: space-between;
+    column-gap: 75px;
+}
 
-    body main div.right img {
-        width: 55%;
-        border-radius: 5px;
-        box-shadow: 2px 2px 10px #3333334d, -2px -2px 10px #3333334d;
-        margin-top: 50px;
-        margin-left: 0px;
-        display: flex;
-        object-fit: cover;
+body main div.left {
+    color: white;
+    width: 60%;
+}
+
+body main div.left p {
+    width: 100%;
+    text-align: justify;
+    justify-content: center;
+    margin-top: 35px;
+}
+
+body main .left h1 {
+    font-size: 2em;
+    width: max-content;
+    border-bottom: 2px yellow solid;
+    padding-bottom: 6px;
+    color: white;
+}
+
+body main .left h3 {
+    width: max-content;
+    border-bottom: 2px yellow solid;
+    border-bottom-style: dashed;
+    padding-bottom: 6px;
+    margin-bottom: 30px;
+    margin-top: 75px;
+    color: white;
+}
+
+body main .left h4 {
+    margin-bottom: 10px;
+}
+
+body main div.right {
+    width: 40%;
+}
+
+body main div.right img {
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px #3333334d, -2px -2px 10px #3333334d;
+}
+
+body main div.left .skill {
+    width: 100%;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+body main div.left .skill .info {
+    width: 100%;
+    height: 100%;
+}
+
+
+body main div.left .skill div.jauge {
+    width: 100%;
+    height: 8px;
+    border-radius: 5px;
+    background-color: white;
+    position: relative;
+}
+
+body main div.left .skill#JS div.jauge::before {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 100%;
+    background: yellow;
+    border-radius: 5px;
+}
+
+body main div.left .skill img {
+    width: 43px;
+    margin-right: 8px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    height: 75px;
+    align-items: center;
+}
+
+footer p {
+    color: white;
+    font-size: 14px;
+}
+
+footer p a {
+    color: yellow;
+    font-weight: bold;
+}
+
+footer p a:hover {
+    text-decoration: underline;
+}
+
+@media only screen and (max-width: 1024px) {
+    .container {
+        padding: 0 25px;
     }
-
+    section.my-skills {
+        column-gap: 25px;
+    }
+    section.my-skills .left,
+    section.my-skills .right {
+        width: 50%;
+    }
 }
 
 @media only screen and (max-width: 700px) {
@@ -329,7 +285,6 @@ body .nav#navResponsive.active ul {
     }
 
     body .nav#navResponsive ul{
-        
         display: block;
         transition: 0.3s ease-in-out;
     }
@@ -338,11 +293,35 @@ body .nav#navResponsive.active ul {
         display: flex;
         justify-content: end;
         align-items: center;
-        padding-right: 10px;
     }
 
     .button-container {
         display: none;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    section.my-skills {
+        display: block;
+    }
+
+    .container section.my-skills {
+        margin-bottom: 0px;
+    }
+
+    section.my-skills .left,
+    section.my-skills .right {
+        width: 100%;
+    }
+
+    section.my-skills .left {
+        margin-bottom: 50px;
+    }
+
+    body main div.left .skill img {
+        width: 35px;
     }
 
 }

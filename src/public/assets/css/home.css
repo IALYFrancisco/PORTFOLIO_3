@@ -112,53 +112,6 @@ body header nav ul li a {
     color: white;
 }
 
-body main {
-    width: 100%;
-}
-
-body main div.left {
-    color: white;
-}
-
-body main div.left p {
-    width: 100%;
-    text-align: justify;
-    justify-content: center;
-    margin-top: 20px;
-    margin-bottom: 38px;
-}
-
-body main .left p .important_word,
-body main .left p .important_word a {
-    color: yellow;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-body main div.left p span.important_word a:hover {
-    text-decoration: underline;
-}
-
-body main h1 {
-    font-size: 2em;
-    width: max-content;
-    border-bottom: 2px yellow solid;
-    padding-bottom: 6px;
-    color: white;
-}
-
-body main .right img {
-    width: 100%;
-    border-radius: 5px;
-    box-shadow: 2px 2px 10px #3333334d, -2px -2px 10px #3333334d;
-}
-
-.container {
-    width: 100%;
-    max-width: 900px;
-    margin: auto;
-}
-
 body header div.menu {
     display: none;
 }
@@ -192,6 +145,44 @@ body .nav#navResponsive.active ul {
     transition: 0.5s ease-in-out;
 }
 
+body main {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+}
+
+body main div.left {
+    color: white;
+    width: 60%;
+}
+
+body main div.left p {
+    width: 100%;
+    text-align: justify;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 38px;
+}
+
+body main .left p .important_word,
+body main .left p .important_word a {
+    color: yellow;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+body main div.left p span.important_word a:hover {
+    text-decoration: underline;
+}
+
+body main h1 {
+    font-size: 2em;
+    width: max-content;
+    border-bottom: 2px yellow solid;
+    padding-bottom: 6px;
+    color: white;
+}
+
 section.who-am-i {
     width: 100%;
     margin: 50px auto;
@@ -200,12 +191,14 @@ section.who-am-i {
     column-gap: 75px;
 }
 
-section.who-am-i .left {
-    width: 60%;
-}
-
 section.who-am-i .right {
     width: 40%;
+}
+
+body main .right img {
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px #3333334d, -2px -2px 10px #3333334d;
 }
 
 footer {
@@ -253,7 +246,6 @@ footer p a:hover {
     }
 
     body .nav#navResponsive ul{
-        
         display: block;
         transition: 0.3s ease-in-out;
     }
@@ -262,7 +254,6 @@ footer p a:hover {
         display: flex;
         justify-content: end;
         align-items: center;
-        padding-right: 10px;
     }
 
     .button-container {

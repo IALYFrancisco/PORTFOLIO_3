@@ -4,7 +4,8 @@
 }
 
 form {
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     margin: 100px auto;
 }
 
@@ -71,4 +72,13 @@ button:active {
 .message-container p {
     color: white;
     font-size: 14px;
+}
+
+@media only screen and (max-width: 760px) {
+    
+    body {
+        width: 100%;
+        padding: 0 15px;
+    }
+
 }

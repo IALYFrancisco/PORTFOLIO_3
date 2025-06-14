@@ -8,7 +8,8 @@
 }
 
 form {
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     margin: 100px auto;
 }
 
@@ -84,4 +85,13 @@ select {
 
 .logo-container img {
     width: 35px;
+}
+
+@media only screen and (max-width: 760px) {
+    
+    body {
+        width: 100%;
+        padding: 0 15px;
+    }
+
 }

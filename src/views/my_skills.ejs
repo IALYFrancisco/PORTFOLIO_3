@@ -14,17 +14,92 @@
     <title>My Skills | PORTFOLIO</title>
 </head>
 <body>
-    <%- include("header") %>
-    <script>
-        document.getElementById('toggleBtn').addEventListener('click', (event) => {
-            document.getElementById('navResponsive').classList.toggle('active');
-        })
-    </script>
-    <main>
-        <%- include("main_my_skills") %>
-        <div class="right img">
-            <img src="assets/images/DSC_1915.JPG" alt="IALY Francisco Raymond joueant la guitare." title="IALY Francisco Raymond joueant la guitare.">
-        </div>
+    <main class="container">
+        <%- include("header") %>
+        <section class="my-skills">
+            <div class="left">
+                <h1>My Skills</h1>
+                <p>
+                    Vous trouverez ci-dessous toutes mes compétences [ langages de programmation , cadres de travail, bibliothèques, SGBG, CMS, outils de développment, outils de teste, mes bonnes pratiques ].
+                </p>
+                <ul>
+                    <li>
+                        <h3>Langages de programmation :</h3>
+                        <ul>
+                            <li class="skill" id="JS">
+                                <div class="logo">
+                                    <img src="assets/icon/icons8-javascript-color/icons8-javascript-100.png" alt="logo" title="logo">
+                                </div>
+                                <div class="info">
+                                    <h4 class="name">Javascript</h4>
+                                    <div class="jauge"></div>
+                                </div>
+                            </li>    
+                            <li class="skill" id="JS">
+                                <div class="logo">
+                                    <img src="assets/images/logo-de-python.png" alt="Logo de Python" title="Logo de Python">
+                                </div>
+                                <div class="info">
+                                    <h4 class="name">Python</h4>
+                                    <div class="jauge"></div>
+                                </div>
+                            </li>    
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>Cadres de travail :</h3>
+                        <ul>
+                            <li class="skill" id="JS">
+                                <div class="logo">
+                                    <img src="assets/images/logo-de-vue.js.png" alt="Logo de Vue.js" title="Logo de Vue.js">
+                                </div>
+                                <div class="info">
+                                    <h4 class="name">Vue.js</h4>
+                                    <div class="jauge"></div>
+                                </div>
+                            </li>    
+                            <li class="skill" id="JS">
+                                <div class="logo">
+                                    <img src="assets/images/logo-de-node.js.png" alt="Logo de Node.js" title="Logo de Node.js">
+                                </div>
+                                <div class="info">
+                                    <h4 class="name">Node.js</h4>
+                                    <div class="jauge"></div>
+                                </div>
+                            </li>    
+                            <li class="skill" id="JS">
+                                <div class="logo">
+                                    <img src="assets/images/logo-de-angular.png" alt="Logo de Angular" title="Logo de Angular">
+                                </div>
+                                <div class="info">
+                                    <h4 class="name">Angular</h4>
+                                    <div class="jauge"></div>
+                                </div>
+                            </li>    
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>SGBD :</h3>
+                        <ul>
+                            <li class="skill" id="JS">
+                                <div class="logo">
+                                    <img src="assets/images/mongodb.png" alt="Logo de Mongodb" title="Logo de Mongodb">
+                                </div>
+                                <div class="info">
+                                    <h4 class="name">Mongodb</h4>
+                                    <div class="jauge"></div>
+                                </div>
+                            </li>        
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="right">
+                <img src="assets/images/DSC_1915.JPG" alt="IALY Francisco Raymond joueant la guitare 🎸 ." title="IALY Francisco Raymond joueant la guitare 🎸 .">
+            </div>
+        </section>
     </main>
+    <%- include('footer') %>
 </body>
+<script src="assets/js/myskills.js"></script>
 </html>

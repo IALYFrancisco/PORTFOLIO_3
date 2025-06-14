@@ -1,4 +1,3 @@
-/* Personnalisation de la scrollbar */
 ::-webkit-scrollbar {
     width: 8px;
     height: 10px;
@@ -36,22 +35,41 @@ body {
     background-color: var(--grenat);
 }
 
+
+body main {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+}
+
+body main h1 {
+    font-size: 2em;
+    width: max-content;
+    border-bottom: 2px yellow solid;
+    padding-bottom: 6px;
+    color: white;
+}
+
+body main .left h4 {
+    margin-top: 5px;
+}
+
 body header {
     width: 100%;
-    max-width: 770px;
     margin: auto;
     height: 70px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 .button-container {
     height: 100%;
     display: flex;
     align-items: center;
 }
 
-.button-container button {
+button {
     padding: 10px 13px;
     background-color: yellow;
     border: none;
@@ -64,7 +82,7 @@ body header {
     outline: none;
 }
 
-.button-container button:active {
+button:active {
     transform: scale(0.95);
     transition: 0.1s;
 }
@@ -113,43 +131,49 @@ body header nav ul li a {
     color: white;
 }
 
-body main {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-wrap: wrap-reverse;
-    justify-content: center;
+body header div.menu {
+    display: none;
+}
+
+body header div.menu img {
+    width: 30px;
+}
+
+body .nav#navResponsive ul{
+    background-color: rgba(255, 255, 0, 0.123);
+    height: 0px;
+    overflow: hidden;
+    margin: auto;
+    list-style-type: none;
+    border: 1px solid yellow;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 5px;
+    display: none;
+    transition: 0.5s ease-in-out;
+}
+
+body .nav#navResponsive ul li a{
+    color: white;
+    text-decoration: none;
+}
+
+body .nav#navResponsive.active ul {
+    height: 200px;
+    padding: 10px;
+    transition: 0.5s ease-in-out;
 }
 
 body main div.left {
-    width: 50%;
-    min-width: 270px;
-    height: inherit;
-    padding-left: 160px;
-    padding-top: 20px;
     color: white;
-}
-
-body main div.left p.Lorem {
-    width: 100%;
-    text-align: justify;
-    justify-content: center;
-}
-
-body main div.left p.title {
-    font-size: 45px;
-    border-bottom: 2px yellow solid;
-    width: 50%;
-    margin-bottom: 30px;
-    padding-bottom: 6px;
+    width: 60%;
 }
 
 body main div.left button {
-    width: 100px;
     height: 40px;
     background-color: yellow;
     border: none;
-    margin-top: 25px;
+    margin-top: 8px;
     border-radius: 5px;
     box-shadow: 2px 2px 10px #3333334d, -2px -2px 10px #3333334d;
     cursor: pointer;
@@ -157,43 +181,43 @@ body main div.left button {
     font-weight: bolder;
 }
 
-body main div.right {
-    width: 600px;
-    height: inherit;
+body main div.left > button {
+    margin-top: 20px;
+}
+
+section.my-projects {
+    width: 100%;
+    margin: 50px auto;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    object-fit: cover;
+    justify-content: space-between;
+    column-gap: 75px;
+}
+
+section.my-projects .right {
+    width: 40%;
 }
 
 body main div.right img {
-    width: 55%;
+    width: 100%;
     border-radius: 5px;
     box-shadow: 2px 2px 10px #3333334d, -2px -2px 10px #3333334d;
-    margin-top: -80px;
-    margin-left: -50px;
-    display: flex;
-    object-fit: cover;
 }
 
-/* Début de style de la page myproject */
-
-body main div.left.my_projects div.list_project {
+body main div.left div.list_project {
     display: flex;
+    flex-direction: column;
+    row-gap: 15px;
     width: 100%;
     height: 340px;
     overflow-y: hidden;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 30px;
+    margin-top: 40px;
 }
 
-
-body main div.left.my_projects div.list_project.toogled {
+body main div.left div.list_project.toogled {
     overflow-y: scroll;
 }
 
-body main div.left.my_projects p.incitation {
+body main div.left p.incitation {
     margin-bottom: 15px;
     font-size: 12px;
     display: none;
@@ -201,7 +225,7 @@ body main div.left.my_projects p.incitation {
     animation: shadow 1.5s infinite ease-in-out;
 }
 
-body main div.left.my_projects p.incitation.toggled {
+body main div.left p.incitation.toggled {
     display: block;
     transition: 0.5s;
 }
@@ -219,55 +243,51 @@ body main div.left.my_projects p.incitation.toggled {
     }
 }
 
-body main div.left.my_projects div.list_project div.project {
-    margin-bottom: 20px;   
-    width: 500px;
+body main div.left div.list_project div.project {
+    width: 100%;
+    max-width: 500px;
     height: max-content;
     background-color: rgba(255, 255, 255, 0.158);
     padding: 5px;
-    border-radius: 10px;
+    border-radius: 5px;
     display: flex;
     align-items: center;
     transition: 0.25s;
 }
 
-body main div.left.my_projects div.list_project div.project:hover {
-    cursor: pointer;
-    box-shadow: 2px 2px 10px rgba(255, 255, 0, 0.226), -2px -2px 10px rgba(255, 255, 0, 0.226);
-    transition: 0.25s;
-}
-
-body main div.left.my_projects div.list_project div.project div.project_action {
+body main div.left div.list_project div.project div.project_action {
     display: flex;
     flex-direction: column;
     width: 100%;
     padding-left: 8px;
     height: 100%;
+    overflow: hidden;
 }
 
-body main div.left.my_projects div.list_project div.project div.project_action button.live_demo{
+body main div.left div.list_project div.project div.project_action p {
+    font-size: 14px;
+    margin: 5px 0 5px 0;
+}
+
+body main div.left div.list_project div.project div.project_action p.skills {
     width: 100%;
-    margin-top: 10px;
+    max-width: 232px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-body main div.left.my_projects div.list_project div.project div.project_action div.images_link {
+body main div.left div.list_project div.project div.project_action span {
+    color: yellow;
+}
+
+body main div.left div.list_project div.project div.project_action button.live_demo{
     width: 100%;
-    margin-top:30px;
 }
 
-body main div.left.my_projects div.list_project div.project div.project_action div.images_link img {
-    width: 35px;
-    margin: auto;
-    color: #333;
-}
-
-body main div.left.my_projects div.list_project div.project div.project_action div.images_link a:nth-child(2) {
-    margin-left: 15px;
-}
-
-body main div.left.my_projects div.project video {
+body main div.left div.project video {
     width: 250px;
-    border-radius: 5px;
+    border-radius: 3px;
 }
 
 body header div.menu {
@@ -278,69 +298,41 @@ body header div.menu img{
     width: 30px;
 }
 
-/*Code de nav responsivé*/
-body .nav#navResponsive ul{
-    background-color: rgba(255, 255, 0, 0.123);
-    width: max-content;
-    height: 0px;
-    overflow: hidden;
-    margin: auto;
-    list-style-type: none;
-    border: 2px solid yellow;
-    line-height: 35px;
-    text-align: center;
-    border-radius: 5px;
-    display: none;
-    transition: 0.3s ease-in-out;
+footer {
+    display: flex;
+    justify-content: center;
+    height: 75px;
+    align-items: center;
 }
 
-body .nav#navResponsive ul li a{
+footer p {
     color: white;
-    text-decoration: none;
+    font-size: 14px;
 }
 
-body .nav#navResponsive.active ul {
-    height: 170px;
-    padding: 10px;
-    transition: 0.3s ease-in-out;
+footer p a {
+    color: yellow;
+    font-weight: bold;
 }
 
-@media only screen and (max-width: 1199px) {
-    
-    body main div.left {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 20px;
-        height: max-content;
-        margin: auto;
-    }
-    
-    body main div.left p.title {
-        font-size: 2rem;
-        width: 100%;
-        margin: auto;
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    body main {
-        height: max-content;
-   }
-
-    body main div.right img {
-        width: 55%;
-        border-radius: 5px;
-        box-shadow: 2px 2px 10px #3333334d, -2px -2px 10px #3333334d;
-        margin-top: 50px;
-        margin-left: 0px;
-        display: flex;
-        object-fit: cover;
-    }
-
+footer p a:hover {
+    text-decoration: underline;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 1024px) {
+    .container {
+        padding: 0 25px;
+    }
+    section.my-projects {
+        column-gap: 25px;
+    }
+    section.my-projects .left,
+    section.my-projects .right {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 760px) {
     
     body header nav {
         display: none;
@@ -351,7 +343,6 @@ body .nav#navResponsive.active ul {
     }
 
     body .nav#navResponsive ul{
-        
         display: block;
         transition: 0.3s ease-in-out;
     }
@@ -360,27 +351,57 @@ body .nav#navResponsive.active ul {
         display: flex;
         justify-content: end;
         align-items: center;
-        padding-right: 10px;
     }
 
     .button-container {
         display: none;
     }
 
-}
-
-@media only screen and (max-width: 570px) {
-
-    body main div.left.my_projects div.list_project div.project {
-        margin: auto;
+    .container {
+        padding: 0 15px;
     }
 
-    body main div.left.my_projects div.list_project {
-        display: flex;
+    section.my-projects {
+        display: block;
+    }
+
+    .container section.my-projects {
+        margin-bottom: 0px;
+    }
+
+    section.my-projects .left,
+    section.my-projects .right {
         width: 100%;
-        height: max-content;
-        flex-wrap: wrap;
-        justify-content: center;
+    }
+
+    section.my-projects .left {
+        margin-bottom: 50px;
+    }
+
+    body main div.left .skill img {
+        width: 35px;
+    }
+
+    body main div.left div.list_project {
+        height: 525px;
+    }
+
+    body main div.left div.list_project div.project {
+        max-width: 100%;
+        display: initial;
+    }
+
+    body main div.left div.project video {
+        width: 100%;
+        height: 100px;
+    }
+
+    body main div.left div.list_project div.project div.project_action {
+        padding-left: 0;
+    }
+
+    body main div.left > button {
+        margin-top: 20px;
     }
 
 }

@@ -14,17 +14,49 @@
     <title>My Projects | PORTFOLIO</title>
 </head>
 <body>
-    <%- include("header") %>    
-    <script>
-        document.getElementById('toggleBtn').addEventListener('click', (event) => {
-            document.getElementById('navResponsive').classList.toggle('active');
-        })
-    </script>
-    <main>
-        <%- include("main_my_projects") %>
-        <div class="right img">
-            <img src="assets/images/DSC_3033.JPG" alt="IALY Francisco Raymond à la certification de TME." title="IALY Francisco Raymond à la certification de TME.">
-        </div>
+    <main class="container">
+        <%- include("header") %>
+        <section class="my-projects">
+            <div class="left">
+                <h1>My Projects</h1>
+                <p class="incitation">
+                    Scroll now to see others projects 😀
+                </p>
+                <div class="list_project">
+
+                    <% documents.forEach( item => { %>
+                    
+                        <div class="project">
+                            
+                            <video src="<%- item.movie_file_url -%>" autoplay loop controls></video>
+
+                            <div class="project_action">
+                                <h4><%- item.name -%></h4>
+                                <p class="type">
+                                    Type: <span><%- item.type -%></span>
+                                </p>
+                                <p class="skills">
+                                    Skills: <span><%- item.skills -%></span>
+                                </p>
+                                <a href="<%- item.host_url -%>" target="_blank">
+                                    <button class="live_demo">Watch live</button>
+                                </a>
+
+                            </div>
+                        
+                        </div>
+                        
+                    <% }); %>
+
+                </div>
+                <button id="seeMoreProjectBtn">See more</button>
+            </div>
+            <div class="right">
+                <img src="assets/images/DSC_3033.JPG" alt="IALY Francisco Raymond à la certification de TME." title="IALY Francisco Raymond à la certification de TME.">
+            </div>
+        </section>
     </main>
+    <%- include('footer') %>
 </body>
+<script src="assets/js/myprojects.js"></script>
 </html>
