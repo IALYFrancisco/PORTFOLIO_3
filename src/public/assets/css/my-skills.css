@@ -172,6 +172,10 @@ body main div.left p {
     margin-top: 35px;
 }
 
+.left p a {
+    color: yellow;
+}
+
 body main .left h1 {
     font-size: 2em;
     width: max-content;
