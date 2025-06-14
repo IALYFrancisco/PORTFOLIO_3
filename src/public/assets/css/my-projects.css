@@ -347,7 +347,6 @@ footer p a:hover {
         display: flex;
         justify-content: end;
         align-items: center;
-        padding-right: 10px;
     }
 
     .button-container {
