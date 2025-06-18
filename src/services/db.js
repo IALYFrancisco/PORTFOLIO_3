@@ -17,9 +17,14 @@ async function _Connection() {
 }
 
 async function _Disconnection() {
-    await mongoose.disconnect()
-        .then(()=>{console.log("Database disconnection successfully")})
-        .catch((error)=>{console.log(error)})
+    if(isConnected){
+        await mongoose.disconnect()
+            .then(()=>{
+                isConnected = false
+                console.log("Database disconnection successfully")
+            })
+            .catch((error)=>{console.log(error)})
+    }
 }
 
 module.exports = {
