@@ -12,7 +12,7 @@ function _logout(request, response) {
             request.flash('error', 'Disconnection error.')
             return response.redirect("/backoffice")
         }
-        response.clearCookie('connect.sid')
+        response.clearCookie("connect.sid")
         response.redirect("/authentication/login")
     })
 }

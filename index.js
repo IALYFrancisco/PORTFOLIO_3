@@ -9,7 +9,7 @@ const session = require('express-session')
 const flash = require('connect-flash')
 const { isAuthenticated, isAdmin } = require('./src/services/auth_services')
 const MongoStore = require('connect-mongo')
-const { connection } = require('./src/services/db')
+const { connection, disconnection } = require('./src/services/db')
 const app = express();
 
 dotenv.config();
@@ -30,13 +30,13 @@ app.use(async (request, response, next) => {
 app.use(session({
   secret: process.env.SESSION_SECRET,
   resave: false,
-  saveUninitialized: false,
+  saveUninitialized: true,
   store: MongoStore.create({
     mongoUrl: process.env.DB_URI,
     ttl: 14 * 24 * 60 * 60
   }),
   cookie: {
-    secure: true,
+    secure: JSON.parse(process.env.APP_PROD),
     maxAge: 1000 * 60 * 60 * 24
   }
 }))
@@ -59,3 +59,8 @@ app.use('/authentication', auth_routes.auth_routes)
 app.listen(process.env.APP_PORT, () => {
   console.log(`The application is listening at ${process.env.APP_ADDRESS}`);
 });
+
+process.on('SIGINT', async () => {
+  await disconnection()
+  process.exit(0)
+})
