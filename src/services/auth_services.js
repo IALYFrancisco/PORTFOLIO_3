@@ -6,7 +6,13 @@ function _goToLogin(request, response){
 }
 
 function _logout(request, response) {
-    request.session.destroy(()=>{
+    request.session.destroy((err)=>{
+        if(err){
+            console.log("Disconnection error.", err)
+            request.flash('error', 'Disconnection error.')
+            return response.redirect("/backoffice")
+        }
+        response.clearCookie('connect.sid')
         response.redirect("/authentication/login")
     })
 }
