@@ -1,5 +1,4 @@
 const { Users } = require("../models/usersModel")
-const { connection, disconnection } = require("../services/db")
 const bcrypt = require('bcrypt')
 
 function _goToLogin(request, response){
@@ -15,9 +14,7 @@ function _logout(request, response) {
 async function _checkLogin(request, response){
     try {
         const { email, password } = request.body
-        await connection()
         const user = await Users.findOne({email})
-        await disconnection()
         if(!user){
             request.flash('error', "User doesn't exist!")
             return response.redirect("/authentication/login")
