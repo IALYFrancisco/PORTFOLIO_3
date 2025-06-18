@@ -49,5 +49,5 @@ app.use('/backoffice', isAuthenticated, isAdmin, backoffice_routes.backoffice_ro
 app.use('/authentication', auth_routes.auth_routes)
 
 app.listen(process.env.APP_PORT, () => {
-  console.log(`L'application est en cours d'exécution sur ${process.env.APP_ADDRESS}`);
+  console.log(`The application is listening at ${process.env.APP_ADDRESS}`);
 });
