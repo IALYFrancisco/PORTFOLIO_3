@@ -8,6 +8,7 @@ const backoffice_routes = require('./src/routes/backoffice_routes')
 const session = require('express-session')
 const flash = require('connect-flash')
 const { isAuthenticated, isAdmin } = require('./src/services/auth_services')
+const MongoStore = require('connect-mongo')
 const app = express();
 
 dotenv.config();
