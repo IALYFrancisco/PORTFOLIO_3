@@ -30,7 +30,15 @@ app.use(async (request, response, next) => {
 app.use(session({
   secret: process.env.SESSION_SECRET,
   resave: false,
-  saveUninitialized: true
+  saveUninitialized: false,
+  store: MongoStore.create({
+    mongoUrl: process.env.DB_URI,
+    ttl: 14 * 24 * 60 * 60
+  }),
+  cookie: {
+    secure: true,
+    maxAge: 1000 * 60 * 60 * 24
+  }
 }))
 
 app.use(flash())
