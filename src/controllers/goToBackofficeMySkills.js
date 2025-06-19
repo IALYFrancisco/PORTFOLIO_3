@@ -2,7 +2,7 @@ function goToBackofficeMySkills( request, response ) {
 
     let list_of_my_skills = new Array(
         {
-          skill_image_logo_file_url : "assets/icon/icons8-javascript-color/icons8-javascript-100.png",
+          skill_image_logo_file_url : "assets/images/logo-de-javascript.png",
           skill_name : "javascript",
           knowledge_level : 60,
           known_library : [
@@ -10,7 +10,7 @@ function goToBackofficeMySkills( request, response ) {
           ]
         },
         {
-          skill_image_logo_file_url : "assets/icon/icons8-angular-color/icons8-angular-100.png",
+          skill_image_logo_file_url : "assets/images/logo-de-angular.png",
           skill_name : "angular",
           knowledge_level : 40,
           known_library : [
