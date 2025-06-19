@@ -112,11 +112,11 @@ body header nav ul li a {
     color: white;
 }
 
-body header div.menu {
+body header .menu {
     display: none;
 }
 
-body header div.menu img {
+body header .menu img {
     width: 30px;
 }
 
@@ -151,12 +151,12 @@ body main {
     margin: auto;
 }
 
-body main div.left {
+body main .left {
     color: white;
     width: 60%;
 }
 
-body main div.left p {
+body main .left p {
     width: 100%;
     text-align: justify;
     justify-content: center;
@@ -171,7 +171,7 @@ body main .left p .important_word a {
     font-weight: bold;
 }
 
-body main div.left p span.important_word a:hover {
+body main .left p span.important_word a:hover {
     text-decoration: underline;
 }
 
@@ -241,7 +241,7 @@ footer p a:hover {
         display: none;
     }
 
-    body header div.menu {
+    body header .menu {
         display: block;
     }
 
