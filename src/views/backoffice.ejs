@@ -23,24 +23,7 @@
     <main id="container">
         <%- include('../partials/backoffice/BO_sidebar') -%>
         <main id="right">
-            <nav id="nav_right">
-                <ul>
-                    <li>
-                        <a href="/">
-                            Home
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/authentication/logout">
-                            Logout
-                        </a>
-                    </li>
-                    <li>
-                        <p class="user-info" style="color: green; font-weight: 900;"><%- user.name %>:<%- user.role %></p>
-                    </li>
-                </ul>
-            </nav>
-            <hr>
+            <%- include('../partials/backoffice/header') %>
             <div id="container_BO_my_skills">
                 <div class="action">
                     <h1 class="title">All projects</h1>
