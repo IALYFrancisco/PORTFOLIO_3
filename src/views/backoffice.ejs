@@ -41,7 +41,57 @@
                 </ul>
             </nav>
             <hr>
-            <%- include('../partials/backoffice/main_backoffice_myprojects') -%>
+            <div id="container_BO_my_skills">
+                <div class="action">
+                    <h1 class="title">All projects</h1>
+                    <a href="/backoffice/add-project">
+                        <button>Add project</button>
+                    </a>
+                </div>
+                <div class="statistics">
+                    <ul class="statistic">
+                    <li><span class="number"><%- projectsList.length -%></span> projects</li>|
+                    <li><span class="number">6</span> in progress</li>|
+                    <li><span class="number">10</span> done</li>
+                    </ul>
+                    <form class="filters" method="GET" action="/backoffice">
+                        <select name="filter" id="filter">
+                            <option value="all">All projects</option>
+                            <option value="encours">En cours</option>
+                            <option value="finis">Done</option>
+                        </select>
+                        <input type="search" name="project_name" id="project_name" placeholder="Search a project">
+                        <button>
+                            <img src="assets/images/search.png" alt="">
+                        </button>
+                    </form>
+                </div>
+                <div class="list_of_my_skills">
+                <% if(projectsList.length > 0) {%>
+                    <% projectsList.forEach(element => { %>
+                        <ul>
+                            <li>
+                                <video src="<%- element.movie_file_url %>" mute loop autoplay controls></video>
+                            </li>
+                            <li style="text-transform: uppercase;"> <%- element.name %> </li>
+                            <li><a href="<%- element.host_url %>" target="_blank"><%- element.host_url %></a></li>
+                            <% if( element.type == "" ){ %>    
+                            <li> <%- "-----" %> </li>
+                            <% }else{ %>
+                            <li style="display: flex; text-wrap: wrap;"> <%- element.type %> </li>
+                            <% } %>
+                            <li class="item_action" style="display: flex; justify-content: flex-end; align-items: center;">
+                                Delete  ||  Edit  ||  <span style="display: flex; align-items: center;"> <img style="width: 20px;" src="assets/icon/icons8-info-pastel/icons8-info-100.png" alt=""> </span>
+                            </li>
+                        </ul>
+                    <% }); %>
+                <% } else { %>
+                    <section class="message-container">
+                        <h3>No project, </h3><a href="/backoffice/add-project">add one ?</a>
+                    </section>
+                <% } %>
+                </div>
+            </div>
         </main>
     </main>
 </body>
