@@ -76,6 +76,7 @@ body main#container aside#aside_bar nav#nav_left ul li a img{
 
 body main#container main#right {
     width: 100%;
+    padding: 0 30px;
 }
 
 body main#container main#right nav#nav_right {
@@ -93,7 +94,6 @@ body main#container main#right nav#nav_right ul {
     height: inherit;
     align-items: center;
     justify-content: end;
-    padding-right: 30px;
     column-gap: 30px;
 }
 
@@ -115,7 +115,6 @@ body main#container main#right nav#nav_right ul li a img{
 }
 
 body main#container main#right hr{
-    width: 98%;
     height: 0px;
     margin: auto;
 }
@@ -125,11 +124,9 @@ body main#container main#right #container_BO_my_skills .action {
     height: 50px;
     display: flex;
     justify-content: space-between;
-    padding-right: 20px;
     align-items: center;
     margin-top: 10px;
     margin-bottom: 50px;
-    padding-left: 30px;
 }
 
 body main#container main#right #container_BO_my_skills .action button {
@@ -184,7 +181,6 @@ body main#container main#right #container_BO_my_skills .statistics {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px 0 30px;
     margin-top: -35px;
 }
 
