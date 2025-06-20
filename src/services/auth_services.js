@@ -1,5 +1,4 @@
 const { Users } = require("../models/usersModel")
-const { connection, disconnection } = require("../services/db")
 const bcrypt = require('bcrypt')
 
 function _goToLogin(request, response){
@@ -7,7 +6,13 @@ function _goToLogin(request, response){
 }
 
 function _logout(request, response) {
-    request.session.destroy(()=>{
+    request.session.destroy((err)=>{
+        if(err){
+            console.log("Disconnection error.", err)
+            request.flash('error', 'Disconnection error.')
+            return response.redirect("/backoffice")
+        }
+        response.clearCookie("connect.sid")
         response.redirect("/authentication/login")
     })
 }
@@ -15,9 +20,7 @@ function _logout(request, response) {
 async function _checkLogin(request, response){
     try {
         const { email, password } = request.body
-        await connection()
         const user = await Users.findOne({email})
-        await disconnection()
         if(!user){
             request.flash('error', "User doesn't exist!")
             return response.redirect("/authentication/login")

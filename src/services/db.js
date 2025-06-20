@@ -3,16 +3,28 @@ const dotenv = require('dotenv')
 
 dotenv.config()
 
+let isConnected = false
+
 async function _Connection() {
-    await mongoose.connect(process.env.DB_URI)
-        .then(()=>{console.log("Connection database OK")})
-        .catch((error)=>{console.log(error)})
+    if(!isConnected){
+        await mongoose.connect(process.env.DB_URI)
+            .then(()=>{
+                isConnected = true
+                console.log("Connection database OK")
+            })
+            .catch((error)=>{console.log(error)})
+    }
 }
 
 async function _Disconnection() {
-    await mongoose.disconnect()
-        .then(()=>{console.log("Database disconnection successfully")})
-        .catch((error)=>{console.log(error)})
+    if(isConnected){
+        await mongoose.disconnect()
+            .then(()=>{
+                isConnected = false
+                console.log("Database disconnection successfully")
+            })
+            .catch((error)=>{console.log(error)})
+    }
 }
 
 module.exports = {

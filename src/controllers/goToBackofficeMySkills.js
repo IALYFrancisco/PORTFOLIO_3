@@ -2,7 +2,7 @@ function goToBackofficeMySkills( request, response ) {
 
     let list_of_my_skills = new Array(
         {
-          skill_image_logo_file_url : "assets/icon/icons8-javascript-color/icons8-javascript-100.png",
+          skill_image_logo_file_url : "assets/images/logo-de-javascript.png",
           skill_name : "javascript",
           knowledge_level : 60,
           known_library : [
@@ -10,7 +10,7 @@ function goToBackofficeMySkills( request, response ) {
           ]
         },
         {
-          skill_image_logo_file_url : "assets/icon/icons8-angular-color/icons8-angular-100.png",
+          skill_image_logo_file_url : "assets/images/logo-de-angular.png",
           skill_name : "angular",
           knowledge_level : 40,
           known_library : [
@@ -20,8 +20,8 @@ function goToBackofficeMySkills( request, response ) {
           ]
         },
         {
-          skill_image_logo_file_url : "assets/icon/icons8-vue-js-color/icons8-vue-js-100.png",
-          skill_name : "vue",
+          skill_image_logo_file_url : "assets/images/logo-de-vue.js.png",
+          skill_name : "vue.js",
           knowledge_level : 37,
           known_library : [
             "vuex",
@@ -31,14 +31,14 @@ function goToBackofficeMySkills( request, response ) {
           ]
         },
         {
-          skill_image_logo_file_url : "assets/icon/icons8-mongodb-a-cross-platform-document-oriented-database-program-color/icons8-mongodb-a-cross-platform-document-oriented-database-program-96.png",
+          skill_image_logo_file_url : "assets/images/mongodb.png",
           skill_name : "mongodb",
           knowledge_level : 36,
           known_library : [
           ]
         },
         {
-          skill_image_logo_file_url : "assets/icon/icons8-nodejs-color/icons8-nodejs-100.png",
+          skill_image_logo_file_url : "assets/images/logo-de-node.js.png",
           skill_name : "node",
           knowledge_level : 40,
           known_library : [

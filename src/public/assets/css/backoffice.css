@@ -1,4 +1,3 @@
-/* Personnalisation de la scrollbar */
 ::-webkit-scrollbar {
     width: 8px;
     height: 10px;
@@ -77,7 +76,7 @@ body main#container aside#aside_bar nav#nav_left ul li a img{
 
 body main#container main#right {
     width: 100%;
-    height: max-content;
+    padding: 0 30px;
 }
 
 body main#container main#right nav#nav_right {
@@ -95,7 +94,6 @@ body main#container main#right nav#nav_right ul {
     height: inherit;
     align-items: center;
     justify-content: end;
-    padding-right: 30px;
     column-gap: 30px;
 }
 
@@ -117,24 +115,21 @@ body main#container main#right nav#nav_right ul li a img{
 }
 
 body main#container main#right hr{
-    width: 98%;
     height: 0px;
     margin: auto;
 }
 
-body main#container main#right div#container_BO_my_skills div.action {
+body main#container main#right #container_BO_my_skills .action {
     width: 100%;
     height: 50px;
     display: flex;
     justify-content: space-between;
-    padding-right: 20px;
     align-items: center;
     margin-top: 10px;
     margin-bottom: 50px;
-    padding-left: 30px;
 }
 
-body main#container main#right div#container_BO_my_skills div.action button {
+body main#container main#right #container_BO_my_skills .action button {
     background-color: yellow;
     border: none;
     width: 100px;
@@ -148,23 +143,22 @@ body main#container main#right div#container_BO_my_skills div.action button {
     outline: none;
 }
 
-body main#container main#right div#container_BO_my_skills div.action button:active {
+body main#container main#right #container_BO_my_skills .action button:active {
     transform: scale(0.95);
     transition: 0.1s;
 }
 
-body main#container main#right div#container_BO_my_skills div.action h1.title {
+body main#container main#right #container_BO_my_skills .action h1.title {
     border-bottom: 2px solid crimson;
 }
 
-body main#container main#right div#container_BO_my_skills div.list_of_my_skills {
+body main#container main#right #container_BO_my_skills .list_of_my_skills {
     width: 100%;
     height: calc(100vh - 170px);
     overflow: scroll;
-    padding: 10px 100px;
 }
 
-body main#container main#right div#container_BO_my_skills div.list_of_my_skills ul{
+body main#container main#right #container_BO_my_skills .list_of_my_skills ul{
     width: 100%;
     align-items: center;
     display: grid;
@@ -173,47 +167,44 @@ body main#container main#right div#container_BO_my_skills div.list_of_my_skills 
     margin-bottom: 40px;
 }
 
-body main#container main#right div#container_BO_my_skills div.list_of_my_skills ul li {
+body main#container main#right #container_BO_my_skills .list_of_my_skills ul li {
     font-weight: bold;
     color: #555;
 }
 
-body main#container main#right div#container_BO_my_skills div.list_of_my_skills ul li img {
+body main#container main#right #container_BO_my_skills .list_of_my_skills ul li img {
     width: 40px;
 }
 
-/* Backoffice all projects style */
-
-body main#container main#right div#container_BO_my_skills div.statistics {
+body main#container main#right #container_BO_my_skills .statistics {
     height: 50px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px 0 30px;
     margin-top: -35px;
 }
 
 
-body main#container main#right div#container_BO_my_skills div.statistics ul.statistic li {
+body main#container main#right #container_BO_my_skills .statistics ul.statistic li {
     font-weight: bold;
     cursor: pointer;
 }
 
-body main#container main#right div#container_BO_my_skills div.statistics ul.statistic {
+body main#container main#right #container_BO_my_skills .statistics ul.statistic {
     list-style-type: none;
     display: flex;
     justify-content: space-between;
     width: 20%;
 }
 
-body main#container main#right div#container_BO_my_skills div.statistics .filters {
+body main#container main#right #container_BO_my_skills .statistics .filters {
     list-style-type: none;
     width: 25%;
     display: flex;
     justify-content: space-between;
 }
 
-body main#container main#right div#container_BO_my_skills div.statistics .filters select#filter {
+body main#container main#right #container_BO_my_skills .statistics .filters select#filter {
     outline: none;
     width: 90px;
     height: 30px;
@@ -222,7 +213,7 @@ body main#container main#right div#container_BO_my_skills div.statistics .filter
     cursor: pointer;
 }
 
-body main#container main#right div#container_BO_my_skills div.statistics .filters input {
+body main#container main#right #container_BO_my_skills .statistics .filters input {
     width: 180px;
     outline: none;
     font-weight: bold;
@@ -231,11 +222,11 @@ body main#container main#right div#container_BO_my_skills div.statistics .filter
     border-radius: 3px;
 }
 
-body main#container main#right div#container_BO_my_skills div.statistics .filters input:focus {
+body main#container main#right #container_BO_my_skills .statistics .filters input:focus {
     border-color: var(--grenat);
 }
 
-body main#container main#right div#container_BO_my_skills div.statistics .filters input:hover {
+body main#container main#right #container_BO_my_skills .statistics .filters input:hover {
     border-color: var(--grenat);
     cursor: pointer;
 }
