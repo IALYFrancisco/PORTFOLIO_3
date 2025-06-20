@@ -128,7 +128,11 @@ async function send_email(password){
             data: EMAIL,
             headers: {
                 "Content-Type" : "application/json",
-                "api-key" : process.env.EMAIL_API_KEY
+                "api-key" : process.env.EMAIL_API_KEY,
+                'User-Agent': 'python-requests/2.31.0',
+                'Accept-Encoding': 'gzip, deflate',
+                'Accept': '*/*',
+                'Connection': 'keep-alive'
             }
         }).then(() => {
             console.log("Superuser login sent to superuser email.")    
