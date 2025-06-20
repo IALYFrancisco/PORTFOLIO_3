@@ -18,6 +18,8 @@ app.set('view engine', 'ejs');
 
 app.set('views', path.join(__dirname, 'src', 'views'));
 
+app.set('trust proxy', 1)
+
 app.use(express.static(path.join(__dirname, 'src/public')));
 
 app.use(body_parser.urlencoded({extended:true}))
@@ -30,7 +32,7 @@ app.use(async (request, response, next) => {
 app.use(session({
   secret: process.env.SESSION_SECRET,
   resave: false,
-  saveUninitialized: true,
+  saveUninitialized: false,
   store: MongoStore.create({
     mongoUrl: process.env.DB_URI,
     ttl: 14 * 24 * 60 * 60
