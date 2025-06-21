@@ -26,7 +26,7 @@ async function _checkLogin(request, response){
             return response.redirect("/authentication/login")
         }
         if(user && await comparePassword(password, user.password)){
-            request.session.user = {name : user.name, email : user.email, role : user.role}
+            request.session.user = {name : user.name, email : user.email, role : user.role, profile: user.profile}
             return response.redirect("/backoffice")
         }else{
             request.flash('error', "Email or password incorrect.")
