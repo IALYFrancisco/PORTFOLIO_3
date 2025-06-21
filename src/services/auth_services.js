@@ -64,6 +64,10 @@ async function _zappLogin (request, response, next){
     return next()
 }
 
+async function Register(request, response) {
+    
+}
+
 module.exports = {
     goToLogin : _goToLogin,
     checkLogin : _checkLogin,
