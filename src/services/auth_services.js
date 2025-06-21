@@ -84,5 +84,6 @@ module.exports = {
     isAuthenticated : _isAuthenticated,
     logout : _logout,
     zappLogin : _zappLogin,
-    _Register: __Register__
+    _Register: __Register__,
+    Register: _Register
 }
