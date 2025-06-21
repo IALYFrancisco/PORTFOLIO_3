@@ -74,7 +74,7 @@ async function _Register(request, response) {
             request.flash('error', 'An user with this email already exist.')
             response.status(409).redirect("/authentication/register")
         }
-        request.body.password = Hash
+        request.body.password = await Hashpassword(request.body.password)
         let newUser = Users(request.body)
         let result = await newUser.save()
         if(result){
