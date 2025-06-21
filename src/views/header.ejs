@@ -19,9 +19,11 @@
     </nav>
     <% if(user){ %>
         <div class="button-container">
-            <a href="/backoffice">
-                <button>Dashboard</button>
-            </a>
+            <% if(user.role === "admin"){ %>
+                <a href="/backoffice">
+                    <button>Dashboard</button>
+                </a>
+            <% } %>
             <div class="border">
                 <div class="profile">
                     <img src="<%- user.profile %>" alt="Default profile.">
