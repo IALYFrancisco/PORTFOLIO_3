@@ -19,8 +19,8 @@ function _logout(request, response) {
 
 async function _checkLogin(request, response){
     try {
-        const { email, password } = request.body
-        const user = await Users.findOne({email})
+        const { _email, password } = request.body
+        const user = await Users.findOne({email: _email})
         if(!user){
             request.flash('error', "User doesn't exist!")
             return response.redirect("/authentication/login")
