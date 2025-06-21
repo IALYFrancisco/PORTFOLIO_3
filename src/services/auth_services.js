@@ -70,7 +70,18 @@ async function __Register__ (request, response) {
 
 async function _Register(request, response) {
     try{
-        console.log(request.body)
+        let user = await Users.findOne({ email: request.body.email})
+        console.log(user)
+        if(user){
+            request.flash('error', 'An user with this email already exist.')
+            response.status(409).redirect("/authentication/register")
+        }
+        let newUser = Users(request.body)
+        let result = await newUser.save()
+        if(result){
+            request.flash('success', "Congratulations 🎉, you are registered.")
+            response.status(201).redirect('/authentication/login')
+        }
     }catch(err){
         console.log(err)
         request.flash('err', 'Error registering, try later.')
