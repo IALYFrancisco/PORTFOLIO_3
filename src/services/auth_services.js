@@ -19,13 +19,12 @@ function _logout(request, response) {
 
 async function _checkLogin(request, response){
     try {
-        const { _email, password } = request.body
-        const user = await Users.findOne({email: _email})
+        const user = await Users.findOne({email: request.body.email})
         if(!user){
             request.flash('error', "User doesn't exist!")
             return response.redirect("/authentication/login")
         }
-        if(user && await comparePassword(password, user.password)){
+        if(user && await comparePassword(request.body.password, user.password)){
             request.session.user = {name : user.name, email : user.email, role : user.role, profile: user.profile}
             return response.redirect("/backoffice")
         }else{
