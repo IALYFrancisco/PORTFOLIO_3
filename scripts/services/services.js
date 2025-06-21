@@ -1,5 +1,5 @@
 const { connection, disconnection } = require("../../src/services/db")
-const { Users } = require('../../src/models/usersModel')
+const { Users } = require('../../src/models/User')
 const fs = require('fs')
 const os = require('os')
 const bcrypt = require('bcrypt')

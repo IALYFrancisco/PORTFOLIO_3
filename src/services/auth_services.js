@@ -1,4 +1,4 @@
-const { Users } = require("../models/usersModel")
+const { Users } = require("../models/User")
 const bcrypt = require('bcrypt')
 
 function _goToLogin(request, response){
