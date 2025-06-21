@@ -57,9 +57,11 @@
         </li>
         <% if(user){ %>
             <li>
-                <a href="/backoffice">
-                    <button>Dashboard</button>
-                </a>
+                <% if(user.role === "admin"){ %>
+                    <a href="/backoffice">
+                        <button>Dashboard</button>
+                    </a>
+                <% } %>
             </li>
         <% } else { %>
             <li>
