@@ -70,11 +70,11 @@ async function __Register__ (request, response) {
 async function _Register(request, response) {
     try{
         let user = await Users.findOne({ email: request.body.email})
-        console.log(user)
         if(user){
             request.flash('error', 'An user with this email already exist.')
             response.status(409).redirect("/authentication/register")
         }
+        request.body.password = Hash
         let newUser = Users(request.body)
         let result = await newUser.save()
         if(result){
@@ -85,6 +85,10 @@ async function _Register(request, response) {
         console.log(err)
         request.flash('err', 'Error registering, try later.')
     }
+}
+
+async function Hashpassword(plainText){
+    return await bcrypt.hash(plainText, 10)
 }
 
 module.exports = {
