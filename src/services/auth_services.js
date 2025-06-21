@@ -64,8 +64,17 @@ async function _zappLogin (request, response, next){
     return next()
 }
 
-async function Register(request, response) {
-    
+async function __Register__ (request, response) {
+    response.render("Authentication/Register")
+}
+
+async function _Register(request, response) {
+    try{
+        console.log(request.body)
+    }catch(err){
+        console.log(err)
+        request.flash('err', 'Error registering, try later.')
+    }
 }
 
 module.exports = {
@@ -74,5 +83,6 @@ module.exports = {
     isAdmin : _isAdmin,
     isAuthenticated : _isAuthenticated,
     logout : _logout,
-    zappLogin : _zappLogin
+    zappLogin : _zappLogin,
+    _Register: __Register__
 }
