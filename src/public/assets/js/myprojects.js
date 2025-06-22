@@ -1,4 +1,6 @@
 var seeLoreProjectBtn = document.getElementById('seeMoreProjectBtn');
+var profile = document.querySelector('.border')
+var dropdown = document.querySelector('.dropdown-container')
 
 seeLoreProjectBtn.addEventListener("click", (event) => {
        
@@ -10,6 +12,11 @@ seeLoreProjectBtn.addEventListener("click", (event) => {
 
     textIncitation.classList.toggle("toggled");
 
+})
+
+profile.addEventListener('click', () => {
+   console.log(dropdown.classList)
+   dropdown.classList.toggle('active')
 })
 
 document.getElementById('toggleBtn').addEventListener('click', (event) => {
