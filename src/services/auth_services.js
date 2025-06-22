@@ -90,8 +90,6 @@ async function Hashpassword(plainText){
 module.exports = {
     goToLogin : _goToLogin,
     checkLogin : _checkLogin,
-    isAdmin : _isAdmin,
-    isAuthenticated : _isAuthenticated,
     logout : _logout,
     zappLogin : _zappLogin,
     _Register: __Register__,
