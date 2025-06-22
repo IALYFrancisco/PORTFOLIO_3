@@ -1,9 +1,9 @@
 const express = require('express')
-const goToBackoffice = require('../controllers/goToBackoffice')
 const goToAddProject = require('../controllers/ProjectController')
 const goToBackofficeMySkills = require('../controllers/goToBackofficeMySkills')
 const addProjectService = require('../services/addProjectService')
 const { AuthenticatedAndAdmin } = require('../services/auth_services')
+const { goToBackoffice } = require('../services/backoffice')
 const _backoffice_routes = express.Router()
 
 _backoffice_routes.use(AuthenticatedAndAdmin)
