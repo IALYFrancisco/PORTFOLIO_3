@@ -42,14 +42,12 @@ async function _checkLogin(request, response){
     }
 }
 
-// Middleware pour vérifier si l'utilisateur est un admin ou pas
 function _isAdmin(request, response, next){
     if(request.session.user && request.session.user.role == "admin") return next()
     request.flash('error', 'User forbidden')
     response.redirect('/authentication/login')
 }
 
-// Middleware pour vérifer si l'utilisateur est connecté ou pas
 function _isAuthenticated(request, response, next) {
     if (request.session.user) return next()
     request.flash('error', 'You must be connected')
