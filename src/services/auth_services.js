@@ -42,7 +42,7 @@ async function _checkLogin(request, response){
     }
 }
 
-function AuthenticatedAndAdmin(request, response, next) {
+function _AuthenticatedAndAdmin(request, response, next) {
     if(request.session.user && request.session.user.role === "admin") return next()
     request.flash('error', 'You must be authenticated and admin.')
     response.redirect('/authentication/login')
@@ -93,5 +93,6 @@ module.exports = {
     logout : _logout,
     zappLogin : _zappLogin,
     _Register: __Register__,
-    Register: _Register
+    Register: _Register,
+    AuthenticatedAndAdmin: _AuthenticatedAndAdmin
 }
