@@ -82,6 +82,26 @@ body header {
     height: 100%;
     background-color: white;
     border-radius: 3px;
+    padding: 5px;
+}
+
+.user-info {
+    display: flex;
+    color: #333;
+    column-gap: 8px;
+}
+
+.user-info h4 {
+    margin: 5px auto;
+}
+
+.profile-container {
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
 }
 
 .profile {
