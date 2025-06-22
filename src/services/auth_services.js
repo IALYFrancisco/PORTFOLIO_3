@@ -42,6 +42,12 @@ async function _checkLogin(request, response){
     }
 }
 
+function AuthenticatedAndAdmin(request, response, next) {
+    if(request.session.user && request.session.user.role === "admin") return next()
+    request.flash('error', 'You must be authenticated and admin.')
+    response.redirect('/authentication/login')
+}
+
 function _isAdmin(request, response, next){
     if(request.session.user && request.session.user.role == "admin") return next()
     request.flash('error', 'User forbidden')
