@@ -7,7 +7,6 @@ const auth_routes = require('./src/routes/auth_routes')
 const backoffice_routes = require('./src/routes/backoffice_routes')
 const session = require('express-session')
 const flash = require('connect-flash')
-const { isAuthenticated, isAdmin } = require('./src/services/auth_services')
 const MongoStore = require('connect-mongo')
 const { connection, disconnection } = require('./src/services/db')
 const app = express();
@@ -54,7 +53,7 @@ app.use((request, response, next) => {
 
 app.use('/', app_routes)
 
-app.use('/backoffice', isAuthenticated, isAdmin, backoffice_routes.backoffice_routes)
+app.use('/backoffice', backoffice_routes.backoffice_routes)
 
 app.use('/authentication', auth_routes.auth_routes)
 
