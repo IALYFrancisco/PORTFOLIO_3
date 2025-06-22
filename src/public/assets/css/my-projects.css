@@ -76,6 +76,13 @@ body header {
     padding: 2px;
     border: 2px solid rgba(255, 255, 0, 0.321);
     border-radius: 50%;
+    transition: 0.1s;
+    cursor: pointer;
+}
+
+.border:active {
+    transform: scale(0.95);
+    transition: 0.1s;
 }
 
 .profile {
