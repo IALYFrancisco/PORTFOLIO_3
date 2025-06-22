@@ -48,18 +48,6 @@ function AuthenticatedAndAdmin(request, response, next) {
     response.redirect('/authentication/login')
 }
 
-function _isAdmin(request, response, next){
-    if(request.session.user && request.session.user.role == "admin") return next()
-    request.flash('error', 'User forbidden')
-    response.redirect('/authentication/login')
-}
-
-function _isAuthenticated(request, response, next) {
-    if (request.session.user) return next()
-    request.flash('error', 'You must be connected')
-    response.redirect('/authentication/login')
-}
-
 // Fonction pour vérifier le mot de passe
 async function comparePassword(plainPassword, hashedPassword){
     return await bcrypt.compare(plainPassword, hashedPassword)
