@@ -1,7 +1,7 @@
-const getAllProjects = require('../services/getAllProjectsService')
+const projectCollection = require("../models/projectsModel")
 
 async function goToMyProjects(request, response) {
-    const documents = await getAllProjects()
+    const documents = await projectCollection.find()
     response.render('my_projects', {documents})
 }
 

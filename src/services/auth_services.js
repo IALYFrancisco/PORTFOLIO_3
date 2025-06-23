@@ -1,4 +1,4 @@
-const { Users } = require("../models/usersModel")
+const { Users } = require("../models/User")
 const bcrypt = require('bcrypt')
 
 function _goToLogin(request, response){
@@ -19,15 +19,18 @@ function _logout(request, response) {
 
 async function _checkLogin(request, response){
     try {
-        const { email, password } = request.body
-        const user = await Users.findOne({email})
+        const user = await Users.findOne({email: request.body.email})
         if(!user){
             request.flash('error', "User doesn't exist!")
             return response.redirect("/authentication/login")
         }
-        if(user && await comparePassword(password, user.password)){
+        if(user && await comparePassword(request.body.password, user.password)){
             request.session.user = {name : user.name, email : user.email, role : user.role, profile: user.profile}
-            return response.redirect("/backoffice")
+            if(user.role === "admin"){
+                return response.redirect("/backoffice")
+            }else{
+                return response.redirect("/")
+            }
         }else{
             request.flash('error', "Email or password incorrect.")
             return response.redirect("/authentication/login")
@@ -39,17 +42,9 @@ async function _checkLogin(request, response){
     }
 }
 
-// Middleware pour vérifier si l'utilisateur est un admin ou pas
-function _isAdmin(request, response, next){
-    if(request.session.user && request.session.user.role == "admin") return next()
-    request.flash('error', 'User forbidden')
-    response.redirect('/authentication/login')
-}
-
-// Middleware pour vérifer si l'utilisateur est connecté ou pas
-function _isAuthenticated(request, response, next) {
-    if (request.session.user) return next()
-    request.flash('error', 'You must be connected')
+function _AuthenticatedAndAdmin(request, response, next) {
+    if(request.session.user && request.session.user.role === "admin") return next()
+    request.flash('error', 'You must be authenticated and admin.')
     response.redirect('/authentication/login')
 }
 
@@ -64,11 +59,40 @@ async function _zappLogin (request, response, next){
     return next()
 }
 
+async function __Register__ (request, response) {
+    response.render("Authentication/Register")
+}
+
+async function _Register(request, response) {
+    try{
+        let user = await Users.findOne({ email: request.body.email})
+        if(user){
+            request.flash('error', 'An user with this email already exist.')
+            response.status(409).redirect("/authentication/register")
+        }
+        request.body.password = await Hashpassword(request.body.password)
+        let newUser = Users(request.body)
+        let result = await newUser.save()
+        if(result){
+            request.flash('success', "Congratulations 🎉, you are registered.")
+            response.status(201).redirect('/authentication/login')
+        }
+    }catch(err){
+        console.log(err)
+        request.flash('err', 'Error registering, try later.')
+    }
+}
+
+async function Hashpassword(plainText){
+    return await bcrypt.hash(plainText, 10)
+}
+
 module.exports = {
     goToLogin : _goToLogin,
     checkLogin : _checkLogin,
-    isAdmin : _isAdmin,
-    isAuthenticated : _isAuthenticated,
     logout : _logout,
-    zappLogin : _zappLogin
+    zappLogin : _zappLogin,
+    _Register: __Register__,
+    Register: _Register,
+    AuthenticatedAndAdmin: _AuthenticatedAndAdmin
 }

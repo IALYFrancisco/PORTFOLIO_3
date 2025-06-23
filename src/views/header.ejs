@@ -19,12 +19,34 @@
     </nav>
     <% if(user){ %>
         <div class="button-container">
-            <a href="/backoffice">
-                <button>Dashboard</button>
-            </a>
+            <% if(user.role === "admin"){ %>
+                <a href="/backoffice">
+                    <button>Dashboard</button>
+                </a>
+            <% } %>
             <div class="border">
                 <div class="profile">
                     <img src="<%- user.profile %>" alt="Default profile.">
+                </div>
+                <div class="dropdown-container">
+                    <div class="dropdown">
+                        <div class="user-info">
+                            <div class="profile-container">
+                                <img src="<%- user.profile %>" alt="User name">
+                            </div>
+                            <div class="name">
+                                <h4><%- user.name %></h4>
+                                <h5><%- user.email %></h5>
+                            </div>
+                        </div>
+                        <hr>
+                        <ul class="actions">
+                            <li>
+                                <img src="assets/images/deconnection.png" alt="">
+                                <a href="/authentication/logout">Logout</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -55,9 +77,11 @@
         </li>
         <% if(user){ %>
             <li>
-                <a href="/backoffice">
-                    <button>Dashboard</button>
-                </a>
+                <% if(user.role === "admin"){ %>
+                    <a href="/backoffice">
+                        <button>Dashboard</button>
+                    </a>
+                <% } %>
             </li>
         <% } else { %>
             <li>
