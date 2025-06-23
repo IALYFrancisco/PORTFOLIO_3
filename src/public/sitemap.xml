@@ -1,13 +1,3 @@
-
-app_routes.get('/', goToHome)
-
-app_routes.get('/my-skills', goToMySkills)
-
-app_routes.get('/my-contacts', goToMyContacts);
-
-app_routes.get('/my-projects', goToMyProjects)
-
-
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset 
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
