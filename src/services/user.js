@@ -1,7 +1,6 @@
 const express = require('express')
 const multer = require('multer')
 const path = require('path')
-const router = express.Router()
 
 const storage = multer.diskStorage({
     destination: (request, file, cb) => {
@@ -29,6 +28,10 @@ const upload = multer({
     limits: { fileSize: 15 * 1024 * 1024 }
 })
 
-function UploadProfile(request, response){
-    
+function _UploadProfile(request, response){
+
+}
+
+module.exports = {
+    UploadProfile: _UploadProfile
 }
