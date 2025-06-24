@@ -3,17 +3,7 @@ const multer = require('multer')
 const path = require('path')
 const { Users } = require('../models/User')
 
-const storage = multer.diskStorage({
-    destination: (request, file, cb) => {
-        cb(null, './src/public/uploads/profiles')
-    },
-    filename: (request, file, cb) => {
-        const ext = path.extname(file.originalname)
-        const uniqueName = Date.now() + '-' + Math.round(Math.random() * 1E9) + ext
-        request.uniqueName = uniqueName
-        cb(null, uniqueName)
-    }
-})
+const storage = multer.memoryStorage()
 
 const fileFilter = (request, file, cb) => {
     const allowedTypes = ['image/jpeg', 'image/png', 'image/jpg']
