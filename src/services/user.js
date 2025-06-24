@@ -31,7 +31,7 @@ const _Upload = multer({
 
 function _UploadProfile(request, response){
     try{
-        // let userID = request.user._id
+        let userID = request.user._id
         let filePath = `${process.env.APP_ADDRESS}/uploads/profiles/${request.uniqueName}`
         response.status(200).json({
             message: "Picture uploaded.",
