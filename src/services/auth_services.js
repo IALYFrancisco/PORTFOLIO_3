@@ -103,5 +103,6 @@ module.exports = {
     zappLogin : _zappLogin,
     _Register: __Register__,
     Register: _Register,
-    AuthenticatedAndAdmin: _AuthenticatedAndAdmin
+    AuthenticatedAndAdmin: _AuthenticatedAndAdmin,
+    Authenticated: _Authenticated
 }
