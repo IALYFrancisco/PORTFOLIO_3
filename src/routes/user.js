@@ -1,7 +1,11 @@
-import { UploadProfile } from '../services/user'
+const { UploadProfile } = require('../services/user')
 
 const express = require('express')
 
-export const user_router = express.Router()
+const _user_router = express.Router()
 
-user_router.post('/profile', UploadProfile)
+_user_router.post('/profile', UploadProfile)
+
+module.exports = {
+    user_router: _user_router
+}
