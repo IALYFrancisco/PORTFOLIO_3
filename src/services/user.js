@@ -14,6 +14,15 @@ const storage = multer.diskStorage({
     }
 })
 
+const fileFilter = (request, file, cb) => {
+    const allowedTypes = ['image/jpeg', 'image/png', 'image/jpg']
+    if(allowedTypes.includes(file.mimeType)){
+        cb(null, true)
+    }else{
+        cb(new Error("File type not allowed."), false)
+    }
+}
+
 function UploadProfile(request, response){
 
 }
