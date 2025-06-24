@@ -22,16 +22,16 @@ const fileFilter = (request, file, cb) => {
     }
 }
 
-const upload = multer({
+const _Upload = multer({
     storage: storage,
     fileFilter: fileFilter,
     limits: { fileSize: 15 * 1024 * 1024 }
 })
 
 function _UploadProfile(request, response){
-
 }
 
 module.exports = {
-    UploadProfile: _UploadProfile
+    UploadProfile: _UploadProfile,
+    Upload: _Upload
 }
