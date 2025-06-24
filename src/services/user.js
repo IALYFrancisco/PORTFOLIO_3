@@ -33,7 +33,8 @@ const _Upload = multer({
 async function _UploadProfile(request, response){
     try{
         let filePath = `${process.env.APP_ADDRESS}/uploads/profiles/${request.uniqueName}`
-        await Users.findByIdAndUpdate(request.session.user._id, { profile: `uploads/profiles/${request.uniqueName}` })
+        let results = await Users.findByIdAndUpdate(request.session.user._id, { profile: `uploads/profiles/${request.uniqueName}` })
+        request.session.user.profile = `uploads/profiles/${request.uniqueName}`
         response.status(200).json({
             message: "Picture uploaded.",
             picture: filePath
