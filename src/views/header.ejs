@@ -26,13 +26,13 @@
             <% } %>
             <div class="border">
                 <div class="profile">
-                    <img src="<%- user.profile %>" alt="Default profile.">
+                    <img src="<%- user.profile %>" alt="<%- user.name %>" title="<%- user.name %>">
                 </div>
                 <div class="dropdown-container">
                     <div class="dropdown">
                         <div class="user-info">
                             <div class="profile-container">
-                                <img src="<%- user.profile %>" alt="User name">
+                                <img src="<%- user.profile %>" alt="<%- user.name %>" title="<%- user.name %>">
                             </div>
                             <div class="name">
                                 <h4><%- user.name %></h4>
@@ -42,7 +42,7 @@
                         <hr>
                         <ul class="actions">
                             <li>
-                                <img src="assets/images/deconnection.png" alt="">
+                                <img src="assets/images/logout.png" alt="Icône de déconnexion.">
                                 <a href="/authentication/logout">Logout</a>
                             </li>
                         </ul>
