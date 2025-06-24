@@ -19,7 +19,13 @@ app.set('views', path.join(__dirname, 'src', 'views'));
 
 app.set('trust proxy', 1)
 
-app.use(express.static(path.join(__dirname, 'src/public')));
+app.use(express.static(path.join(__dirname, 'src/public'), {
+  setHeaders: (res, filePath) => {
+    if(filePath.endsWith('.xml')) {
+      res.setHeader("Content-Type", "application/xml")
+    }
+  }
+}));
 
 app.use(body_parser.urlencoded({extended:true}))
 
