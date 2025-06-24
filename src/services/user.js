@@ -10,7 +10,7 @@ const fileFilter = (request, file, cb) => {
     if(allowedTypes.includes(file.mimetype)){
         cb(null, true)
     }else{
-        cb(new Error("File type not allowed."), false)
+        cb(new Error("File type not supported."), false)
     }
 }
 
