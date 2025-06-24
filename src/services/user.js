@@ -2,6 +2,7 @@ const express = require('express')
 const multer = require('multer')
 const path = require('path')
 const { Users } = require('../models/User')
+const sharp = require('sharp')
 
 const storage = multer.memoryStorage()
 
@@ -22,14 +23,18 @@ const _Upload = multer({
 
 async function _UploadProfile(request, response){
     try{
-        let filePath = `${process.env.APP_ADDRESS}/uploads/profiles/${request.uniqueName}`
-        let results = await Users.findByIdAndUpdate(request.session.user._id, { profile: `uploads/profiles/${request.uniqueName}` })
-        request.session.user.profile = `uploads/profiles/${request.uniqueName}`
-        response.status(200).json({
-            message: "Picture uploaded.",
-            picture: filePath
+        if(!request.file) return response.status(400).json("No picture provided.")
+        let fileName = `${Date.now()}-${Math.round(Math.random() * 1E9)}.jpeg`
+        let output = `./src/public/uploads/profiles/${fileName}`
+        await sharp(request.file.buffer).jpeg({ quality: 60 }).toFile(output)
+        await Users.findByIdAndUpdate(request.session.user._id, { profile: `uploads/profiles/${fileName}` })
+        request.session.user.profile = `uploads/profiles/${fileName}`
+        response.status(201).json({
+            message: "Profile image changed successfully.",
+            image: `${process.env.APP_ADDRESS}/uploads/profiles/${fileName}`
         })
     }catch(err){
+        console.log(err)
         response.status(500).json({
             error: err.message
         })
