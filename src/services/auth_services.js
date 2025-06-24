@@ -42,6 +42,15 @@ async function _checkLogin(request, response){
     }
 }
 
+function _Authenticated(request, response, next){
+    if(request.session.user){
+        return next()
+    }
+    response.status(401).json({
+        message: "You must be authenticated."
+    })
+}
+
 function _AuthenticatedAndAdmin(request, response, next) {
     if(request.session.user && request.session.user.role === "admin") return next()
     request.flash('error', 'You must be authenticated and admin.')
