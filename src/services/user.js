@@ -1,7 +1,7 @@
 const express = require('express')
 const multer = require('multer')
 const path = require('path')
-const User = require('../models/User')
+const { Users } = require('../models/User')
 
 const storage = multer.diskStorage({
     destination: (request, file, cb) => {
@@ -33,7 +33,7 @@ const _Upload = multer({
 async function _UploadProfile(request, response){
     try{
         let filePath = `${process.env.APP_ADDRESS}/uploads/profiles/${request.uniqueName}`
-        await User.findByIdAndUpdate(request.session.user._id, { profile: `uploads/profiles/${request.uniqueName}` })
+        await Users.findByIdAndUpdate(request.session.user._id, { profile: `uploads/profiles/${request.uniqueName}` })
         response.status(200).json({
             message: "Picture uploaded.",
             picture: filePath
