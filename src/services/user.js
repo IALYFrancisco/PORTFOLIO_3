@@ -23,6 +23,12 @@ const fileFilter = (request, file, cb) => {
     }
 }
 
+const upload = multer({
+    storage: storage,
+    fileFilter: fileFilter,
+    limits: { fileSize: 15 * 1024 * 1024 }
+})
+
 function UploadProfile(request, response){
 
 }
