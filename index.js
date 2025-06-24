@@ -9,6 +9,7 @@ const session = require('express-session')
 const flash = require('connect-flash')
 const MongoStore = require('connect-mongo')
 const { connection, disconnection } = require('./src/services/db')
+const { user_router } = require('./src/routes/user')
 const app = express();
 
 dotenv.config();
@@ -56,6 +57,8 @@ app.use('/', app_routes)
 app.use('/backoffice', backoffice_routes.backoffice_routes)
 
 app.use('/authentication', auth_routes.auth_routes)
+
+app.use('/user', user_router)
 
 app.listen(process.env.APP_PORT, () => {
   console.log(`The application is listening at ${process.env.APP_ADDRESS}`);
