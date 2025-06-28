@@ -25,7 +25,7 @@ async function _checkLogin(request, response){
             return response.redirect("/authentication/login")
         }
         if(user && await comparePassword(request.body.password, user.password)){
-            request.session.user = {name : user.name, email : user.email, role : user.role, profile: user.profile}
+            request.session.user = {_id: user._id, name : user.name, email : user.email, role : user.role, profile: user.profile}
             if(user.role === "admin"){
                 return response.redirect("/backoffice")
             }else{
@@ -40,6 +40,15 @@ async function _checkLogin(request, response){
         request.flash('error', "Failed to log in, try next time")
         return response.redirect("/authentication/login")
     }
+}
+
+function _Authenticated(request, response, next){
+    if(request.session.user){
+        return next()
+    }
+    response.status(401).json({
+        message: "You must be authenticated."
+    })
 }
 
 function _AuthenticatedAndAdmin(request, response, next) {
@@ -94,5 +103,6 @@ module.exports = {
     zappLogin : _zappLogin,
     _Register: __Register__,
     Register: _Register,
-    AuthenticatedAndAdmin: _AuthenticatedAndAdmin
+    AuthenticatedAndAdmin: _AuthenticatedAndAdmin,
+    Authenticated: _Authenticated
 }
