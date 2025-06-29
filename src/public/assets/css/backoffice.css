@@ -153,8 +153,8 @@ body main#container main#right #container_BO_my_skills .action button:active {
     transition: 0.1s;
 }
 
-body main#container main#right #container_BO_my_skills .action h1.title {
-    border-bottom: 2px solid crimson;
+body main#container main#right #container_BO_my_skills .action h1 {
+    border-bottom: 1px solid var(--grenat);
 }
 
 body main#container main#right #container_BO_my_skills .list_of_my_skills {
