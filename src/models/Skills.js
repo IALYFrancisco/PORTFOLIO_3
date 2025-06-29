@@ -9,4 +9,4 @@ const skillsSchema = new mongoose.Schema({
 
 const Skills = new mongoose.model('Skills', skillsSchema)
 
-module.exports = Skills
+module.exports = { Skills : Skills }
