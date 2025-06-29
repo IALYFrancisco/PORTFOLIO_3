@@ -36,5 +36,6 @@ async function AddSkill(request, response){
 
 module.exports = { 
     goToBackoffice: _goToBackoffice,
-    AddSkill : AddSkill
+    AddSkill : AddSkill,
+    GoToAddSkill : GoToAddSkill
 }
