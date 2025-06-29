@@ -17,8 +17,8 @@ async function _goToBackoffice(request, response) {
     }
 }
 
-function GoToAddSkill(request, resposne){
-    resposne.render("Backoffice/AddSkills")
+function GoToAddSkill(request, response){
+    response.render("Backoffice/AddSkills")
 }
 
 async function AddSkill(request, response){
@@ -30,7 +30,7 @@ async function AddSkill(request, response){
         }
     }catch(err){
         response.redirect("/backoffice/add-skill")
-        console.log("Error adding skill.")
+        console.log(err)
     }
 }
 
