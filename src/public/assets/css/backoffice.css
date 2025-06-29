@@ -120,6 +120,10 @@ body main#container main#right hr{
     margin: auto;
 }
 
+body main#container main#right #container_BO_my_skills {
+    margin-top: 30px;
+}
+
 body main#container main#right #container_BO_my_skills .action {
     width: 100%;
     height: 50px;
