@@ -159,8 +159,7 @@ body main#container main#right #container_BO_my_skills .action h1 {
 
 #container_BO_my_skills .list_of_my_skills {
     width: 100%;
-    height: calc(100vh - 170px);
-    overflow: scroll;
+    height: calc(100vh - 230px);
 }
 
 #container_BO_my_skills .list_of_my_skills ul{
