@@ -18,7 +18,7 @@ async function _goToBackoffice(request, response) {
 }
 
 function GoToAddSkill(request, resposne){
-    resposne.render("Backoffice/AddSkill")
+    resposne.render("Backoffice/AddSkills")
 }
 
 async function AddSkill(request, response){
