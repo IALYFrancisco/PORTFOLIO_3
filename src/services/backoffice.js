@@ -17,6 +17,10 @@ async function _goToBackoffice(request, response) {
     }
 }
 
+function GoToAddSkill(request, resposne){
+    resposne.render("Backoffice/AddSkill")
+}
+
 async function AddSkill(request, response){
     try{
         let newSkill = Skills(request.body)
