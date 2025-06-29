@@ -157,13 +157,13 @@ body main#container main#right #container_BO_my_skills .action h1 {
     border-bottom: 1px solid var(--grenat);
 }
 
-body main#container main#right #container_BO_my_skills .list_of_my_skills {
+#container_BO_my_skills .list_of_my_skills {
     width: 100%;
     height: calc(100vh - 170px);
     overflow: scroll;
 }
 
-body main#container main#right #container_BO_my_skills .list_of_my_skills ul{
+#container_BO_my_skills .list_of_my_skills ul{
     width: 100%;
     align-items: center;
     display: grid;
@@ -172,12 +172,12 @@ body main#container main#right #container_BO_my_skills .list_of_my_skills ul{
     margin-bottom: 40px;
 }
 
-body main#container main#right #container_BO_my_skills .list_of_my_skills ul li {
+#container_BO_my_skills .list_of_my_skills ul li {
     font-weight: bold;
     color: #555;
 }
 
-body main#container main#right #container_BO_my_skills .list_of_my_skills ul li img {
+#container_BO_my_skills .list_of_my_skills ul li img {
     width: 40px;
 }
 
