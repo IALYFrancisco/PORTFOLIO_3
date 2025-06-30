@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+    @font-face {
+        font-family: proxima_soft_thin;
+        src: url("../assets/font/ProximaSoft-Thin.ttf");
+    }
+    </style>
+    <link rel="stylesheet" href="../assets/css/add-project.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, follow">
+    <link rel="shortcut icon" href="../assets/images/logo-de-IALY-Francisco-Raymond.png" type="image/x-icon">
+    <title>Add skill | PORTFOLIO</title>
+</head>
+<body>
+    <form action="/backoffice/add-skill" method="POST">
+        <section class="logo-container">
+            <a href="/">
+                <img src="../assets/images/logo-de-IALY-Francisco-Raymond.png" alt="Logo de IALY Francisco Raymond" title="Logo de IALY Francisco Raymond">
+            </a>
+            <h2>Add skill</h2>
+        </section>
+        <section>
+            <label for="name">Skill name</label>
+            <input type="text" name="name" id="name" required>        
+        </section>
+        <section>
+            <label for="logo">Logo</label>
+            <input type="text" name="logo" id="logo" required>
+        </section>
+        <section>
+            <label for="category">Category of project</label>
+            <select name="category" id="category" required>
+                <option value="pl">Programming languages</option>
+                <option value="f">Frameworks</option>
+                <option value="dms">Database management systems</option>
+                <option value="cms">Content management systems</option>
+                <option value="dev-tools">Developement tools</option>
+                <option value="test-tools">Testing tools</option>
+                <option value="cv-tools">Code versioning tools</option>
+            </select>
+        </section>
+        <section>
+            <label for="knowledge_percentage">Skill knowlodge percentage</label>
+            <input type="number" max="100" min="0" name="knowledge_percentage" id="knowledge_percentage" required>
+        </section>
+        <section class="button-container">
+            <button>Submit</button>
+        </section>
+    </form>
+</body>
+</html>

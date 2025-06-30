@@ -1,4 +1,5 @@
 const projectCollection = require("../models/projectsModel")
+const Skills = require("../models/Skills")
 
 async function _goToBackoffice(request, response) {
     if(request.query.project_name){
@@ -16,6 +17,25 @@ async function _goToBackoffice(request, response) {
     }
 }
 
+function GoToAddSkill(request, response){
+    response.render("Backoffice/AddSkills")
+}
+
+async function AddSkill(request, response){
+    try{
+        let newSkill = Skills(request.body)
+        let result = await newSkill.save()
+        if(result){
+            response.redirect("/backoffice/my-skills")
+        }
+    }catch(err){
+        response.redirect("/backoffice/add-skill")
+        console.log(err)
+    }
+}
+
 module.exports = { 
-    goToBackoffice: _goToBackoffice
+    goToBackoffice: _goToBackoffice,
+    AddSkill : AddSkill,
+    GoToAddSkill : GoToAddSkill
 }
