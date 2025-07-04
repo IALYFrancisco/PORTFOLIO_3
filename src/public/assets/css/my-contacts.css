@@ -237,7 +237,7 @@ body main div.left p.Lorem {
     justify-content: center;
 }
 
-body main div.left p.title {
+body main div.left h1 {
     font-size: 45px;
     border-bottom: 2px yellow solid;
     width: 50%;
@@ -293,7 +293,7 @@ body main .my_contacts {
     color: white;
 }
 
-body main .my_contacts p.title {
+body main .my_contacts h1 {
     font-size: 45px;
     border-bottom: 2px yellow solid;
     margin-bottom: 30px;
@@ -394,7 +394,7 @@ body .nav#navResponsive.active ul {
 
 @media only screen and (max-width: 1330px) {
     
-    body main .my_contacts p.title {
+    body main .my_contacts h1 {
         width: max-content;
         margin: auto;
     }
@@ -412,7 +412,7 @@ body .nav#navResponsive.active ul {
         margin: auto;
     }
     
-    body main div.left p.title {
+    body main div.left h1 {
         font-size: 2rem;
         width: 100%;
         margin: auto;
@@ -420,7 +420,7 @@ body .nav#navResponsive.active ul {
         margin-bottom: 20px;
     }
 
-    body main .my_contacts p.title {
+    body main .my_contacts h1 {
         font-size: 2rem;
         text-align: center;
         width: 100%;
