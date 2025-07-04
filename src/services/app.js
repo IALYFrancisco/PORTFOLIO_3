@@ -7,11 +7,16 @@ function goToHome(request, response) {
     response.render('home');
 }
 
+function goToMySkills(request, response){
+    response.render('my_skills');
+}
+
 function goToMyContacts(request, response){
     response.render('my_contacts')
 }
 
 module.exports = { 
     goToMyContacts : goToMyContacts,
-    goToHome : goToHome
+    goToHome : goToHome,
+    goToMySkills: goToMySkills
 }
