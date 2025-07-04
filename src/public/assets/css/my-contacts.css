@@ -210,6 +210,7 @@ body main {
 
 .my_contacts {
     width: 100%;
+    margin: 50px auto;
 }
 
 .my_contacts h1 {
@@ -302,6 +303,18 @@ body .nav#navResponsive.active ul {
     height: 170px;
     padding: 10px;
     transition: 0.3s ease-in-out;
+}
+
+.left {
+    width: 60%;
+}
+
+.left p {
+    color: white;
+}
+
+.left span {
+    color: yellow;
 }
 
 @media only screen and (max-width: 1300px) {
