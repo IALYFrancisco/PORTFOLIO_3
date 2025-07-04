@@ -37,7 +37,6 @@ body {
 
 body header {
     width: 100%;
-    max-width: 770px;
     margin: auto;
     height: 70px;
     display: flex;
@@ -205,6 +204,8 @@ body header nav ul li a {
 
 body main {
     width: 100%;
+    max-width: 900px;
+    margin: auto;
 }
 
 body main .my_contacts {
