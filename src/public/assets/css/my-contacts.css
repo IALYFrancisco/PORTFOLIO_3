@@ -341,6 +341,18 @@ textarea {
     border-bottom-right-radius: 5px;
 }
 
+.gallery li:first-child img {
+    margin-top: -65px;
+}
+
+.gallery li:nth-child(2) img{
+    margin-top: -50px;
+}
+
+.gallery li:last-child img {
+    margin-top: -60px;
+}
+
 .gallery li::before {
     position: absolute;
     content: '';
@@ -351,7 +363,7 @@ textarea {
 }
 
 .gallery li:hover::before{
-    background: #58184556;
+    background-color: transparent;
     transition: background-color .5s;
     cursor: pointer;
 }
