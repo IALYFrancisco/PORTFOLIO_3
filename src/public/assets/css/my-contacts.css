@@ -365,6 +365,12 @@ textarea {
     color: white;
 }
 
+.socials_media {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
 .socials_media img {
     width: 50px;
 }
@@ -378,7 +384,6 @@ textarea {
 
 .right a {
     color: white;
-    font-weight: 600;
     font-size: 14px;
     width: 100%;
     text-align: center;
