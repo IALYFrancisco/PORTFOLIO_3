@@ -1,3 +1,32 @@
+<ul class="overlay">
+    <li>
+        <a href="/">Who am I?</a>
+    </li>
+    <li>
+        <a href="my-skills">My Skills</a>
+    </li>
+    <li>
+        <a href="my-projects">My Projects</a>
+    </li>
+    <li>
+        <a href="my-contacts">My Contacts</a>
+    </li>
+    <% if(user){ %>
+        <li>
+            <% if(user.role === "admin"){ %>
+                <a href="/backoffice">
+                    <button>Dashboard</button>
+                </a>
+            <% } %>
+        </li>
+    <% } else { %>
+        <li>
+            <a href="/authentication/login">
+                <button>Login</button>
+            </a>
+        </li>
+    <% } %>
+</ul>
 <header>
     <div class="none">
     </div>
