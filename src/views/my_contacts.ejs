@@ -14,13 +14,13 @@
     <title>My Contacts | PORTFOLIO</title>
 </head>
 <body>
-    <%- include("header") %>
     <script>
         document.getElementById('toggleBtn').addEventListener('click', (event) => {
             document.getElementById('navResponsive').classList.toggle('active');
         })
     </script> 
-    <main>
+    <main class="container">
+        <%- include("header") %>
         <div class="my_container">
             <p class="title">
                 My Contacts
