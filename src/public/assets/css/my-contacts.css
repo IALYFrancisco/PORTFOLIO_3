@@ -205,10 +205,6 @@ body header nav ul li a {
 
 body main {
     width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-wrap: wrap-reverse;
-    justify-content: center;
 }
 
 body main .my_contacts {
@@ -219,12 +215,12 @@ body main .my_contacts {
 }
 
 body main .my_contacts h1 {
-    font-size: 45px;
+    font-size: 2em;
     border-bottom: 2px yellow solid;
     margin-bottom: 30px;
     padding-bottom: 6px;
     color: white;
-    width: 25%;
+    width: max-content;
 }
 
 body main .my_contacts div.list_contact {
@@ -320,7 +316,6 @@ body .nav#navResponsive.active ul {
 @media only screen and (max-width: 1330px) {
     
     body main .my_contacts h1 {
-        width: max-content;
         margin: auto;
     }
 
@@ -329,7 +324,6 @@ body .nav#navResponsive.active ul {
 @media only screen and (max-width: 1199px) {
 
     body main .my_contacts h1 {
-        font-size: 2rem;
         text-align: center;
         width: 100%;
     }
