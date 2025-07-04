@@ -210,9 +210,6 @@ body main {
 
 body main .my_contacts {
     width: 100%;
-    height: inherit;
-    padding: 20px 160px 0 160px;
-    color: white;
 }
 
 body main .my_contacts h1 {
