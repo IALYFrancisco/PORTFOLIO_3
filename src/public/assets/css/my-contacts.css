@@ -284,7 +284,7 @@ body main div.right img {
     background-color: red;
 }
 
-body main div.my_contacts {
+body main .my_contacts {
     width: 100%;
     height: inherit;
     padding-left: 160px;
@@ -293,7 +293,7 @@ body main div.my_contacts {
     color: white;
 }
 
-body main div.my_contacts p.title {
+body main .my_contacts p.title {
     font-size: 45px;
     border-bottom: 2px yellow solid;
     margin-bottom: 30px;
@@ -302,7 +302,7 @@ body main div.my_contacts p.title {
     width: 25%;
 }
 
-body main div.my_contacts div.list_contact {
+body main .my_contacts div.list_contact {
     width: inherit;
     height: max-content;
     display: flex;
@@ -311,7 +311,7 @@ body main div.my_contacts div.list_contact {
     padding-top: 40px;
 }
 
-body main div.my_contacts div.list_contact div.contact {
+body main .my_contacts div.list_contact div.contact {
     width: 200px;
     height: 80px;
     display: flex;
@@ -323,29 +323,29 @@ body main div.my_contacts div.list_contact div.contact {
     cursor: pointer;
 }
 
-body main div.my_contacts div.list_contact div.contact:hover {
+body main .my_contacts div.list_contact div.contact:hover {
     background-color: rgba(255, 255, 0, 0.185);
     transition: 0.5s all;
     border-radius: 5px;
     padding-bottom: 30px;
 }
 
-body main div.my_contacts div.list_contact div.contact img {
+body main .my_contacts div.list_contact div.contact img {
     width: 50px;
     margin: auto;
 }
 
-body main div.my_contacts div.list_contact label {
+body main .my_contacts div.list_contact label {
     cursor: pointer;
 }
 
-body main div.my_contacts div.list_contact a {
+body main .my_contacts div.list_contact a {
     color: white;
     text-decoration: none;
     transition: 0.3s all;
 }
 
-body main div.my_contacts div.list_contact a:hover {
+body main .my_contacts div.list_contact a:hover {
     color: yellow;
     transition: 0.3s all;
     text-decoration: underline;
@@ -394,7 +394,7 @@ body .nav#navResponsive.active ul {
 
 @media only screen and (max-width: 1330px) {
     
-    body main div.my_contacts p.title {
+    body main .my_contacts p.title {
         width: max-content;
         margin: auto;
     }
@@ -420,7 +420,7 @@ body .nav#navResponsive.active ul {
         margin-bottom: 20px;
     }
 
-    body main div.my_contacts p.title {
+    body main .my_contacts p.title {
         font-size: 2rem;
         text-align: center;
         width: 100%;
@@ -473,14 +473,14 @@ body .nav#navResponsive.active ul {
 
 @media only screen and (max-width: 570px) {
     
-    body main div.my_contacts {
+    body main .my_contacts {
         padding-left: 0px;
         padding-right: 0px;
         margin: auto;
         padding: 20px;
     }
 
-    body main div.my_contacts div.list_contact {
+    body main .my_contacts div.list_contact {
         width: 100%;
         margin: auto;
     }
