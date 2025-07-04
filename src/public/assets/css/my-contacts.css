@@ -224,54 +224,6 @@ body main {
     width: max-content;
 }
 
-.my_contacts div.list_contact {
-    width: inherit;
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    padding-top: 40px;
-}
-
-.my_contacts div.list_contact div.contact {
-    width: 200px;
-    height: 80px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    margin-bottom: 50px;
-    transition: 0.5s all;
-    cursor: pointer;
-}
-
-.my_contacts div.list_contact div.contact:hover {
-    background-color: rgba(255, 255, 0, 0.185);
-    transition: 0.5s all;
-    border-radius: 5px;
-    padding-bottom: 30px;
-}
-
-.my_contacts div.list_contact div.contact img {
-    width: 50px;
-    margin: auto;
-}
-
-.my_contacts div.list_contact label {
-    cursor: pointer;
-}
-
-.my_contacts div.list_contact a {
-    color: white;
-    text-decoration: none;
-    transition: 0.3s all;
-}
-
-.my_contacts div.list_contact a:hover {
-    color: yellow;
-    transition: 0.3s all;
-    text-decoration: underline;
-}
-
 body header div.menu {
     display: none;
 }
@@ -539,17 +491,4 @@ footer p a:hover {
         margin-bottom: 50px;
     }
 
-}
-
-@media only screen and (max-width: 570px) {
-    
-    .my_contacts {
-        margin: auto;
-        padding: 20px;
-    }
-
-    .my_contacts div.list_contact {
-        width: 100%;
-        margin: auto;
-    }
 }
