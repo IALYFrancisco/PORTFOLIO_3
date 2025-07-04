@@ -139,7 +139,7 @@ body header {
     height: 100%;
 }
 
-.button-container button {
+button {
     padding: 10px 13px;
     background-color: yellow;
     border: none;
@@ -152,7 +152,7 @@ body header {
     outline: none;
 }
 
-.button-container button:active {
+button:active {
     transform: scale(0.95);
     transition: 0.1s;
 }
