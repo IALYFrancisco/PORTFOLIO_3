@@ -5,7 +5,12 @@ var overlay = document.querySelector('.overlay')
 
 if(overlay){
    document.getElementById('toggleBtn').addEventListener('click', () => {
-      overlay.classList.toggle('active')
+      overlay.classList.add('active')
+      document.querySelector(".overlay ul").classList.add('active')
+   })
+   document.querySelector('.close').addEventListener('click', () => {
+      overlay.classList.remove('active')
+      document.querySelector(".overlay ul").classList.remove('active')
    })
 }
 
