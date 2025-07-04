@@ -329,6 +329,20 @@ textarea {
     row-gap: 20px;
 }
 
+.gallery h5 {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    transition: opacity .5s;
+    color: #cbcbcb;
+    opacity: 1;
+}
+
+.gallery li:hover h5 {
+    opacity: 0;
+    transition: opacity .5s;
+}
+
 .gallery li {
     height: 125px;
     overflow: hidden;
