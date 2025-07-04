@@ -484,19 +484,6 @@ footer p a:hover {
     }
 }
 
-@media only screen and (max-width: 1199px) {
-
-    .my_contacts h1 {
-        text-align: center;
-        width: 100%;
-    }
-
-    body main {
-        height: max-content;
-   }
-
-}
-
 @media only screen and (max-width: 700px) {
     
     body header nav {
