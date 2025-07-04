@@ -31,13 +31,11 @@ a {
 
 body {
     width: 100%;
-    height: 100vh;
     background-color: var(--grenat);
 }
 
 body header {
     width: 100%;
-    max-width: 770px;
     margin: auto;
     height: 70px;
     display: flex;
@@ -98,10 +96,6 @@ body header {
     overflow: hidden;
 }
 
-.user-info h4 {
-    margin: 5px auto;
-}
-
 .profile-container {
     min-width: 50px;
     height: 50px;
@@ -114,13 +108,6 @@ body header {
 .profile-container img {
     width: 100%;
     height: 100%;
-}
-
-hr {
-    height: 0.5px;
-    border: none;
-    background-color: rgba(128, 128, 128, 0.427);
-    margin-top: 10px;
 }
 
 .actions li {
@@ -152,7 +139,7 @@ hr {
     height: 100%;
 }
 
-.button-container button {
+button {
     padding: 10px 13px;
     background-color: yellow;
     border: none;
@@ -165,7 +152,7 @@ hr {
     outline: none;
 }
 
-.button-container button:active {
+button:active {
     transform: scale(0.95);
     transition: 0.1s;
 }
@@ -216,139 +203,25 @@ body header nav ul li a {
 
 body main {
     width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-wrap: wrap-reverse;
-    justify-content: center;
-}
-
-body main div.left {
-    width: 50%;
-    min-width: 270px;
-    height: inherit;
-    padding-left: 160px;
-    padding-top: 20px;
-    color: white;
-}
-
-body main div.left p.Lorem {
-    width: 100%;
-    text-align: justify;
-    justify-content: center;
-}
-
-body main div.left p.title {
-    font-size: 45px;
-    border-bottom: 2px yellow solid;
-    width: 50%;
-    margin-bottom: 30px;
-    padding-bottom: 6px;
-}
-
-body main div.left button {
-    width: 100px;
-    height: 40px;
-    background-color: yellow;
-    border: none;
-    margin-top: 25px;
-    border-radius: 5px;
-    box-shadow: 2px 2px 10px #3333334d, -2px -2px 10px #3333334d;
-    cursor: pointer;
-    color: #000;
-    font-weight: bolder;
-}
-
-body main div.right {
-    width: 600px;
-    height: inherit;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    object-fit: cover;
-}
-
-body main div.right img {
-    width: 55%;
-    border-radius: 5px;
-    box-shadow: 2px 2px 10px #3333334d, -2px -2px 10px #3333334d;
-    margin-top: -80px;
-    margin-left: -50px;
-    display: flex;
-    object-fit: cover;
-}
-
-.home-info-container {
-    width: 100%;
-    max-width: 1200px;
+    max-width: 900px;
     margin: auto;
-    background-color: red;
 }
 
-body main div.my_contacts {
+.my_contacts {
     width: 100%;
-    height: inherit;
-    padding-left: 160px;
-    padding-right: 160px;
-    padding-top: 20px;
-    color: white;
+    margin: 50px auto;
+    display: flex;
+    justify-content: space-between;
+    column-gap: 75px;
 }
 
-body main div.my_contacts p.title {
-    font-size: 45px;
+.my_contacts h1 {
+    font-size: 2em;
     border-bottom: 2px yellow solid;
     margin-bottom: 30px;
     padding-bottom: 6px;
     color: white;
-    width: 25%;
-}
-
-body main div.my_contacts div.list_contact {
-    width: inherit;
-    height: max-content;
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    padding-top: 40px;
-}
-
-body main div.my_contacts div.list_contact div.contact {
-    width: 200px;
-    height: 80px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    margin-bottom: 50px;
-    transition: 0.5s all;
-    cursor: pointer;
-}
-
-body main div.my_contacts div.list_contact div.contact:hover {
-    background-color: rgba(255, 255, 0, 0.185);
-    transition: 0.5s all;
-    border-radius: 5px;
-    padding-bottom: 30px;
-}
-
-body main div.my_contacts div.list_contact div.contact img {
-    width: 50px;
-    margin: auto;
-}
-
-body main div.my_contacts div.list_contact label {
-    cursor: pointer;
-}
-
-body main div.my_contacts div.list_contact a {
-    color: white;
-    text-decoration: none;
-    transition: 0.3s all;
-}
-
-body main div.my_contacts div.list_contact a:hover {
-    color: yellow;
-    transition: 0.3s all;
-    text-decoration: underline;
+    width: max-content;
 }
 
 body header div.menu {
@@ -359,30 +232,202 @@ body header div.menu img{
     width: 30px;
 }
 
-body .nav#navResponsive ul{
-    background-color: rgba(255, 255, 0, 0.123);
-    width: max-content;
-    height: 0px;
-    overflow: hidden;
-    margin: auto;
-    list-style-type: none;
-    border: 2px solid yellow;
-    line-height: 35px;
-    text-align: center;
-    border-radius: 5px;
-    display: none;
-    transition: 0.3s ease-in-out;
+.left {
+    width: 60%;
+    color: white
 }
 
-body .nav#navResponsive ul li a{
+.left span {
+    color: yellow;
+}
+
+form {
+    width: 100%;
+    margin: 50px 0;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+::placeholder {
+    color: rgb(45, 45, 45);
+}
+
+input {
+    width: 100%;
+    height: 30px;
+    outline: none;
+    padding: 5px;
+    font-weight: 600;
+    border-radius: 3px;
+    border: none;
+}
+
+input:focus,
+textarea:focus {
+    outline: 3px solid rgba(155, 155, 0, 0.585);
+}
+
+textarea {
+    border-radius: 3px;
+    border: none;
+    width: 100%;
+    height: 100px;
+    resize: none;
+    outline: none;
+    padding: 5px;
+    font-weight: 600;
+}
+
+.right {
+    width: 40%;
     color: white;
-    text-decoration: none;
 }
 
-body .nav#navResponsive.active ul {
-    height: 170px;
-    padding: 10px;
-    transition: 0.3s ease-in-out;
+.socials_media {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.socials_media img {
+    width: 35px;
+}
+
+.socials_media li {
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.right a {
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    border-radius: 3px;
+    transition: background-color .5s;
+}
+
+.right a:hover {
+    background-color: rgba(255, 255, 0, 0.172);
+    transition: background-color .5s;
+}
+
+.gallery{
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.gallery li {
+    height: 125px;
+    overflow: hidden;
+    position: relative;
+    transition: background-color .5s;
+}
+
+.gallery li:last-child {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.gallery li::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: #581845d7;
+    transition: background-color .5s;
+}
+
+.gallery li:hover::before{
+    background: #58184556;
+    transition: background-color .5s;
+    cursor: pointer;
+}
+
+.gallery li img {
+    width: 100%;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    height: 75px;
+    align-items: center;
+}
+
+footer p {
+    color: white;
+    font-size: 14px;
+}
+
+footer p a {
+    color: yellow;
+    font-weight: bold;
+}
+
+footer p a:hover {
+    text-decoration: underline;
+}
+
+.overlay {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: -100%;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255, 255, 0, 0.299);
+    backdrop-filter: blur(5px);
+    display: flex;
+    transition: .3s;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay.active {
+    left: 0;
+    transition: .3s;
+}
+
+.overlay ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 30px;
+}
+
+.overlay a {
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.overlay .close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    right: 20px;
+    top: 20px;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
+    background-color: white;
 }
 
 @media only screen and (max-width: 1300px) {
@@ -392,54 +437,17 @@ body .nav#navResponsive.active ul {
     }
 }
 
-@media only screen and (max-width: 1330px) {
-    
-    body main div.my_contacts p.title {
-        width: max-content;
-        margin: auto;
+@media only screen and (max-width: 1024px) {
+    .container {
+        padding: 0 25px;
     }
-
-}
-
-@media only screen and (max-width: 1199px) {
-    
-    body main div.left {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 20px;
-        height: max-content;
-        margin: auto;
+    section.my_contacts {
+        column-gap: 25px;
     }
-    
-    body main div.left p.title {
-        font-size: 2rem;
-        width: 100%;
-        margin: auto;
-        text-align: center;
-        margin-bottom: 20px;
+    section.my_contacts .left,
+    section.my_contacts .right {
+        width: 50%;
     }
-
-    body main div.my_contacts p.title {
-        font-size: 2rem;
-        text-align: center;
-        width: 100%;
-    }
-
-    body main {
-        height: max-content;
-   }
-
-    body main div.right img {
-        width: 55%;
-        border-radius: 5px;
-        box-shadow: 2px 2px 10px #3333334d, -2px -2px 10px #3333334d;
-        margin-top: 50px;
-        margin-left: 0px;
-        display: flex;
-        object-fit: cover;
-    }
-
 }
 
 @media only screen and (max-width: 700px) {
@@ -450,12 +458,6 @@ body .nav#navResponsive.active ul {
 
     body header div.menu {
         display: block;
-    }
-
-    body .nav#navResponsive ul{
-        
-        display: block;
-        transition: 0.3s ease-in-out;
     }
 
     body header {
@@ -469,19 +471,25 @@ body .nav#navResponsive.active ul {
         display: none;
     }
 
-}
-
-@media only screen and (max-width: 570px) {
-    
-    body main div.my_contacts {
-        padding-left: 0px;
-        padding-right: 0px;
-        margin: auto;
-        padding: 20px;
+    .container {
+        padding: 0 15px;
     }
 
-    body main div.my_contacts div.list_contact {
+    section.my_contacts {
+        display: block;
+    }
+
+    .container section.my_contacts {
+        margin-bottom: 0px;
+    }
+
+    section.my_contacts .left,
+    section.my_contacts .right {
         width: 100%;
-        margin: auto;
     }
+
+    section.my_contacts .left {
+        margin-bottom: 50px;
+    }
+
 }

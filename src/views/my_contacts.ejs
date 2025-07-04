@@ -14,15 +14,81 @@
     <title>My Contacts | PORTFOLIO</title>
 </head>
 <body>
-    <%- include("header") %>
-    <script>
-        document.getElementById('toggleBtn').addEventListener('click', (event) => {
-            document.getElementById('navResponsive').classList.toggle('active');
-        })
-    </script> 
-    <main>
-        <%- include("main_my_contacts") %>
+    <main class="container">
+        <%- include("header") %>
+        <section class="my_contacts">
+            <aside class="left">
+                <h1>My Contacts</h1>
+                <p>
+                    Have you somethings to tell me ? An <span>idea</span> of <span>collaboration</span> ? Need you one of my <span>services</span> ?
+                    Join me on my socials media or leave me message here and I shall anwer you as possible, see you 🤗.
+                </p>
+                <form action="">
+                    <section>
+                        <label for="name">Your name :</label>
+                        <input type="text" name="name" id="name" required placeholder="ex: John Doe">    
+                    </section>
+                    <section>
+                        <label for="name">Your email :</label>
+                        <input type="email" name="email" id="email" required placeholder="ex: johndoe@example.com">
+                    </section>
+                    <section>
+                        <label for="descriptions">Your messages :</label>
+                        <textarea name="descriptions" id="descriptions" required placeholder="Start type your messages here ..."></textarea>
+                    </section>
+                    <section class="button-container">
+                        <button>Send</button>
+                    </section>
+                </form>
+            </aside>
+            <aside class="right">
+                <ul class="socials_media">
+                    <li title="Francisco Raymond IALY">
+                        <a href="https://www.linkedin.com/in/francisco-raymond-ialy-41ab21300/" target="_blank">
+                            <img src="assets/images/linkedin.png">
+                        </a>
+                    </li>
+                    <li title="ialyfrancisco7@gmail.com">
+                        <a href="mailto:ialyfrancisco7@gmail.com">
+                            <img src="assets/images/gmail.png">
+                        </a>
+                    </li>
+                    <li title="Francisco IALY">
+                        <a href="https://github.com/IALYFrancisco" target="_blank">
+                            <img src="assets/images/github.png">
+                        </a>
+                    </li>
+                    <li title="+261 34 47 635 78">
+                        <a href="#">
+                            <img src="assets/images/phone.png">
+                        </a>
+                    </li>
+                    <li title="Buffalo Buffalo">
+                        <a href="https://www.facebook.com/fifi.fy.75/" target="_blank">
+                            <img src="assets/images/facebook.png">
+                        </a>
+                    </li>
+                    <li title="Mon CV">
+                        <a href="assets/documents/CV de IALY Francisco Raymond.pdf" target="_blank" alt="CV de IALY Francisco Raymond">
+                            <img src="assets/images/cv.png">
+                        </a>
+                    </li>
+                </ul>
+                <ul class="gallery">
+                    <li>
+                        <img src="assets/images/IALY-Francisco-Raymond-devant-une-porte-rouge.jpg" alt="IALY Francisco Raymond tenant devant une porte rouge." title="IALY Francisco Raymond tenant devant une porte rouge." alt="">
+                    </li>
+                    <li>
+                        <img src="assets/images/IALY-Francisco-Raymond-devant-une-porte-rouge.jpg" alt="IALY Francisco Raymond tenant devant une porte rouge." title="IALY Francisco Raymond tenant devant une porte rouge." alt="">
+                    </li>
+                    <li>
+                        <img src="assets/images/IALY-Francisco-Raymond-devant-une-porte-rouge.jpg" alt="IALY Francisco Raymond tenant devant une porte rouge." title="IALY Francisco Raymond tenant devant une porte rouge." alt="">
+                    </li>
+                </ul>
+            </aside>
+        </section>
     </main>
+    <%- include("footer") %>
 </body>
 <script src="assets/js/mycontacts.js"></script>
 </html>
