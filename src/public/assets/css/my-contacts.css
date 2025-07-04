@@ -368,11 +368,11 @@ textarea {
 .socials_media {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 12px;
 }
 
 .socials_media img {
-    width: 50px;
+    width: 35px;
 }
 
 .socials_media li {
@@ -384,10 +384,9 @@ textarea {
 
 .right a {
     color: white;
-    font-size: 14px;
     width: 100%;
     text-align: center;
-    padding: 10px;
+    padding: 5px;
     border-radius: 3px;
     transition: background-color .5s;
 }
