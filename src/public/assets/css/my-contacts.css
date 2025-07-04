@@ -484,14 +484,6 @@ footer p a:hover {
     }
 }
 
-@media only screen and (max-width: 1330px) {
-    
-    .my_contacts h1 {
-        margin: auto;
-    }
-
-}
-
 @media only screen and (max-width: 1199px) {
 
     .my_contacts h1 {
