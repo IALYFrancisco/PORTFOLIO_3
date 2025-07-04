@@ -12,6 +12,6 @@ function goToMyContacts(request, response){
 }
 
 module.exports = { 
-    goToMyContacts: goToMyContacts,
+    goToMyContacts : goToMyContacts,
     goToHome : goToHome
 }
