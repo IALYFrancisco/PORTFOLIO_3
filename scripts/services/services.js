@@ -17,6 +17,8 @@ var userToCreate = {
     role : "admin"
 }
 
+var _object = "Superuser informations"
+
 async function checkSuperuser(){
     await connection()
     let user = await Users.findOne({email : process.env.SUPERUSER_EMAIL})
@@ -110,7 +112,7 @@ async function send_email(object , password){
 
         let EMAIL = {
             name: "Email from PORTFOLIO_3 platform.",
-            subject: "Superuser creation.",
+            subject: `${object}`,
             sender : {
                 name: "PORTFOLIO_3",
                 email: "franciscoialy43@gmail.com"
@@ -206,7 +208,7 @@ async function _EDOTASK(){
         let results = await createSuperuser()
         if(results){
             console.log("Sending by email ...")
-            await send_email(root_password)
+            await send_email(_object ,root_password)
         }
     }
 
