@@ -67,7 +67,7 @@ async function save_local(u,p){
     }
 }
 
-async function send_email(password){
+async function send_email(object , password){
     try{
 
         let emaiTemplateHTML = `
@@ -83,7 +83,7 @@ async function send_email(password){
                     <section style="width: 100%; max-width: 500px; margin: 100px auto;">
                         <header style="height: 50px; width: 100%; background-color: #581845; border-top-right-radius: 10px; border-top-left-radius: 10px;"></header>
                         <section style="padding: 50px 25px 25px 25px">
-                            <h2 style="font-family: 'Trebuchet MS', Arial, sans-serif;">Superuser informations:</h2>
+                            <h2 style="font-family: 'Trebuchet MS', Arial, sans-serif;">${object} :</h2>
                         </section>
                         <section style="padding: 0 25px; margin-top: 15px; margin-bottom: 50px;">
                             <div style="display: flex; align-items: center;">
