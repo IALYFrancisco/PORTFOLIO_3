@@ -35,7 +35,7 @@ async function AddSkill(request, response){
 }
 
 function goToAddProject( request, response ) {
-    response.render('addProject');
+    response.render('Backoffice/addProject');
 };
 
 
