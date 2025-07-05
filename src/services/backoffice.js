@@ -34,8 +34,13 @@ async function AddSkill(request, response){
     }
 }
 
+function goToAddProject( request, response ) {
+    response.render('addProject');
+};
+
 module.exports = { 
     goToBackoffice: _goToBackoffice,
     AddSkill : AddSkill,
-    GoToAddSkill : GoToAddSkill
+    GoToAddSkill : GoToAddSkill,
+    goToAddProject : goToAddProject
 }
