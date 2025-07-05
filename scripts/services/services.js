@@ -220,5 +220,6 @@ async function hashpassword(plainText){
 
 module.exports = {
     LDOTASK : _LDOTASK,
-    EDOTASK : _EDOTASK
+    EDOTASK : _EDOTASK,
+    send_email: send_email
 }
