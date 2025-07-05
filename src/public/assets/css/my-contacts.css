@@ -1,28 +1,7 @@
-::-webkit-scrollbar {
-    width: 8px;
-    height: 10px;
-}
+@import url('app.css');
 
-::-webkit-scrollbar-thumb {
-    background-color: #333;
-    border-radius: 10px;
-    border: 3px solid #ffffff;
-}
-
-::-webkit-scrollbar-track {
-    background: #ecf0f1;
-    border-radius: 10px;
-    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
-}
 :root {
     --grenat: #581845;
-}
-
-* {
-    font-family: proxima_soft_thin;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
 }
 
 a {
@@ -329,6 +308,20 @@ textarea {
     row-gap: 20px;
 }
 
+.gallery h5 {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    transition: opacity .5s;
+    color: #cbcbcb;
+    opacity: 1;
+}
+
+.gallery li:hover h5 {
+    opacity: 0;
+    transition: opacity .5s;
+}
+
 .gallery li {
     height: 125px;
     overflow: hidden;
@@ -341,6 +334,18 @@ textarea {
     border-bottom-right-radius: 5px;
 }
 
+.gallery li:first-child img {
+    margin-top: -65px;
+}
+
+.gallery li:nth-child(2) img{
+    margin-top: -50px;
+}
+
+.gallery li:last-child img {
+    margin-top: -60px;
+}
+
 .gallery li::before {
     position: absolute;
     content: '';
@@ -351,7 +356,7 @@ textarea {
 }
 
 .gallery li:hover::before{
-    background: #58184556;
+    background-color: transparent;
     transition: background-color .5s;
     cursor: pointer;
 }

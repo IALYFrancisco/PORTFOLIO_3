@@ -34,8 +34,32 @@ async function AddSkill(request, response){
     }
 }
 
+function goToAddProject( request, response ) {
+    response.render('Backoffice/addProject');
+};
+
+
+async function goToBackofficeMySkills( request, response ) {
+  let skills = await Skills.find({})
+  response.render('backoffice_myskills', { skills : skills })
+}
+
+async function addProjectService(request, response) {
+    try{
+        let newProject = projectCollection(request.body)
+        await newProject.save()
+        request.flash('success', "A project is added.")
+        return response.redirect('/backoffice')
+    }catch(error){
+        console.log('There are an errors: ' + error)
+    }
+}
+
 module.exports = { 
     goToBackoffice: _goToBackoffice,
     AddSkill : AddSkill,
-    GoToAddSkill : GoToAddSkill
+    GoToAddSkill : GoToAddSkill,
+    goToAddProject : goToAddProject,
+    goToBackofficeMySkills : goToBackofficeMySkills,
+    addProjectService : addProjectService
 }

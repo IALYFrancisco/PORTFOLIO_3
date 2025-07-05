@@ -17,6 +17,8 @@ var userToCreate = {
     role : "admin"
 }
 
+var _object = "Superuser informations"
+
 async function checkSuperuser(){
     await connection()
     let user = await Users.findOne({email : process.env.SUPERUSER_EMAIL})
@@ -67,7 +69,7 @@ async function save_local(u,p){
     }
 }
 
-async function send_email(password){
+async function send_email(object , password){
     try{
 
         let emaiTemplateHTML = `
@@ -83,7 +85,7 @@ async function send_email(password){
                     <section style="width: 100%; max-width: 500px; margin: 100px auto;">
                         <header style="height: 50px; width: 100%; background-color: #581845; border-top-right-radius: 10px; border-top-left-radius: 10px;"></header>
                         <section style="padding: 50px 25px 25px 25px">
-                            <h2 style="font-family: 'Trebuchet MS', Arial, sans-serif;">Superuser informations:</h2>
+                            <h2 style="font-family: 'Trebuchet MS', Arial, sans-serif;">${object} :</h2>
                         </section>
                         <section style="padding: 0 25px; margin-top: 15px; margin-bottom: 50px;">
                             <div style="display: flex; align-items: center;">
@@ -110,7 +112,7 @@ async function send_email(password){
 
         let EMAIL = {
             name: "Email from PORTFOLIO_3 platform.",
-            subject: "Superuser creation.",
+            subject: `${object}`,
             sender : {
                 name: "PORTFOLIO_3",
                 email: "franciscoialy43@gmail.com"
@@ -206,7 +208,7 @@ async function _EDOTASK(){
         let results = await createSuperuser()
         if(results){
             console.log("Sending by email ...")
-            await send_email(root_password)
+            await send_email(_object ,root_password)
         }
     }
 
@@ -218,5 +220,6 @@ async function hashpassword(plainText){
 
 module.exports = {
     LDOTASK : _LDOTASK,
-    EDOTASK : _EDOTASK
+    EDOTASK : _EDOTASK,
+    send_email: send_email
 }

@@ -1,7 +1,4 @@
-* {
-    box-sizing: border-box;
-    font-family: proxima_soft_thin;
-}
+@import url('app.css');
 
 :root {
     --grenat: #581845;

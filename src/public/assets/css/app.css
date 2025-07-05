@@ -1,0 +1,49 @@
+* {
+    font-family: proxima_soft_thin;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #333;
+    border-radius: 10px;
+    border: 3px solid #ffffff;
+}
+
+::-webkit-scrollbar-track {
+    background: #ecf0f1;
+    border-radius: 10px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.notification-container {
+    position: absolute;
+    width: max-content;
+    padding: 10px;
+    border-radius: 3px;
+    color: white;
+    font-weight: 500;
+    font-size: 14px;
+    top: 50px;
+    left: -50%;
+    right: -50%;
+    margin: auto;
+}
+
+.notification-container.error {
+    background-color: rgba(220, 20, 60, 0.318);
+    backdrop-filter: blur(2);
+    border: 2px crimson solid;
+}
+
+.notification-container.success {
+    background-color: rgba(0, 128, 0, 0.331);
+    backdrop-filter: blur(2);
+    border: 2px green solid;
+}
