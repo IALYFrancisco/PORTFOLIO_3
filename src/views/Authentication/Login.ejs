@@ -15,12 +15,12 @@
 </head>
 <body>
     <% if(success && success.length > 0) { %>
-        <div class="notification-container">
+        <div class="notification-container success">
             <p><%- success %></p>
         </div>
     <% } %>
     <% if(error && error.length > 0) { %>
-        <div class="message-container">
+        <div class="message-container error">
             <p><%- error -%></p>
         </div>
     <% } %>
