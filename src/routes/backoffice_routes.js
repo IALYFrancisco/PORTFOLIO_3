@@ -1,7 +1,6 @@
 const express = require('express')
-const addProjectService = require('../services/addProjectService')
 const { AuthenticatedAndAdmin } = require('../services/auth_services')
-const { goToBackoffice, AddSkill, GoToAddSkill, goToAddProject, goToBackofficeMySkills } = require('../services/backoffice')
+const { goToBackoffice, AddSkill, GoToAddSkill, goToAddProject, goToBackofficeMySkills, addProjectService } = require('../services/backoffice')
 const _backoffice_routes = express.Router()
 
 _backoffice_routes.use(AuthenticatedAndAdmin)
