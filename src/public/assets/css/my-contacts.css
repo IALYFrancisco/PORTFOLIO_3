@@ -435,6 +435,30 @@ footer p a:hover {
     background-color: white;
 }
 
+.message-container {
+    width: max-content;
+    padding: 10px;
+    background-color: crimson;
+    margin: 20px auto;
+    border-radius: 3px;
+}
+
+.message-container p {
+    color: white;
+    font-size: 14px;
+}
+
+.notification-container {
+    width: max-content;
+    padding: 10px;
+    background-color: green;
+    margin: 20px auto;
+    border-radius: 3px;
+    color: white;
+    font-weight: 500;
+    font-size: 14px;
+}
+
 @media only screen and (max-width: 1300px) {
     .dropdown-container.active {
         top: 50px;
