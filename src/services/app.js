@@ -1,5 +1,6 @@
 const visitor_counter = require('../services/visitor_counter')
 const projectCollection = require("../models/projectsModel")
+const { send_email } = require('../../scripts/services/services')
 
 function goToHome(request, response) {
     let ip = request.headers['x-forwarded-for'] || request.socket.remoteAddress || null
@@ -22,11 +23,13 @@ function goToMyContacts(request, response){
 }
 
 async function SendContactEmail(request, response){
-    try{
+    try{  
        let message = request.body
-       console.log(message) 
+       await send_email("An user sent you message from your portfolio", message)
+       request.flash('success', '👏 Your message is sent, you will be contacted by IALY as possible, see you.')
+       response.status(200).redirect('/my-contacts')
     }catch(err){
-        console.log("Error sending contact message.")
+       request.flash('error', '😥 Error sending message, try later.')
     }
 }
 
