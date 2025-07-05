@@ -25,9 +25,14 @@ function goToMyContacts(request, response){
 async function SendContactEmail(request, response){
     try{  
        let message = request.body
-       await send_email("An user sent you message from your portfolio", message)
-       request.flash('success', '👏 Your message is sent, you will be contacted by IALY as possible, see you.')
-       response.status(200).redirect('/my-contacts')
+       let result = await send_email("An user sent you message from your portfolio", message)
+       if(result){
+           request.flash('success', '👏 Your message is sent, you will be contacted by IALY as possible, see you.')
+           response.status(200).redirect('/my-contacts')
+       }else{
+           request.flash('error', '😥 Error sending message, try later.')
+           response.status(200).redirect('/my-contacts')
+       }
     }catch(err){
         request.flash('error', '😥 Error sending message, try later.')
         response.status(200).redirect('/my-contacts')
