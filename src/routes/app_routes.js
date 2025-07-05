@@ -1,7 +1,6 @@
 const express = require('express')
 const app_routes = express.Router()
-const goToMyProjects = require('../controllers/goToMyProjectsController')
-const { goToHome, goToMyContacts, goToMySkills } = require('../services/app')
+const { goToHome, goToMyContacts, goToMySkills, goToMyProjects } = require('../services/app')
 
 app_routes.get('/', goToHome)
 

@@ -1,4 +1,5 @@
 const visitor_counter = require('../services/visitor_counter')
+const projectCollection = require("../models/projectsModel")
 
 function goToHome(request, response) {
     let ip = request.headers['x-forwarded-for'] || request.socket.remoteAddress || null
@@ -11,12 +12,20 @@ function goToMySkills(request, response){
     response.render('my_skills');
 }
 
+async function goToMyProjects(request, response) {
+    const documents = await projectCollection.find()
+    response.render('my_projects', {documents})
+}
+
 function goToMyContacts(request, response){
     response.render('my_contacts')
 }
 
+
+
 module.exports = { 
     goToMyContacts : goToMyContacts,
     goToHome : goToHome,
-    goToMySkills: goToMySkills
+    goToMySkills: goToMySkills,
+    goToMyProjects : goToMyProjects
 }
