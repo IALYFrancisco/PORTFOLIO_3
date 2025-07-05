@@ -29,7 +29,8 @@ async function SendContactEmail(request, response){
        request.flash('success', '👏 Your message is sent, you will be contacted by IALY as possible, see you.')
        response.status(200).redirect('/my-contacts')
     }catch(err){
-       request.flash('error', '😥 Error sending message, try later.')
+        request.flash('error', '😥 Error sending message, try later.')
+        response.status(200).redirect('/my-contacts')
     }
 }
 
