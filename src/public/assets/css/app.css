@@ -41,3 +41,9 @@
     backdrop-filter: blur(2);
     border: 2px crimson solid;
 }
+
+.notification-container.success {
+    background-color: rgba(0, 128, 0, 0.331);
+    backdrop-filter: blur(2);
+    border: 2px green solid;
+}

@@ -14,16 +14,7 @@
     <title>Login | PORTFOLIO</title>
 </head>
 <body>
-    <% if(success && success.length > 0) { %>
-        <div class="notification-container success">
-            <p><%- success %></p>
-        </div>
-    <% } %>
-    <% if(error && error.length > 0) { %>
-        <div class="notification-container error">
-            <p><%- error -%></p>
-        </div>
-    <% } %>
+    <%- include("../Partials/flash")%>
     <form action="/authentication/login" method="POST">
         <section class="logo-container">
             <a href="/">
