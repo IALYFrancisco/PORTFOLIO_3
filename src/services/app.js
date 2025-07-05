@@ -23,7 +23,8 @@ function goToMyContacts(request, response){
 
 async function SendContactEmail(request, response){
     try{
-
+       let message = request.body
+       console.log(message) 
     }catch(err){
         console.log("Error sending contact message.")
     }
@@ -33,5 +34,6 @@ module.exports = {
     goToMyContacts : goToMyContacts,
     goToHome : goToHome,
     goToMySkills: goToMySkills,
-    goToMyProjects : goToMyProjects
+    goToMyProjects : goToMyProjects,
+    SendContactEmail : SendContactEmail
 }
