@@ -21,6 +21,14 @@ function goToMyContacts(request, response){
     response.render('my_contacts')
 }
 
+async function SendContactEmail(request, response){
+    try{
+
+    }catch(err){
+        console.log("Error sending contact message.")
+    }
+}
+
 module.exports = { 
     goToMyContacts : goToMyContacts,
     goToHome : goToHome,
