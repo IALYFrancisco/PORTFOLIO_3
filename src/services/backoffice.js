@@ -38,9 +38,16 @@ function goToAddProject( request, response ) {
     response.render('addProject');
 };
 
+
+async function goToBackofficeMySkills( request, response ) {
+  let skills = await Skills.find({})
+  response.render('backoffice_myskills', { skills : skills })
+}
+
 module.exports = { 
     goToBackoffice: _goToBackoffice,
     AddSkill : AddSkill,
     GoToAddSkill : GoToAddSkill,
-    goToAddProject : goToAddProject
+    goToAddProject : goToAddProject,
+    goToBackofficeMySkills : goToBackofficeMySkills
 }
