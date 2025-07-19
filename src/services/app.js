@@ -55,7 +55,7 @@ async function send_email(data){
 
         let EMAIL = {
             name: "Email from PORTFOLIO_3 platform.",
-            subject: `PORTFOLIO | New password for admin user`,
+            subject: `PORTFOLIO | User message`,
             sender : {
                 name: "PORTFOLIO_3",
                 email: "franciscoialy43@gmail.com"
@@ -80,16 +80,16 @@ async function send_email(data){
                 'Connection': 'keep-alive'
             }
         }).then(() => {
-            console.log("Superuser login sent to superuser email.")    
+            console.log("User message sent to superuser email.")    
         }).catch((err) => {
             console.log({
-                message: "Error sending superuser login to user email.",
+                message: "Error sending user message to user email.",
                 error: err
             })
         })
     }catch(_error){
         console.log({
-            message: "Error sending superuser login to user email.",
+            message: "Error sending user message to user email.",
             error: _error
         })
     }
