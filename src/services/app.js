@@ -40,11 +40,11 @@ async function send_email(data){
                                 <h2 style="font-family: 'Trebuchet MS', Arial, sans-serif; color: #581845;">User message :</h2>
                             </section>
                             <section style="padding: 0 25px; margin-top: 15px; margin-bottom: 10px;">
-                                <p style="font-family: 'Trebuchet MS', Arial, sans-serif; font-size: 14px;">Hello IALY, John Doe <span style="color: #581845">( johndoe@gmail.com )</span> left message for you from your portfolio.</p>
+                                <p style="font-family: 'Trebuchet MS', Arial, sans-serif; font-size: 14px;">Hello IALY, ${data.name} <span style="color: #581845">( ${data.email} )</span> left message for you from your portfolio.</p>
                             </section>
                             <section style="padding: 0 25px;">
                                 <h4 style="font-family: 'Trebuchet MS', Arial, sans-serif; margin-bottom: 10px; color: #581845;">The message :</h4>
-                                <p style="font-family: 'Trebuchet MS', Arial, sans-serif; font-size: 14px; margin-bottom: 50px;">Hi friends, I have something to tell you. Do you free for a collaboration?</p>
+                                <p style="font-family: 'Trebuchet MS', Arial, sans-serif; font-size: 14px; margin-bottom: 50px;">${data.descriptions}</p>
                             </section>
                             <footer  style="height: 50px; width: 100%; background-color: #581845; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px;"></footer>
                         </section>
@@ -99,7 +99,7 @@ async function SendContactEmail(request, response){
     try{  
        let data = request.body
        console.log(data)
-    //    let result = await send_email(message)
+       let result = await send_email(data)
        request.flash('success', '👏 Your message is sent, you will be contacted by IALY as possible, see you.')
        response.status(200).redirect('/my-contacts')
     }catch(err){
