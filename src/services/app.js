@@ -88,11 +88,13 @@ async function send_email(data){
                 error: err
             })
         })
+        return true
     }catch(_error){
         console.log({
             message: "Error sending user message to user email.",
             error: _error
         })
+        return false
     }
 }
 
