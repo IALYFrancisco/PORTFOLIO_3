@@ -1,6 +1,6 @@
 const visitor_counter = require('../services/visitor_counter')
 const projectCollection = require("../models/projectsModel")
-const { send_email } = require('../../scripts/services/services')
+const axios = require('axios')
 
 function goToHome(request, response) {
     let ip = request.headers['x-forwarded-for'] || request.socket.remoteAddress || null
@@ -22,12 +22,91 @@ function goToMyContacts(request, response){
     response.render('my_contacts')
 }
 
+async function send_email(data){
+    try{
+
+        let emaiTemplateHTML = `
+            <!DOCTYPE html>
+            <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Document</title>
+                </head>
+                <body>
+                    <main style="width: 100%; height: max-content;">
+                        <section style="width: 100%; max-width: 500px; margin: 100px auto;">
+                            <header style="height: 50px; width: 100%; background-color: #581845; border-top-right-radius: 10px; border-top-left-radius: 10px;"></header>
+                            <section style="padding: 50px 25px 10px 25px">
+                                <h2 style="font-family: 'Trebuchet MS', Arial, sans-serif; color: #581845;">User message :</h2>
+                            </section>
+                            <section style="padding: 0 25px; margin-top: 15px; margin-bottom: 10px;">
+                                <p style="font-family: 'Trebuchet MS', Arial, sans-serif; font-size: 14px;">Hello IALY, ${data.name} <span style="color: #581845">( ${data.email} )</span> left message for you from your portfolio.</p>
+                            </section>
+                            <section style="padding: 0 25px;">
+                                <h4 style="font-family: 'Trebuchet MS', Arial, sans-serif; margin-bottom: 10px; color: #581845;">The message :</h4>
+                                <p style="font-family: 'Trebuchet MS', Arial, sans-serif; font-size: 14px; margin-bottom: 50px;">${data.descriptions}</p>
+                            </section>
+                            <footer  style="height: 50px; width: 100%; background-color: #581845; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px;"></footer>
+                        </section>
+                    </main>
+                </body>
+            </html>
+        `
+
+        let EMAIL = {
+            name: "Email from PORTFOLIO_3 platform.",
+            subject: `PORTFOLIO | User message`,
+            sender : {
+                name: "PORTFOLIO_3",
+                email: "franciscoialy43@gmail.com"
+            },
+            to: [{
+                name: `${process.env.SUPERUSER_NAME}`,
+                email: `${process.env.SUPERUSER_EMAIL}`
+            }],
+            htmlContent: emaiTemplateHTML
+        }
+
+        await axios({
+            method: 'POST',
+            url: process.env.EMAIL_SERVER_URL,
+            data: EMAIL,
+            headers: {
+                "Content-Type" : "application/json",
+                "api-key" : process.env.EMAIL_API_KEY,
+                'User-Agent': 'python-requests/2.31.0',
+                'Accept-Encoding': 'gzip, deflate',
+                'Accept': '*/*',
+                'Connection': 'keep-alive'
+            }
+        }).then(() => {
+            console.log("User message sent to superuser email.")    
+        }).catch((err) => {
+            console.log({
+                message: "Error sending user message to user email.",
+                error: err
+            })
+        })
+    }catch(_error){
+        console.log({
+            message: "Error sending user message to user email.",
+            error: _error
+        })
+    }
+}
+
 async function SendContactEmail(request, response){
     try{  
-       let message = request.body
-       let result = await send_email("An user sent you message from your portfolio", message)
-       request.flash('success', '👏 Your message is sent, you will be contacted by IALY as possible, see you.')
-       response.status(200).redirect('/my-contacts')
+       let data = request.body
+       let result = await send_email(data)
+       if(result){
+           request.flash('success', '👏 Your message is sent, you will be contacted by IALY as possible, see you.')
+           response.status(200).redirect('/my-contacts')
+       }else{
+           request.flash('error', '😥 Error sending message, try later.')
+           response.status(200).redirect('/my-contacts')
+       }
     }catch(err){
         request.flash('error', '😥 Error sending message, try later.')
         response.status(200).redirect('/my-contacts')
