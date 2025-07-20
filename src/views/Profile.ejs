@@ -7,5 +7,29 @@
     <title><%- user.name %> | PORTFOLIO</title>
 </head>
 <body>
+    <main>
+        <h2>You can change your profile.</h2>
+        <hr>
+        <section>
+            <section class="left">
+                <div class="border">
+                    <div class="img-container">
+                        <img src="../<%- user.profile %>" alt="Photo de <%- user.name %>">
+                    </div>
+                </div>
+            </section>
+            <section class="right">
+                <div class="element">
+                    <input type="text" name="name" id="name" value="<%- user.name %>" disabled required>
+                    <button>
+                        <img src="" alt="">
+                    </button>
+                </div>
+                <div class="element">
+                    <input type="email" name="name" id="name" value="<%- user.email %>" disabled required>
+                </div>
+            </section>
+        </section>
+    </main>
 </body>
 </html>
