@@ -16,7 +16,6 @@ if(overlay){
 
 if(profile){
    profile.addEventListener('click', () => {
-      console.log(dropdown.classList)
       dropdown.classList.toggle('active')
    })
 }
