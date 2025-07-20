@@ -64,6 +64,7 @@
                 </div>
                 <div class="dropdown-container">
                     <div class="dropdown">
+                    <a href="/user/profile">
                         <div class="user-info">
                             <div class="profile-container">
                                 <img src="<%- user.profile %>" alt="<%- user.name %>" title="<%- user.name %>">
@@ -73,12 +74,15 @@
                                 <h6><%- user.email %></h6>
                             </div>
                         </div>
+                    </a>
                         <hr>
                         <ul class="actions">
-                            <li>
-                                <img src="assets/images/logout.png" alt="Icône de déconnexion.">
-                                <a href="/authentication/logout">Logout</a>
-                            </li>
+                            <a href="/authentication/logout">
+                                <li>
+                                    <img src="assets/images/logout.png" alt="Icône de déconnexion.">
+                                    <span>Logout</span>
+                                </li>
+                            </a>
                         </ul>
                     </div>
                 </div>
