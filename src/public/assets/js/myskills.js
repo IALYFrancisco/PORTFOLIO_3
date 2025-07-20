@@ -13,3 +13,9 @@ if(overlay){
       document.querySelector(".overlay ul").classList.remove('active')
    })
 }
+
+if(profile){
+   profile.addEventListener('click', () => {
+      dropdown.classList.toggle('active')
+   })
+}
