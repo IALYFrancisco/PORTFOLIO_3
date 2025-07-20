@@ -3,6 +3,12 @@ var dropdown = document.querySelector('.dropdown-container')
 
 var overlay = document.querySelector('.overlay')
 
+if(profile){
+   profile.addEventListener('click', () => {
+      dropdown.classList.toggle('active')
+   })
+}
+
 if(overlay){
    document.getElementById('toggleBtn').addEventListener('click', () => {
       overlay.classList.add('active')
@@ -11,11 +17,5 @@ if(overlay){
    document.querySelector('.close').addEventListener('click', () => {
       overlay.classList.remove('active')
       document.querySelector(".overlay ul").classList.remove('active')
-   })
-}
-
-if(profile){
-   profile.addEventListener('click', () => {
-      dropdown.classList.toggle('active')
    })
 }
