@@ -41,6 +41,14 @@ async function _UploadProfile(request, response){
     }
 }
 
+async function Profile(request, response) {
+    try {
+        
+    }catch(err){
+
+    }
+}
+
 module.exports = {
     UploadProfile: _UploadProfile,
     Upload: _Upload
