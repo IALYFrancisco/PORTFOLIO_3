@@ -1,3 +1,8 @@
+@font-face {
+    font-family: proxima_soft_thin;
+    src: url('../font/ProximaSoft-Thin.ttf');
+}
+
 * {
     font-family: proxima_soft_thin;
     margin: 0;
