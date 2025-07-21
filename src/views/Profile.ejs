@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/Profile.css">
+    <title><%- user.name %> | PORTFOLIO</title>
+</head>
+<body>
+    <main>
+        <h1>You can change your profile.</h1>
+        <hr>
+        <section>
+            <section class="left">
+                <div class="border">
+                    <div class="img-container">
+                        <img src="../<%- user.profile %>" alt="Photo de <%- user.name %>">
+                    </div>
+                </div>
+            </section>
+            <section class="right">
+                <div class="element">
+                    <input type="text" name="name" id="name" value="<%- user.name %>" disabled required>
+                    <button>
+                        <img src="../assets/images/edit.png" alt="">
+                    </button>
+                </div>
+                <div class="element">
+                    <input type="email" name="name" id="name" value="<%- user.email %>" disabled required>
+                    <button>
+                        <img src="../assets/images/edit.png" alt="">
+                    </button>
+                </div>
+            </section>
+        </section>
+    </main>
+</body>
+</html>

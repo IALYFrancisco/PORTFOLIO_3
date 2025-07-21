@@ -81,14 +81,15 @@ async function send_email(data){
                 'Connection': 'keep-alive'
             }
         }).then(() => {
-            console.log("User message sent to superuser email.")    
+            console.log("User message sent to superuser email.")
+            return true
         }).catch((err) => {
             console.log({
                 message: "Error sending user message to user email.",
                 error: err
             })
+            return false
         })
-        return true
     }catch(_error){
         console.log({
             message: "Error sending user message to user email.",
@@ -102,7 +103,7 @@ async function SendContactEmail(request, response){
     try{  
        let data = request.body
        let result = await send_email(data)
-       if(result){
+       if(result===true){
            request.flash('success', '👏 Your message is sent, you will be contacted by IALY as possible, see you.')
            response.status(200).redirect('/my-contacts')
        }else{

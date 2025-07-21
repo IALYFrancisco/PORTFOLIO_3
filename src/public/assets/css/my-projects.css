@@ -85,7 +85,7 @@ body header {
     height: 100%;
     background-color: white;
     border-radius: 3px;
-    padding: 10px;
+    padding: 5px;
 }
 
 .user-info {
@@ -93,6 +93,13 @@ body header {
     color: #333;
     column-gap: 8px;
     overflow: hidden;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.user-info:hover {
+    background-color: rgba(235, 228, 228, 0.515);
+    cursor: pointer;
 }
 
 .user-info h4 {
@@ -125,6 +132,12 @@ hr {
     align-items: center;
     column-gap: 7px;
     margin-top: 8px;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.actions li:hover {
+    background-color: rgba(235, 228, 228, 0.515);
 }
 
 .actions img {

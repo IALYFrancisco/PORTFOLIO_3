@@ -41,7 +41,16 @@ async function _UploadProfile(request, response){
     }
 }
 
+async function Profile(request, response) {
+    try {
+        response.render('Profile')
+    }catch(err){
+        console.log("Error rendering profile page.")
+    }
+}
+
 module.exports = {
     UploadProfile: _UploadProfile,
-    Upload: _Upload
+    Upload: _Upload,
+    Profile: Profile
 }
