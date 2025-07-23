@@ -17,7 +17,7 @@ async function get_all_projects(){
     try{
         let projects = await axios({
             method: 'GET',
-            url: `${process.env.DOMAIN_PROJECT_ENDPOINT}`,
+            url: `${process.env.DOMAIN_PROJECT_ENDPOINT}/project/get-all`,
             headers: {
                 'api-key': process.env.PROJECT_API_KEY
             }
@@ -25,13 +25,17 @@ async function get_all_projects(){
         return projects
     }catch(err){
         console.log('Error fetching project list from ME')
+        console.log(err)
     }
 
 }
 
 async function goToMyProjects(request, response) {
     let projects = await get_all_projects()
-    response.render('my_projects', {projects})
+    console.log(process.env.PROJECT_API_KEY)
+    if(projects){
+        response.render('my_projects', {projects})
+    }
 }
 
 function goToMyContacts(request, response){
