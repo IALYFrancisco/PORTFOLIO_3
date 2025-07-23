@@ -103,7 +103,7 @@ async function SendContactEmail(request, response){
     try{  
        let data = request.body
        let result = await send_email(data)
-       if(result===true){
+       if(await result===true){
            request.flash('success', '👏 Your message is sent, you will be contacted by IALY as possible, see you.')
            response.status(200).redirect('/my-contacts')
        }else{
