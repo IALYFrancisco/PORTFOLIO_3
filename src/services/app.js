@@ -80,16 +80,11 @@ async function send_email(data){
                 'Accept': '*/*',
                 'Connection': 'keep-alive'
             }
-        }).then(() => {
-            console.log("User message sent to superuser email.")
-            return true
-        }).catch((err) => {
-            console.log({
-                message: "Error sending user message to user email.",
-                error: err
-            })
-            return false
         })
+
+        console.log("User message sent to superuser email.")
+        return true
+        
     }catch(_error){
         console.log({
             message: "Error sending user message to user email.",
