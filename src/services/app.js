@@ -19,7 +19,7 @@ async function get_all_projects(){
             method: 'GET',
             url: `${process.env.DOMAIN_PROJECT_ENDPOINT}/project/get-all`,
             headers: {
-                'api-key': process.env.PROJECT_API_KEY
+                'x-api-key': process.env.PROJECT_API_KEY
             }
         })
         return projects
@@ -31,9 +31,9 @@ async function get_all_projects(){
 }
 
 async function goToMyProjects(request, response) {
-    let projects = await get_all_projects()
-    console.log(process.env.PROJECT_API_KEY)
-    if(projects){
+    let data = await get_all_projects()
+    let projects = data.data.data
+    if(data){
         response.render('my_projects', {projects})
     }
 }
