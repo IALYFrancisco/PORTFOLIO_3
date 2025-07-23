@@ -13,6 +13,21 @@ function goToMySkills(request, response){
     response.render('my_skills');
 }
 
+async function get_all_projects(){
+    try{
+        axios({
+            method: 'GET',
+            url: `${process.env.DOMAIN_PROJECT_ENDPOINT}`,
+            headers: {
+                'api-key': ''
+            }
+        })
+    }catch(err){
+
+    }
+
+}
+
 async function goToMyProjects(request, response) {
     const documents = await projectCollection.find()
     response.render('my_projects', {documents})
