@@ -38,7 +38,6 @@ function goToAddProject( request, response ) {
     response.render('Backoffice/addProject');
 };
 
-
 async function goToBackofficeMySkills( request, response ) {
   let skills = await Skills.find({})
   response.render('backoffice_myskills', { skills : skills })

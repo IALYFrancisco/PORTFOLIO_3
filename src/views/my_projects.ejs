@@ -18,21 +18,21 @@
                 </p>
                 <div class="list_project">
 
-                    <% documents.forEach( item => { %>
+                    <% projects.forEach( project => { %>
                     
                         <div class="project">
                             
-                            <video src="<%- item.movie_file_url -%>" autoplay loop controls></video>
+                            <video src="<%- project.movie_file_url -%>" autoplay loop controls></video>
 
                             <div class="project_action">
-                                <h4><%- item.name -%></h4>
+                                <h4><%- project.name -%></h4>
                                 <p class="type">
-                                    Type: <span><%- item.type -%></span>
+                                    Type: <span><%- project.type -%></span>
                                 </p>
                                 <p class="skills">
-                                    Skills: <span><%- item.skills -%></span>
+                                    Skills: <span><%- project.skills -%></span>
                                 </p>
-                                <a href="<%- item.host_url -%>" target="_blank">
+                                <a href="<%- project.host_url -%>" target="_blank">
                                     <button class="live_demo">Watch live</button>
                                 </a>
 

@@ -13,9 +13,29 @@ function goToMySkills(request, response){
     response.render('my_skills');
 }
 
+async function get_all_projects(){
+    try{
+        let projects = await axios({
+            method: 'GET',
+            url: `${process.env.DOMAIN_PROJECT_ENDPOINT}/project/get-all`,
+            headers: {
+                'x-api-key': process.env.PROJECT_API_KEY
+            }
+        })
+        return projects
+    }catch(err){
+        console.log('Error fetching project list from ME')
+        console.log(err)
+    }
+
+}
+
 async function goToMyProjects(request, response) {
-    const documents = await projectCollection.find()
-    response.render('my_projects', {documents})
+    let data = await get_all_projects()
+    let projects = data.data.data
+    if(data){
+        response.render('my_projects', {projects})
+    }
 }
 
 function goToMyContacts(request, response){
