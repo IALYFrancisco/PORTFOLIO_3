@@ -67,7 +67,6 @@ body {
 }
 
 #nav_right section {
-    background: red;
     display: flex;
     width: 40px;
     height: 40px;
