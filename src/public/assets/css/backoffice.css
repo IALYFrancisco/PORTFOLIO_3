@@ -66,6 +66,32 @@ body {
     border-bottom: 1px solid rgb(241, 241, 241);
 }
 
+#nav_right section {
+    background: red;
+    display: flex;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+#nav_right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#nav_right .border {
+    padding: 2px;
+    border: 2px solid rgba(106, 106, 0, 0.321);
+    border-radius: 50%;
+}
+
+#nav_right .border:active {
+    transform: scale(0.95);
+    transition: 0.1s;
+}
+
 #container main#right hr{
     height: 0px;
     margin: auto;
