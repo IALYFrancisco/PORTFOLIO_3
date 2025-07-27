@@ -66,33 +66,6 @@ body {
     border-bottom: 1px solid rgb(241, 241, 241);
 }
 
-#container main#right nav#nav_right ul {
-    list-style-type: none;
-    display: flex;
-    width: 250px;
-    height: inherit;
-    align-items: center;
-    justify-content: end;
-    column-gap: 30px;
-}
-
-#container main#right nav#nav_right ul li {
-    width: max-content;
-    height: max-content;
-}
-
-#container main#right nav#nav_right ul li a{
-    width: max-content;
-    height: max-content;
-    text-decoration: none;
-    font-weight: 900;
-    color: #333;
-}
-
-#container main#right nav#nav_right ul li a img{
-    width: 30px;
-}
-
 #container main#right hr{
     height: 0px;
     margin: auto;
