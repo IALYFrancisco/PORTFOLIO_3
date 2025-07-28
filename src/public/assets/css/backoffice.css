@@ -66,31 +66,29 @@ body {
     border-bottom: 1px solid rgb(241, 241, 241);
 }
 
-#container main#right nav#nav_right ul {
-    list-style-type: none;
+#nav_right section {
     display: flex;
-    width: 250px;
-    height: inherit;
-    align-items: center;
-    justify-content: end;
-    column-gap: 30px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
 }
 
-#container main#right nav#nav_right ul li {
-    width: max-content;
-    height: max-content;
+#nav_right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-#container main#right nav#nav_right ul li a{
-    width: max-content;
-    height: max-content;
-    text-decoration: none;
-    font-weight: 900;
-    color: #333;
+#nav_right .border {
+    padding: 2px;
+    border: 2px solid rgba(106, 106, 0, 0.321);
+    border-radius: 50%;
 }
 
-#container main#right nav#nav_right ul li a img{
-    width: 30px;
+#nav_right .border:active {
+    transform: scale(0.95);
+    transition: 0.1s;
 }
 
 #container main#right hr{
