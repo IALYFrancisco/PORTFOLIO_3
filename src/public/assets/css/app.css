@@ -52,3 +52,7 @@
     backdrop-filter: blur(2);
     border: 2px green solid;
 }
+
+a {
+    text-decoration: none;
+}
