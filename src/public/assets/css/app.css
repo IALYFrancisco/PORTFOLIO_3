@@ -52,3 +52,11 @@
     backdrop-filter: blur(2);
     border: 2px green solid;
 }
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}

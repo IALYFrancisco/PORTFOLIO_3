@@ -64,17 +64,17 @@
                 </div>
                 <div class="dropdown-container">
                     <div class="dropdown">
-                    <a href="/user/profile">
-                        <div class="user-info">
-                            <div class="profile-container">
-                                <img src="<%- user.profile %>" alt="<%- user.name %>" title="<%- user.name %>">
+                        <a href="/user/profile">
+                            <div class="user-info">
+                                <div class="profile-container">
+                                    <img src="<%- user.profile %>" alt="<%- user.name %>" title="<%- user.name %>">
+                                </div>
+                                <div class="name">
+                                    <h4><%- user.name %></h4>
+                                    <h6><%- user.email %></h6>
+                                </div>
                             </div>
-                            <div class="name">
-                                <h4><%- user.name %></h4>
-                                <h6><%- user.email %></h6>
-                            </div>
-                        </div>
-                    </a>
+                        </a>
                         <hr>
                         <ul class="actions">
                             <a href="/authentication/logout">
