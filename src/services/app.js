@@ -32,7 +32,7 @@ async function get_all_projects(){
 
 async function goToMyProjects(request, response) {
     let data = await get_all_projects()
-    let projects = data.data.data
+    let projects = data
     if(data){
         response.render('my_projects', {projects})
     }
