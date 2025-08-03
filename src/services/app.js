@@ -31,9 +31,9 @@ async function get_all_projects(){
 }
 
 async function goToMyProjects(request, response) {
-    let data = await get_all_projects()
-    let projects = data
-    if(data){
+    let _response = await get_all_projects()
+    if(_response){
+        let projects = _response.data
         response.render('my_projects', {projects})
     }
 }

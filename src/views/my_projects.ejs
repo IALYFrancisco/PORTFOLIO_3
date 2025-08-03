@@ -18,6 +18,8 @@
                 </p>
                 <div class="list_project">
 
+                <% if(projects){ %>
+                
                     <% projects.forEach( project => { %>
                     
                         <div class="project">
@@ -41,6 +43,8 @@
                         </div>
                         
                     <% }); %>
+
+                <% } %>
 
                 </div>
                 <button id="seeMoreProjectBtn">See more</button>
