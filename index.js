@@ -9,9 +9,11 @@ const session = require('express-session')
 const flash = require('connect-flash')
 const MongoStore = require('connect-mongo')
 const { user_router } = require('./src/routes/user')
+const { DbConnection } = require('./src/services/db')
 const app = express();
 
 dotenv.config();
+// DbConnection()
 
 app.set('view engine', 'ejs');
 

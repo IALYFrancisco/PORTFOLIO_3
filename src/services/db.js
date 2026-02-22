@@ -1,33 +1,12 @@
+const chalk = require('chalk')
 const mongoose = require('mongoose')
-const dotenv = require('dotenv')
 
-dotenv.config()
-
-let isConnected = false
-
-async function _Connection() {
-    if(!isConnected){
-        await mongoose.connect(process.env.DB_URI)
-            .then(()=>{
-                isConnected = true
-                console.log("Connection database OK")
-            })
-            .catch((error)=>{console.log(error)})
-    }
-}
-
-async function _Disconnection() {
-    if(isConnected){
-        await mongoose.disconnect()
-            .then(()=>{
-                isConnected = false
-                console.log("Database disconnection successfully")
-            })
-            .catch((error)=>{console.log(error)})
-    }
+function DbConnection() {
+    mongoose.connect(process.env.DB_URI)
+        .then(()=>{ console.log(chalk.bgHex('#098702ff').hex('#fffbfc')('Database connection success.')) })
+        .catch((err)=>{ console.log('Database connection error :' + err) })
 }
 
 module.exports = {
-    connection : _Connection,
-    disconnection : _Disconnection
+    DbConnection: DbConnection
 }
