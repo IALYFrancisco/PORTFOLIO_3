@@ -1,7 +1,9 @@
 const dotenv = require('dotenv')
 const { LDOTASK } = require('./services/services')
+const { DbConnection } = require('../src/services/db')
 
 dotenv.config()
+DbConnection()
 
 try {
     LDOTASK()
