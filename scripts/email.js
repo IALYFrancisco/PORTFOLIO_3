@@ -1,7 +1,6 @@
 const dotenv = require('dotenv')
 const { EDOTASK } = require('./services/services')
 const { DbConnection } = require('../src/services/db')
-const { disconnect } = require('mongoose')
 
 dotenv.config()
 
@@ -13,6 +12,4 @@ try {
         message : "Failed to create superuser.",
         error : _error
     })
-}finally{
-    await disconnect()
 }

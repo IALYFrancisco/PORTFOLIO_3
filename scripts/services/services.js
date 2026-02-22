@@ -6,6 +6,7 @@ const path = require('path')
 const { default: axios } = require("axios");
 const chalk = require('chalk')
 const crypto = require('crypto')
+const { default: mongoose } = require('mongoose')
 
 var root_password = crypto.randomBytes(32).toString('hex')
 
@@ -175,6 +176,8 @@ async function _LDOTASK(){
         }
     }
 
+    await mongoose.disconnect()
+
 }
 
 async function _EDOTASK(){
@@ -205,6 +208,8 @@ async function _EDOTASK(){
             await send_email(_object ,root_password)
         }
     }
+
+    await mongoose.disconnect()
 
 }
 
