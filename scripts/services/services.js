@@ -1,4 +1,3 @@
-const { connection, disconnection } = require("../../src/services/db")
 const { Users } = require('../../src/models/User')
 const fs = require('fs')
 const os = require('os')
@@ -7,6 +6,7 @@ const path = require('path')
 const { default: axios } = require("axios");
 const chalk = require('chalk')
 const crypto = require('crypto')
+const { default: mongoose } = require('mongoose')
 
 var root_password = crypto.randomBytes(32).toString('hex')
 
@@ -20,14 +20,11 @@ var userToCreate = {
 var _object = "Superuser informations"
 
 async function checkSuperuser(){
-    await connection()
     let user = await Users.findOne({email : process.env.SUPERUSER_EMAIL})
     if(user){
-        await disconnection()
         return true
     }
     else{
-        await disconnection()
         return false
     }
 }
@@ -36,10 +33,8 @@ async function createSuperuser(){
     try{
         console.log(chalk.yellow("Creating superuser ..."))
         userToCreate.password = await hashpassword(`${root_password}`)
-        await connection()
         let user = Users(userToCreate)
         await user.save()
-        await disconnection()
         return true
     }catch(err){
         console.log({
@@ -154,63 +149,76 @@ async function send_email(password){
 
 async function _LDOTASK(){
 
-    console.log(chalk.bgHex('581845').yellow("\nSuperuser creation."))
-    
-    if(process.env.SUPERUSER_NAME) {
-        let userName = process.env.SUPERUSER_NAME
-        userToCreate.name = userName
-    }else {
-        console.log("La variable d'environnement SUPERUSER_NAME n'est pas définie.")
-    }
+    try{
 
-    if(process.env.SUPERUSER_EMAIL) {
-        let userEmail = process.env.SUPERUSER_EMAIL
-        userToCreate.email = userEmail
-    }else {
-        console.log("La variable d'environnement SUPERUSER_EMAIL n'est pas définie.")
-    }
-
-    if(await checkSuperuser()){
-        console.log(chalk.bgYellow.black("Superuser already exist."))
-        return ""
-    }else{
-        let results = await createSuperuser()
-        if(results){
-            console.log(chalk.yellow("Local informations saving ..."))
-            await save_local(userToCreate, root_password)
+        console.log(chalk.bgHex('581845').yellow("\nSuperuser creation."))
+        
+        if(process.env.SUPERUSER_NAME) {
+            let userName = process.env.SUPERUSER_NAME
+            userToCreate.name = userName
+        }else {
+            console.log("La variable d'environnement SUPERUSER_NAME n'est pas définie.")
         }
+    
+        if(process.env.SUPERUSER_EMAIL) {
+            let userEmail = process.env.SUPERUSER_EMAIL
+            userToCreate.email = userEmail
+        }else {
+            console.log("La variable d'environnement SUPERUSER_EMAIL n'est pas définie.")
+        }
+    
+        if(await checkSuperuser()){
+            console.log(chalk.bgYellow.black("Superuser already exist."))
+            return ""
+        }else{
+            let results = await createSuperuser()
+            if(results){
+                console.log(chalk.yellow("Local informations saving ..."))
+                await save_local(userToCreate, root_password)
+            }
+        }
+
+    }finally{
+        await mongoose.disconnect()
     }
 
 }
 
 async function _EDOTASK(){
 
-    console.log(chalk.bgHex('581845').yellow("\nSuperuser creation."))
-    
-    if(process.env.SUPERUSER_NAME) {
-        let userName = process.env.SUPERUSER_NAME
-        userToCreate.name = userName
-    }else {
-        console.log("La variable d'environnement SUPERUSER_NAME n'est pas définie.")
-    }
+    try{
 
-    if(process.env.SUPERUSER_EMAIL) {
-        let userEmail = process.env.SUPERUSER_EMAIL
-        userToCreate.email = userEmail
-    }else {
-        console.log("La variable d'environnement SUPERUSER_EMAIL n'est pas définie.")
-    }
-
-    if(await checkSuperuser()){
-        console.log(chalk.bgYellow.black("Superuser already exist."))
-        return ""
-    }else{
-        let results = await createSuperuser()
-        if(results){
-            console.log("Sending by email ...")
-            await send_email(_object ,root_password)
+        console.log(chalk.bgHex('581845').yellow("\nSuperuser creation."))
+        
+        if(process.env.SUPERUSER_NAME) {
+            let userName = process.env.SUPERUSER_NAME
+            userToCreate.name = userName
+        }else {
+            console.log("La variable d'environnement SUPERUSER_NAME n'est pas définie.")
         }
+    
+        if(process.env.SUPERUSER_EMAIL) {
+            let userEmail = process.env.SUPERUSER_EMAIL
+            userToCreate.email = userEmail
+        }else {
+            console.log("La variable d'environnement SUPERUSER_EMAIL n'est pas définie.")
+        }
+    
+        if(await checkSuperuser()){
+            console.log(chalk.bgYellow.black("Superuser already exist."))
+            return ""
+        }else{
+            let results = await createSuperuser()
+            if(results){
+                console.log("Sending by email ...")
+                await send_email(_object ,root_password)
+            }
+        }
+    }finally{
+        await mongoose.disconnect()
     }
+
+
 
 }
 

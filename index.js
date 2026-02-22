@@ -8,11 +8,13 @@ const backoffice_routes = require('./src/routes/backoffice_routes')
 const session = require('express-session')
 const flash = require('connect-flash')
 const MongoStore = require('connect-mongo')
-const { connection, disconnection } = require('./src/services/db')
 const { user_router } = require('./src/routes/user')
+const { DbConnection } = require('./src/services/db')
+const chalk = require('chalk')
 const app = express();
 
 dotenv.config();
+DbConnection()
 
 app.set('view engine', 'ejs');
 
@@ -29,11 +31,6 @@ app.use(express.static(path.join(__dirname, 'src/public'), {
 }));
 
 app.use(body_parser.urlencoded({extended:true}))
-
-app.use(async (request, response, next) => {
-  await connection()
-  next()
-})
 
 app.use(session({
   secret: process.env.SESSION_SECRET,
@@ -66,11 +63,4 @@ app.use('/authentication', auth_routes.auth_routes)
 
 app.use('/user', user_router)
 
-app.listen(process.env.APP_PORT, () => {
-  console.log(`The application is listening at ${process.env.APP_ADDRESS}`);
-});
-
-process.on('SIGINT', async () => {
-  await disconnection()
-  process.exit(0)
-})
+app.listen(process.env.APP_PORT, () => { console.log(chalk.bgHex('#4a78a6').hex("#fffbfc")(`Server is runnning at ${process.env.APP_ADDRESS}`)); });
