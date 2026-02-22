@@ -10,6 +10,7 @@ const flash = require('connect-flash')
 const MongoStore = require('connect-mongo')
 const { user_router } = require('./src/routes/user')
 const { DbConnection } = require('./src/services/db')
+const chalk = require('chalk')
 const app = express();
 
 dotenv.config();
@@ -62,6 +63,4 @@ app.use('/authentication', auth_routes.auth_routes)
 
 app.use('/user', user_router)
 
-app.listen(process.env.APP_PORT, () => {
-  console.log(`The application is listening at ${process.env.APP_ADDRESS}`);
-});
+app.listen(process.env.APP_PORT, () => { console.log(chalk.bgHex('#4a78a6').hex("#fffbfc")(`Server is runnning at ${process.env.APP_ADDRESS}`)); });
