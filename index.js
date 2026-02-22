@@ -13,7 +13,7 @@ const { DbConnection } = require('./src/services/db')
 const app = express();
 
 dotenv.config();
-// DbConnection()
+DbConnection()
 
 app.set('view engine', 'ejs');
 

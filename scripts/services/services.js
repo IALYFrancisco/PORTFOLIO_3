@@ -1,4 +1,3 @@
-const { connection, disconnection } = require("../../src/services/db")
 const { Users } = require('../../src/models/User')
 const fs = require('fs')
 const os = require('os')
@@ -20,14 +19,11 @@ var userToCreate = {
 var _object = "Superuser informations"
 
 async function checkSuperuser(){
-    await connection()
     let user = await Users.findOne({email : process.env.SUPERUSER_EMAIL})
     if(user){
-        await disconnection()
         return true
     }
     else{
-        await disconnection()
         return false
     }
 }
@@ -36,10 +32,8 @@ async function createSuperuser(){
     try{
         console.log(chalk.yellow("Creating superuser ..."))
         userToCreate.password = await hashpassword(`${root_password}`)
-        await connection()
         let user = Users(userToCreate)
         await user.save()
-        await disconnection()
         return true
     }catch(err){
         console.log({
