@@ -8,7 +8,6 @@ const backoffice_routes = require('./src/routes/backoffice_routes')
 const session = require('express-session')
 const flash = require('connect-flash')
 const MongoStore = require('connect-mongo')
-const { connection } = require('./src/services/db')
 const { user_router } = require('./src/routes/user')
 const app = express();
 
@@ -29,11 +28,6 @@ app.use(express.static(path.join(__dirname, 'src/public'), {
 }));
 
 app.use(body_parser.urlencoded({extended:true}))
-
-app.use(async (request, response, next) => {
-  await connection()
-  next()
-})
 
 app.use(session({
   secret: process.env.SESSION_SECRET,
